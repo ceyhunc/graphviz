@@ -1,0 +1,729 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Output Formats
+Date: Fri, 31 Aug 2007 18:07:31 +0300
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://graphviz.org/doc/info/output.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3138
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--=0A=
+    This is a generated document.  Do not edit.=0A=
+--><HTML=20
+version=3D2.0><HEAD><TITLE>Output Formats</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"MSHTML 6.00.6000.16525" name=3DGENERATOR></HEAD>
+<BODY bgColor=3Dwhite><A name=3Dtop></A>
+<H1 align=3Dcenter>Output Formats</H1>
+<HR>
+The output format is specified with the <STRONG>-T</STRONG><I>lang</I> =
+flag on=20
+the <A href=3D"http://graphviz.org/doc/info/command.html">command =
+line</A>, where=20
+<I>lang</I> is one of the parameters listed below.=20
+<P>Note that the internal coordinate system has the origin in the lower =
+left=20
+corner. Thus, positions in the <A=20
+href=3D"http://graphviz.org/doc/info/output.html#d:canon">canon</A>, <A=20
+href=3D"http://graphviz.org/doc/info/output.html#d:dot">dot</A>, <A=20
+href=3D"http://graphviz.org/doc/info/output.html#d:xdot">xdot</A>, <A=20
+href=3D"http://graphviz.org/doc/info/output.html#d:plain">plain</A>, and =
+<A=20
+href=3D"http://graphviz.org/doc/info/output.html#d:plain-ext">plain-ext</=
+A>=20
+formats need to be interpreted in this manner.=20
+<P>
+<TABLE align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TH>Command-line<BR>parameter</TH>
+    <TH>Format</TH></TR>
+  <TR>
+    <TD align=3Dmiddle><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:canon"=20
+      name=3Da:canon>canon</A> <BR><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:dot" =
+name=3Da:dot>dot</A>=20
+      <BR><A href=3D"http://graphviz.org/doc/info/output.html#d:xdot"=20
+      name=3Da:xdot>xdot</A> </TD>
+    <TD>DOT</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:cmap"=20
+      name=3Da:cmap>cmap</A> </TD>
+    <TD>Client-side imagemap (deprecated)</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:dia"=20
+      name=3Da:dia>dia</A> </TD>
+    <TD>Dia format</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:fig"=20
+      name=3Da:fig>fig</A> </TD>
+    <TD>FIG</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:gd"=20
+      name=3Da:gd>gd</A> <BR><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:gd2" =
+name=3Da:gd2>gd2</A>=20
+    </TD>
+    <TD>GD/GD2 formats</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:gif"=20
+      name=3Da:gif>gif</A> </TD>
+    <TD>GIF</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:hpgl"=20
+      name=3Da:hpgl>hpgl</A> </TD>
+    <TD>HP-GL/2</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:imap"=20
+      name=3Da:imap>imap</A> <BR><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:cmapx"=20
+      name=3Da:cmapx>cmapx</A> </TD>
+    <TD>Server-side and client-side imagemaps</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:imap_np"=20
+      name=3Da:imap_np>imap_np</A> <BR><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:cmapx_np"=20
+      name=3Da:cmapx_np>cmapx_np</A> </TD>
+    <TD>Server-side and client-side imagemaps</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:ismap"=20
+      name=3Da:ismap>ismap</A> </TD>
+    <TD>Server-side imagemap (deprecated)</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:jpg"=20
+      name=3Da:jpg>jpg</A> <BR><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:jpeg"=20
+      name=3Da:jpeg>jpeg</A> </TD>
+    <TD>JPEG (deprecated - 8 May 2006 - will no longer be =
+supported)</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:mif"=20
+      name=3Da:mif>mif</A> </TD>
+    <TD>FrameMaker MIF format</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:mp"=20
+      name=3Da:mp>mp</A> </TD>
+    <TD>MetaPost</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:pcl"=20
+      name=3Da:pcl>pcl</A> </TD>
+    <TD>PCL</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:pic"=20
+      name=3Da:pic>pic</A> </TD>
+    <TD>PIC</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:plain"=20
+      name=3Da:plain>plain</A> <BR><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:plain-ext"=20
+      name=3Da:plain-ext>plain-ext</A> </TD>
+    <TD>Simple text format</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:png"=20
+      name=3Da:png>png</A> </TD>
+    <TD>Portable Network Graphics format</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:ps"=20
+      name=3Da:ps>ps</A> </TD>
+    <TD>PostScript</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:ps2"=20
+      name=3Da:ps2>ps2</A> </TD>
+    <TD>PostScript for PDF</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:svg"=20
+      name=3Da:svg>svg</A> <BR><A=20
+      href=3D"http://graphviz.org/doc/info/output.html#d:svgz"=20
+      name=3Da:svgz>svgz</A> </TD>
+    <TD>Scalable Vector Graphics</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:vrml"=20
+      name=3Da:vrml>vrml</A> </TD>
+    <TD>VRML</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:vtx"=20
+      name=3Da:vtx>vtx</A> </TD>
+    <TD>Visual Thought format</TD></TR>
+  <TR>
+    <TD align=3Dmiddle><A =
+href=3D"http://graphviz.org/doc/info/output.html#d:wbmp"=20
+      name=3Da:wbmp>wbmp</A> </TD>
+    <TD>Wireless BitMap format</TD></TR></TBODY></TABLE>
+<HR>
+
+<H2>Format Descriptions</H2>
+<DL>
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:canon"=20
+  name=3Dd:canon><STRONG>canon</STRONG></A> ,
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:dot"=20
+  name=3Dd:dot><STRONG>dot</STRONG></A> ,
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:xdot"=20
+  name=3Dd:xdot><STRONG>xdot</STRONG></A>=20
+  <DD>These formats produce output in the <A=20
+  href=3D"http://graphviz.org/doc/info/lang.html">dot language</A>. =
+Using=20
+  <B>canon</B> produces a prettyprinted version of the input, with no =
+layout=20
+  performed.=20
+  <P>The <B>dot</B> option corresponds to attributed dot output, and is =
+the=20
+  default output format. It reproduces the input, along with layout =
+information=20
+  for the graph. In particular, a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:bb">bb</A> attribute =
+is=20
+  attached to the graph, specifying the bounding box of the drawing. If =
+the=20
+  graph has a label, its position is specified by the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:lp">lp</A> =
+attribute.=20
+  <P>Each node gets <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:pos">pos</A>, <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:width">width</A> and =
+<A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:height">height</A> =
+attributes.=20
+  If the node is a record, the record rectangles are given in the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:rects">rects</A> =
+attribute. If=20
+  the node is a polygon and the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:vertices">vertices</A> =
+
+  attribute is defined, this attribute contains the vertices of the =
+node.=20
+  <P>Every edge is assigned a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:pos">pos</A> =
+attribute, and if=20
+  the edge has a label, the label position is given in <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:lp">lp</A>.=20
+  <P>The <B>xdot</B> format extends the <B>dot</B> format by providing =
+much more=20
+  detailed information about how graph components are drawn. It relies =
+on=20
+  additional attributes for nodes, edges and graphs.=20
+  <P>The format is preliminary; comments and suggestions for better=20
+  representations are welcome. To allow for changes in the format, =
+Graphviz=20
+  attaches the attribute <TT>xdotversion</TT> to the graph.=20
+  <P>At present, additional drawing attributes are only attached to =
+nodes and=20
+  edges. There are six new attributes: <SPACER size=3D"10" =
+TYPE=3D"VERTICAL">
+  <TABLE bgColor=3Dbeige border=3D1>
+    <TBODY>
+    <TR>
+      <TD>_draw_
+      <TD colSpan=3D2>Drawing operations=20
+    <TR>
+      <TD>_ldraw_
+      <TD colSpan=3D2>Label drawing=20
+    <TR>
+      <TD>_hdraw_
+      <TD>Head arrowhead
+      <TD>Edge only=20
+    <TR>
+      <TD>_tdraw_
+      <TD>Tail arrowhead
+      <TD>Edge only=20
+    <TR>
+      <TD>_hldraw_
+      <TD>Head label
+      <TD>Edge only=20
+    <TR>
+      <TD>_tldraw_
+      <TD>Tail label
+      <TD>Edge only </TR></TBODY></TABLE>
+  <P>The value of these attributes consists of the concatenation of some =
+
+  (multi-)set of the following 12 rendering or attribute operations. =
+(The number=20
+  is parentheses gives the xdot version when the operation was added to =
+the=20
+  format. If no version number is given, the operation was in the =
+original=20
+  specification.) <SPACER size=3D"10" TYPE=3D"VERTICAL">
+  <TABLE bgColor=3Dbeige border=3D1>
+    <TBODY>
+    <TR>
+      <TD>E x<SUB>0</SUB> y<SUB>0</SUB> w h=20
+      <TD>Filled ellipse ((x-x<SUB>0</SUB>)/w)<SUP>2</SUP> +=20
+        ((y-y<SUB>0</SUB>)/h)<SUP>2</SUP> =3D 1=20
+    <TR>
+      <TD>e x<SUB>0</SUB> y<SUB>0</SUB> w h=20
+      <TD>Unfilled ellipse ((x-x<SUB>0</SUB>)/w)<SUP>2</SUP> +=20
+        ((y-y<SUB>0</SUB>)/h)<SUP>2</SUP> =3D 1=20
+    <TR>
+      <TD>P n x<SUB>1</SUB> y<SUB>1</SUB> ... x<SUB>n</SUB> =
+y<SUB>n</SUB>=20
+      <TD>Filled polygon using the given n points=20
+    <TR>
+      <TD>p n x<SUB>1</SUB> y<SUB>1</SUB> ... x<SUB>n</SUB> =
+y<SUB>n</SUB>=20
+      <TD>Unfilled polygon using the given n points=20
+    <TR>
+      <TD>L n x<SUB>1</SUB> y<SUB>1</SUB> ... x<SUB>n</SUB> =
+y<SUB>n</SUB>=20
+      <TD>Polyline using the given n points=20
+    <TR>
+      <TD>B n x<SUB>1</SUB> y<SUB>1</SUB> ... x<SUB>n</SUB> =
+y<SUB>n</SUB>=20
+      <TD>B-spline using the given n control points=20
+    <TR>
+      <TD>b n x<SUB>1</SUB> y<SUB>1</SUB> ... x<SUB>n</SUB> =
+y<SUB>n</SUB>=20
+      <TD>Filled B-spline using the given n control points (1.1)=20
+    <TR>
+      <TD>T x y j w n -<I>c<SUB>1</SUB>c<SUB>2</SUB>...c<SUB>n</SUB><I>=20
+        </I></I>
+      <TD>Text drawn using the baseline point (x,y). The text consists =
+of the=20
+        n characters following '-'. The text should be left-aligned =
+(centered,=20
+        right-aligned) on the point if j is -1 (0, 1), respectively. The =
+value w=20
+        gives the width of the text as computed by the library.=20
+    <TR>
+      <TD>C n -<I>c<SUB>1</SUB>c<SUB>2</SUB>...c<SUB>n</SUB><I> </I></I>
+      <TD>Set fill color. The color value consists of the n characters=20
+        following '-'. (1.1)=20
+    <TR>
+      <TD>c n -<I>c<SUB>1</SUB>c<SUB>2</SUB>...c<SUB>n</SUB><I> </I></I>
+      <TD>Set pen color. The color value consists of the n characters=20
+        following '-'. (1.1)=20
+    <TR>
+      <TD>F s n -<I>c<SUB>1</SUB>c<SUB>2</SUB>...c<SUB>n</SUB><I> =
+</I></I>
+      <TD>Set font. The font size is s points. The font name consists of =
+the n=20
+        characters following '-'. (1.1)=20
+    <TR>
+      <TD>S n -<I>c<SUB>1</SUB>c<SUB>2</SUB>...c<SUB>n</SUB><I> </I></I>
+      <TD>Set style attribute. The style value consists of the n =
+characters=20
+        following '-'. The syntax of the value is the same as specified =
+for a=20
+        <B>styleItem</B> in <A=20
+        =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:style">style</A>. =
+(1.1)=20
+    <TR>
+      <TD>I x y w h n -<I>c<SUB>1</SUB>c<SUB>2</SUB>...c<SUB>n</SUB><I>=20
+        </I></I>
+      <TD>Externally-specified image drawn in the box with lower left =
+corner=20
+        (x,y) and upper right corner (x+w,y+h). The name of the image =
+consists=20
+        of the n characters following '-'. This is usually a bitmap =
+image. Note=20
+        that the image size, even when converted from pixels to points, =
+might be=20
+        different from the required size (w,h). It is assumed the =
+renderer will=20
+        perform the necessary scaling. (1.2) =
+</TR></TBODY></TABLE><SPACER size=3D"10"=20
+  TYPE=3D"VERTICAL">In handling alignment, the application may want to =
+recompute=20
+  the string width using its own rendering primitives.=20
+  <P>The text operation is only used in the label attributes. Normally, =
+the=20
+  non-text operations are only used in the non-label attributes. If, =
+however,=20
+  the <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:decorate">decorate</A> =
+
+  attribute is set on an edge, its label attribute will also contain a =
+polyline=20
+  operation. In addition, if a label is a complex, HTML-like label, it =
+will also=20
+  contain non-text operations.=20
+  <P>All coordinates and sizes are in points. Note though that if an =
+edge or=20
+  node is invisible, no drawing operations are attached to it.=20
+  <P>Version info:=20
+  <TABLE border=3D1>
+    <TBODY>
+    <TR>
+      <TH>Xdot version</TH>
+      <TH>Graphviz version</TH></TR>
+    <TR>
+      <TD>1.0</TD>
+      <TD>1.9</TD></TR>
+    <TR>
+      <TD>1.1</TD>
+      <TD>2.8</TD></TR>
+    <TR>
+      <TD>1.2</TD>
+      <TD>2.13</TD></TR></TBODY></TABLE></P>
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:cmap"=20
+  name=3Dd:cmap><STRONG>cmap</STRONG></A>=20
+  <DD>Produces map files for client-side image maps. The cmap format is =
+mostly=20
+  identical to cmapx, but the latter is well-formed XML amenable to =
+processing=20
+  by XML tools. In particular, the cmapx output is wrapped in=20
+  &lt;map&gt;&lt;/map&gt;.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:dia"=20
+  name=3Dd:dia><STRONG>dia</STRONG></A>=20
+  <DD>Produces <A href=3D"http://www.gnome.org/projects/dia/">Dia</A> =
+output.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:fig"=20
+  name=3Dd:fig><STRONG>fig</STRONG></A>=20
+  <DD>Outputs graphs in the FIG graphics language.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:gd"=20
+  name=3Dd:gd><STRONG>gd</STRONG></A> ,
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:gd2"=20
+  name=3Dd:gd2><STRONG>gd2</STRONG></A>=20
+  <DD>Output images in the GD and GD2 format. These are the internal =
+formats=20
+  used by the gd library. The latter is compressed.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:gif"=20
+  name=3Dd:gif><STRONG>gif</STRONG></A>=20
+  <DD>Outputs GIF bitmap images.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:hpgl"=20
+  name=3Dd:hpgl><STRONG>hpgl</STRONG></A>=20
+  <DD>Produces output in the HP-GL/2 vector graphic printer language.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:imap"=20
+  name=3Dd:imap><STRONG>imap</STRONG></A> ,
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:cmapx"=20
+  name=3Dd:cmapx><STRONG>cmapx</STRONG></A>=20
+  <DD>Produces map files for server-side and client-side image maps, =
+These can=20
+  be used in a web page with a graphical form of the output, e.g. in =
+JPEG or GIF=20
+  format, to attach links to nodes and edges. For example, to create a=20
+  server-side map given the dot file <PRE>  /* x.dot */
+  digraph mainmap {
+    URL=3D"http://www.research.att.com/base.html";
+    command [URL=3D"http://www.research.att.com/command.html"];
+    command -&gt; output [URL=3D"colors.html"];
+  }
+  </PRE>one would process the graph and generate two output files: <PRE> =
+ dot -Timap -ox.map -Tgif -ox.gif x.dot
+  </PRE>and then refer to it in a web page: <XMP>  <A =
+HREF=3D"x.map"><IMG SRC=3D"x.gif" ismap=3D"ismap" /></A>
+  </XMP>For client-side maps, one again generates two output files: =
+<PRE>  dot -Tcmapx -ox.map -Tgif -ox.gif x.dot
+  </PRE>and uses the HTML <XMP>  <IMG SRC=3D"x.gif" USEMAP=3D"#mainmap" =
+/>
+  ... [content of x.map] ...
+  </XMP><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URLs</A> can=20
+  be attached to the root graph, nodes and edges. If a node has a URL, =
+clicking=20
+  in the node will activate the link. If an edge has a URL, various =
+points along=20
+  the edge (but not necessarily the head or tail) will link to it. In =
+addition,=20
+  if the edge has a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:label">label</A>, =
+that will=20
+  link to the URL. As for the head of the edge, this is linked to the <A =
+
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:headURL">headURL</A>, =
+if set.=20
+  Otherwise, it is linked to the edge's URL if that is defined. The =
+analogous=20
+  description holds for the tail and the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:tailURL">tailURL</A>. =
+A URL=20
+  associated with the graph is used as a default link.=20
+  <P>If the URL of a node contains the escape sequence "\N", it will be =
+replaced=20
+  by the node's name. If the headURL is defined and contains the escape =
+sequence=20
+  "\N", it will be replaced by the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:headlabel">headlabel</A=
+>, if=20
+  defined. The analogous result holds for the tailURL and the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:taillabel">taillabel</A=
+>. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:imap_np"=20
+  name=3Dd:imap_np><STRONG>imap_np</STRONG></A> ,
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:cmapx_np"=20
+  name=3Dd:cmapx_np><STRONG>cmapx_np</STRONG></A>=20
+  <DD>These are identical to the imap and cmapx formats, except they =
+rely solely=20
+  on rectangles as active areas.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:ismap"=20
+  name=3Dd:ismap><STRONG>ismap</STRONG></A>=20
+  <DD>Produces HTML image map files. This is a predecessor (circa 1994) =
+of the=20
+  IMAP format. Most servers now use the latter. <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URLs</A> can be =
+attached=20
+  to the root graph, nodes and edges. Since edge links are attached to =
+edge=20
+  labels, an edge must have a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:label">label</A> for =
+its URL=20
+  to be used. For both nodes and edges, if the URL has the escape =
+sequence "\N"=20
+  embedded in its string, this will be replaced with the node or edge =
+name.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:jpg"=20
+  name=3Dd:jpg><STRONG>jpg</STRONG></A> ,
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:jpeg"=20
+  name=3Dd:jpeg><STRONG>jpeg</STRONG></A>=20
+  <DD>Output JPEG compressed image files. This format relies on the =
+installation=20
+  having the JPEG library.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:mif"=20
+  name=3Dd:mif><STRONG>mif</STRONG></A>=20
+  <DD>Generates Frame Maker MIF files.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:mp"=20
+  name=3Dd:mp><STRONG>mp</STRONG></A>=20
+  <DD>Produces <A=20
+  href=3D"http://cm.bell-labs.com/who/hobby/MetaPost.html">MetaPost</A> =
+output.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:pcl"=20
+  name=3Dd:pcl><STRONG>pcl</STRONG></A>=20
+  <DD>Produces output in the PCL printer language. <A=20
+  href=3D"http://graphviz.org/doc/info/output.html#d:hpgl">HP-GL</A> is =
+a subset=20
+  of PCL, so that PCL output is the same as HP-GL, wrapped with some =
+initial and=20
+  final commands to set the printer to and from HP-GL mode.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:pic"=20
+  name=3Dd:pic><STRONG>pic</STRONG></A>=20
+  <DD>Outputs in PIC, the picture description language in the =
+troff-family=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:plain"=20
+  name=3Dd:plain><STRONG>plain</STRONG></A> ,
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:plain-ext"=20
+  name=3Dd:plain-ext><STRONG>plain-ext</STRONG></A>=20
+  <DD>The plain and plain-ext formats produce output using a simple, =
+line-based=20
+  language. The latter format differs in that, on edges, it provides =
+port names=20
+  on head and tail nodes when applicable.=20
+  <P>There are four types of statements. <PRE>   <STRONG>graph</STRONG> =
+<I>scale</I> <I>width</I> <I>height</I>
+   <STRONG>node</STRONG> <I>name</I> <I>x</I> <I>y</I> <I>width</I> =
+<I>height</I> <I>label</I> <I>style</I> <I>shape</I> <I>color</I> =
+<I>fillcolor</I>
+   <STRONG>edge</STRONG> <I>tail</I> <I>head</I> <I>n</I> =
+<I>x<SUB>1</SUB></I> <I>y<SUB>1</SUB></I> .. <I>x<SUB>n</SUB></I> =
+<I>y<SUB>n</SUB></I> [<I>label</I> <I>xl</I> <I>yl</I>] <I>style</I> =
+<I>color</I>
+   <STRONG>stop</STRONG>
+  </PRE>
+  <DL>
+    <DT><STRONG>graph</STRONG>=20
+    <DD>The <I>width</I> and <I>height</I> values give the width and =
+height of=20
+    the drawing. The lower left corner of the drawing is at the origin. =
+The=20
+    <I>scale</I> value indicates how the drawing should be scaled if a =
+<A=20
+    href=3D"http://graphviz.org/doc/info/attrs.html#d:size">size</A> =
+attribute was=20
+    given and the drawing needs to be scaled to conform to that size. If =
+no=20
+    scaling is necessary, it will be set to 1.0. Note that all graph, =
+node and=20
+    edge coordinates and lengths are given unscaled.=20
+    <DT><STRONG>node</STRONG>=20
+    <DD>The <I>name</I> value is the name of the node, and <I>x</I> and =
+<I>y</I>=20
+    give the node's position. The <I>width</I> and <I>height</I> are the =
+width=20
+    and height of the node. The <I>label</I>, <I>style</I>, =
+<I>shape</I>,=20
+    <I>color</I> and <I>fillcolor</I> give the node's <A=20
+    href=3D"http://graphviz.org/doc/info/attrs.html#d:label">label</A>, =
+<A=20
+    href=3D"http://graphviz.org/doc/info/attrs.html#d:style">style</A>, =
+<A=20
+    href=3D"http://graphviz.org/doc/info/attrs.html#d:shape">shape</A>, =
+<A=20
+    href=3D"http://graphviz.org/doc/info/attrs.html#d:color">color</A> =
+and <A=20
+    =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:fillcolor">fillcolor</A=
+>,=20
+    respectively, using attribute default values where necessary. If the =
+node=20
+    does not have a style attribute, "solid" is used.=20
+    <DT><STRONG>edge</STRONG>=20
+    <DD>The <I>tail</I> and <I>head</I> values give the names of the =
+head and=20
+    tail nodes. In plain-ext format, the head or tail name will be =
+appended with=20
+    a colon and a portname if the edge connects to the node at a port. =
+<I>n</I>=20
+    is the number of control points defining the B-spline forming the =
+edge. This=20
+    is followed by 2*<I>n</I> numbers giving the x and y coordinates of =
+the=20
+    control points in order from tail to head. If the edge has a <A=20
+    href=3D"http://graphviz.org/doc/info/attrs.html#d:label">label</A>, =
+this comes=20
+    next followed by the x and y coordinates of the label's position. =
+The edge=20
+    description is completed by the edge's <A=20
+    href=3D"http://graphviz.org/doc/info/attrs.html#d:style">style</A> =
+and <A=20
+    href=3D"http://graphviz.org/doc/info/attrs.html#d:color">color</A>. =
+As with=20
+    nodes, if a style is not defined, "solid" is used.=20
+    <P><B>Note:</B> The control points given in an edge statement define =
+the=20
+    body of the edge. In particular, if the edge has an arrowhead to the =
+head or=20
+    tail node, there will be a gap between the last or first control =
+points and=20
+    the boundary of the associated node. There are at least 3 possible =
+ways of=20
+    handling this gap:=20
+    <UL>
+      <LI>Arrange that the input graph uses <TT>dir=3Dnone</TT>,=20
+      <TT>arrowhead=3Dnone</TT>, or <TT>arrowtail=3Dnone</TT> for all =
+edges. In this=20
+      case, the terminating control points will always touch the node.=20
+      <LI>Consider the line segment joining the control point and the =
+center of=20
+      the node, and determine the point where the segment intersects the =
+node's=20
+      boundary. Then use the control point and the intersection point as =
+the=20
+      main axis of an arrowhead. The problem with this approach is that, =
+if the=20
+      edge has a port, the edge will not be pointing to the center of =
+the node.=20
+      In this case, rather than use the control point and center point, =
+one can=20
+      use the control point and its tangent.=20
+      <LI>Arrange that the input graph uses <TT>headclip=3Dfalse</TT> or =
+
+      <TT>tailclip=3Dfalse</TT>. In this case, the edge will terminate =
+at the=20
+      node's center rather than its boundary. If arrowheads are used, =
+there will=20
+      still be a gap, but normally this will occur within the node. The=20
+      application will still need to clip the spline to the node =
+boundary. Also,=20
+      as with the previous item, if the edge points to a node port, this =
+
+      technique will fail. </LI></UL></DD></DL>The output consists of =
+one=20
+  <STRONG>graph</STRONG> line, a sequence of <STRONG>node</STRONG> =
+lines, one=20
+  per node, a sequence of <STRONG>edge</STRONG> lines, one per edge, and =
+a final=20
+  <STRONG>stop</STRONG> line. All units are in inches, represented by a =
+floating=20
+  point number.=20
+  <P>Note that the plain formats provide minimal information, really =
+giving not=20
+  much more than node positions and sizes, and edge spline control =
+points. These=20
+  formats are usually most useful to applications wanting just this =
+geometric=20
+  information, and willing to fill in all of the graphical details. The =
+only=20
+  real advantages to these formats is their terseness and their ease of =
+parsing.=20
+  In general, the <A=20
+  href=3D"http://graphviz.org/doc/info/output.html#d:dot">dot</A> and <A =
+
+  href=3D"http://graphviz.org/doc/info/output.html#d:xdot">xdot</A> are =
+preferable=20
+  in terms of the quantity of information provided. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:png"=20
+  name=3Dd:png><STRONG>png</STRONG></A>=20
+  <DD>Produces output in the PNG (Portable Network Graphics) format. PNG =
+relies=20
+  on having libz and the PNG library.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:ps"=20
+  name=3Dd:ps><STRONG>ps</STRONG></A>=20
+  <DD>Produces PostScript output.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:ps2"=20
+  name=3Dd:ps2><STRONG>ps2</STRONG></A>=20
+  <DD>Produces PostScript output with PDF notations. It is assumed the =
+output=20
+  will be directly converted into PDF format. The notations include PDF =
+bounding=20
+  box information, so that the resulting PDF file can be correctly used =
+with pdf=20
+  tools, such as <STRONG>pdflatex</STRONG>. In addition, if a node has a =
+URL=20
+  attribute, this gets translated into PDF code such that the node, when =
+viewed=20
+  in a PDF-viewer, e.g., <STRONG>acroread</STRONG>, is a link to the =
+given URL.=20
+  If a URL is attached to the graph, this serves as a base, such that =
+relative=20
+  URLs on nodes are derived from it.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:svg"=20
+  name=3Dd:svg><STRONG>svg</STRONG></A> ,
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:svgz"=20
+  name=3Dd:svgz><STRONG>svgz</STRONG></A>=20
+  <DD>Produce <A href=3D"http://www.adobe.com/svg/">SVG</A> output, the =
+latter in=20
+  compressed format. SVG relies on having libz.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:vrml"=20
+  name=3Dd:vrml><STRONG>vrml</STRONG></A>=20
+  <DD>Outputs graphs in the <A href=3D"http://www.vrml.org/">VRML</A> =
+format. To=20
+  get a 3D embedding, nodes must have a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:z">z</A> attribute. =
+These can=20
+  either be supplied as part of the input graph, or be generated by =
+neato=20
+  provided <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:dim">dim</A><TT>=3D3</T=
+T> and at=20
+  least one node has a <B>z</B> value.=20
+  <P>Line segments are drawn as cylinders. In general, VRML output =
+relies on=20
+  having the PNG library to produce images used to texture-fill the node =
+shapes.=20
+  However, if <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:shape">shape</A><TT>=3D=
+point</TT>,=20
+  a node is drawn as a 3D sphere. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:vtx"=20
+  name=3Dd:vtx><STRONG>vtx</STRONG></A>=20
+  <DD>Generates graph diagrams in the format for <A=20
+  =
+href=3D"http://www.bombshellstudios.com/samples/co/vt.html">Confluents's =
+Visual=20
+  Thought</A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/output.html#a:wbmp"=20
+  name=3Dd:wbmp><STRONG>wbmp</STRONG></A>=20
+  <DD>Produces output in the Wireless BitMap (WBMP) format, optimized =
+for mobile=20
+  computing. </DD></DL>
+<HR>
+</BODY></HTML>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dtclose.c" />
+    <ClCompile Include="dtdisc.c" />
+    <ClCompile Include="dtextract.c" />
+    <ClCompile Include="dtflatten.c" />
+    <ClCompile Include="dthash.c" />
+    <ClCompile Include="dtlist.c" />
+    <ClCompile Include="dtmethod.c" />
+    <ClCompile Include="dtopen.c" />
+    <ClCompile Include="dtrenew.c" />
+    <ClCompile Include="dtrestore.c" />
+    <ClCompile Include="dtsize.c" />
+    <ClCompile Include="dtstat.c" />
+    <ClCompile Include="dtstrhash.c" />
+    <ClCompile Include="dttree.c" />
+    <ClCompile Include="dtview.c" />
+    <ClCompile Include="dtwalk.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ast_common.h" />
+    <ClInclude Include="cdt.h" />
+    <ClInclude Include="dthdr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cdt.pdf" />
+  </ItemGroup>
+</Project>

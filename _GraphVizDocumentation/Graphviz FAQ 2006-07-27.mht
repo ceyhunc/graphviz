@@ -1,0 +1,1138 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Graphviz FAQ 2006-07-27
+Date: Fri, 31 Aug 2007 18:03:15 +0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C7EBF9.33B62E70"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3138
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C7EBF9.33B62E70
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://graphviz.org/doc/FAQ.html
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML><HEAD><TITLE>Graphviz FAQ 2006-07-27</TITLE>
+<META http-equiv=3Dcontent-type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"MSHTML 6.00.6000.16525" name=3DGENERATOR></HEAD>
+<BODY>
+<H1>Graphviz FAQ 2006-07-27</H1><A =
+href=3D"mailto:gviz-bugs@research.att.com">The=20
+Graphviz Project</A>=20
+<P><B>Note</B>: This is not a tutorial; to understand the following, you =
+should=20
+know how to use the basic features of the tools and languages involved. =
+Please=20
+see the <A href=3D"http://www.graphviz.org/Documentation.php">user =
+guides and=20
+documentation</A> for further information or the <A=20
+href=3D"http://www.graphviz.org/Resources.php">resources page</A> for a =
+partial=20
+list of compatible tools and packages.=20
+<H2>General</H2><A href=3D"http://graphviz.org/doc/FAQ.html#Q1" =
+name=3DQ1><B>Q1</A>.=20
+Where can I see a list of all the attributes that control dot or =
+neato?</B> </A>
+<P>See <A href=3D"http://graphviz.org/doc/info/attrs.html">Graph =
+Attributes</A>.=20
+There is also information on <A=20
+href=3D"http://graphviz.org/doc/info/command.html">command-line =
+usage</A> and <A=20
+href=3D"http://graphviz.org/doc/info/output.html">output formats</A>.=20
+<P><A name=3Dmailinglist></A><A =
+href=3D"http://graphviz.org/doc/FAQ.html#Q2"=20
+name=3DQ2><B>Q2</A>. Where can I discuss Graphviz?</B>=20
+<P>We run a mailing list.=20
+<P>To subscribe or unsubscribe, visit the <A=20
+href=3D"https://mailman.research.att.com/mailman/listinfo/graphviz-intere=
+st">graphviz-interest</A>=20
+<EM>mailman</EM> control page. See also the general <A=20
+href=3D"http://www.list.org/mailman-member/index.html">instructions</A> =
+for=20
+mailman.=20
+<P>You can also see the <A=20
+href=3D"https://mailman.research.att.com/pipermail/graphviz-interest/">ar=
+chive</A>.=20
+
+<P>You may wish to use a Yahoo or Hotmail account if you're concerned =
+about=20
+spam. We also run anti-spam filters, and rewrite <TT>@</TT> as =
+<TT>at</TT> to=20
+keep verbatim addresses out of the archive.=20
+<P>Please, please, please, do not torment the mailing list with =
+beginner's=20
+questions. First, check this FAQ and the <A=20
+href=3D"https://mailman.research.att.com/pipermail/graphviz-interest/">me=
+ssage=20
+archive</A> carefully. Because Graphviz software is made available =
+without=20
+charge, our resources for routine support are very limited. If you run =
+into=20
+software build problems with the ``stable'' release, you could also try =
+the=20
+current <A =
+href=3D"http://www.graphviz.org/pub/graphviz/CURRENT/">development=20
+snapshot<A>. If you are desperate, or better yet, if you have =
+constructive=20
+advice, please send a message to the <A=20
+href=3D"https://mailman.research.att.com/mailman/listinfo/graphviz-devel"=
+>graphviz-devel=20
+mailing list</A>. (Note that our local buildlogs are also <A=20
+href=3D"http://www.graphviz.org/pub/graphviz/ARCHIVE/">online</A>.)=20
+<P>Also, if a program crashes or you get an abort or something strange =
+occurs=20
+and you are fairly comfortable using the tools:=20
+<UL>
+  <LI>Check the <A=20
+  =
+href=3D"http://www.research.att.com/~erg/graphviz/bugs/openbugs.html">ope=
+n bug=20
+  list</A> to see if a similar bug has already been reported. You might =
+also=20
+  consider checking the <A=20
+  =
+href=3D"http://www.research.att.com/~erg/graphviz/bugs/buglist.html">full=
+ bug=20
+  list</A>, since your bug may have been reported and fixed in the =
+working=20
+  version.=20
+  <LI>Submit a <A=20
+  href=3D"http://www.research.att.com/~erg/graphviz/bugform.html">bug =
+report</A>.=20
+  If you prefer, you can download a <A=20
+  href=3D"http://www.research.att.com/~erg/graphviz/bugform.txt">report =
+in text=20
+  form</A>, fill in the fields, and email it to <A=20
+  =
+href=3D"mailto:gviz-bugs@research.att.com">gviz-bugs@research.att.com</A>=
+.=20
+</LI></UL>
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q3" name=3DQ3><B>Q3</A>. =
+I'm trying=20
+to make a layout larger. How?</B>=20
+<P>There are various ways to increase the size of a layout. In doing =
+this, one=20
+has to decide if the sizes of the nodes and text should be increased as =
+well.=20
+<P>One approach is to adjust individual parameters such as <TT>fontsize, =
+
+nodesep</TT> and <TT>ranksep</TT>. For example, <PRE>           digraph =
+G {
+                graph [fontsize=3D24];
+                edge  [fontsize=3D24];
+                node  [fontsize=3D24];
+                ranksep =3D 1.5;
+                nodesep =3D .25;
+                edge [style=3D"setlinewidth(3)"];
+                a -&gt; b -&gt; c;
+           }
+</PRE>If you do this, make sure you are not fighting a conflicting graph =
+size=20
+setting, like <TT>size=3D"6,6"</TT>, which will then scale everything =
+back down.=20
+<P>If you are using fdp or neato, increasing the edge len will tend to =
+expand=20
+the layout. <PRE>        graph G {
+           edge [len=3D3]
+           a -- { b c d }
+        }
+</PRE>For twopi and circo, there are other parameters such as =
+<TT>ranksep</TT>=20
+which can be used. See the <A=20
+href=3D"http://graphviz.org/doc/info/attrs.html">graph attributes</A>.=20
+<P>You can also use the <TT>ratio</TT> attribute. If you set the =
+<TT>size</TT>=20
+attribute to the desired drawing size, and then set =
+<TT>ratio=3Dfill</TT>, node=20
+positions are scaled separately in x and y until the drawing fills the =
+specified=20
+<TT>size</TT>. Note that node sizes stay the same. If, instead, you set=20
+<TT>ratio=3Dexpand</TT>, the layout is uniformly scaled up in x and y =
+until at=20
+least one dimension fits <TT>size</TT>.=20
+<P>If you specify the <TT>size</TT> attribute but end it with an =
+exclamation=20
+mark (!), the final drawing will be scaled up uniformly in x and y until =
+at=20
+least one dimension fits <TT>size</TT>. Note that everything is scaled =
+up,=20
+including text and node sizes.=20
+<P>If you're using Postscript, you can just scale up the output by =
+manually=20
+adding a command such as <TT>2 2 scale</TT> where the Postscript =
+environment is=20
+set up. Make sure to adjust the <TT>BoundingBox</TT> too if your tools =
+look at=20
+this header.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q4" name=3DQ4><B>Q4</A>. =
+How can I=20
+join or merge certain edge routes in dot?</B>=20
+<P>You can try running <TT>dot -Gconcentrate=3Dtrue</TT> or you can =
+introduce your=20
+own virtual nodes drawn as tiny circles where you want to split or join =
+edges: <PRE>digraph G {
+  yourvirtualnode [shape=3Dcircle,width=3D.01,height=3D.01,label=3D""];
+  a -&gt; yourvirtualnode [arrowhead=3Dnone]
+  yourvirtualnode -&gt; {b;c}
+}
+</PRE>
+<P><A name=3DQ4a><B>Q. How can I generate graph layouts in PDF?</B> </A>
+<P>First, create Postscript output, then use an external converter from=20
+Postscript to PDF. For example,<BR><TT>dot -Tps | epsf2pdf -o=20
+file.pdf</TT><BR>Note that URL tags are respected, to allow clickable =
+PDF=20
+objects.=20
+<P>If your intention is to use the figure as PDF in some document =
+preparation=20
+system, such as pdflatex, it is very important to use -Tps2 rather than =
+-Tps. In=20
+general, if you really want PDF output, that is, you would like to have =
+a -Tpdf=20
+flag, use -Tps2 before converting to PDF.=20
+<P>In the diagram below, the shaded nodes will contain bad =
+output.<BR><IMG=20
+src=3D"http://graphviz.org/doc/pspdf.png">=20
+<P><A name=3DQ4b><B>Q. How can I make duplicate nodes?</B> </A>
+<P>Make unique nodes with duplicate labels. <PRE>      digraph G {
+            node001 [label =3D "A"];
+            node002 [label =3D "A"];
+			node001 -&gt; node002;
+	  }
+</PRE>
+<P><A name=3DQ4c><B>Q. How can I set a graph or cluster label without =
+its=20
+propagating to all sub-clusters?</B> </A>
+<P>Set the label at the end of the graph (before the closing brace), =
+after all=20
+its contents have been defined. (We admit it seems desirable to define =
+some=20
+special syntax for non-inherited attribute settings.)=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q5" name=3DQ5><B>Q5</A>. =
+How can I=20
+draw multiple parallel edges in neato?</B>=20
+<P>This is possible when the <TT>splines</TT> attribute is false, which =
+is the=20
+default. When <TT>splines=3Dtrue</TT>, we have no good answer but we are =
+working=20
+on it. One trick which is sometimes sufficient is to specify multiple =
+colors for=20
+the edge. This will a produce set of tightly parallel splines, each in =
+its=20
+specified color. Read about the <A=20
+href=3D"http://graphviz.org/doc/info/attrs.html#d:color">color =
+attribute</A> for=20
+more information.=20
+<H2>Clusters</H2><A name=3DQ5a><B>Q. How can I create edges between =
+cluster=20
+boxes?</B> </A>
+<P>This only works in Graphviz version 1.7 and higher. To make edges =
+between=20
+clusters, first set the graph attribute <TT>compound=3Dtrue</TT>. Then, =
+you can=20
+specify a cluster by name as a <I>logical head or tail</I> to an edge. =
+This will=20
+cause the edge joining the two nodes to be clipped to the exterior of =
+the box=20
+around the given cluster.=20
+<P>For example, <PRE>      digraph G {
+        compound=3Dtrue;
+        nodesep=3D1.0;
+        subgraph cluster_A {
+          a -&gt; b;
+          a -&gt; c;
+        }
+        subgraph cluster_B {
+          d -&gt; e;
+          f -&gt; e;
+        }
+        a -&gt; e [ ltail=3Dcluster_A,
+                 lhead=3Dcluster_B ];
+      }
+</PRE>has an edge going from <TT>cluster_A</TT> to <TT>cluster_B</TT>. =
+If,=20
+instead, you say <PRE>        a -&gt; e [ltail=3Dcluster_A];
+</PRE>this gives you an edge from <TT>cluster_A</TT> to node <TT>e</TT>. =
+Or you=20
+could just specify an <TT>lhead</TT> attribute. The program warns if a =
+cluster=20
+specified as a logical node is not defined. Also, if a cluster is =
+specified as a=20
+logical head for an edge, the real head must be contained in the =
+cluster, and=20
+the real tail must not be. A similar check is done for logical tails. In =
+these=20
+cases, the edge is drawn between the real nodes as usual.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q6" name=3DQ6><B>Q6</A>. =
+Clusters are=20
+hard to see.</B>=20
+<P>Set <TT>bgcolor=3Dgrey</TT> (or some other color) in the cluster.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q7" name=3DQ7><B>Q7</A>. =
+How can I=20
+symmetrize (balance) tree layouts?</B>=20
+<P>When a tree node has an even number of children, it isn't necessarily =
+
+centered above the two middle ones. If you know the order of the =
+children, a=20
+simple hack is to introduce new, invisible middle nodes to re-balance =
+the=20
+layout. The connecting edges should also be invisible. For example: =
+<PRE>digraph G {
+a -&gt; b0;
+xb [label=3D"",width=3D.1,style=3Dinvis]
+a -&gt; xb [style=3Dinvis];
+a -&gt; b1;
+{rank=3Dsame b0 -&gt;  xb -&gt; b1 [style=3Dinvis]}
+b0 -&gt; c0;
+xc [label=3D"",width=3D.1,style=3Dinvis]
+b0 -&gt; xc [style=3Dinvis];
+b0 -&gt; c1;
+{rank=3Dsame c0 -&gt;  xc -&gt; c1 [style=3Dinvis]}
+}
+</PRE>This trick really ought to be build into our solver (and made =
+independent=20
+of the order of the children, and available for layouts other than =
+trees, too).=20
+<H2>Output features</H2><A href=3D"http://graphviz.org/doc/FAQ.html#Q8"=20
+name=3DQ8><B>Q8</A>. How can I get high quality (antialiased) =
+output?</B>=20
+<P>The easiest thing may be to make the layout in Postscript (option=20
+<TT>-Tps</TT>), then run through <A=20
+href=3D"http://www.cs.wisc.edu/~ghost/">Ghostview</A> with antialiasing =
+enabled.=20
+The important command line options are <TT>-dTextAlphaBits=3D4=20
+-dGraphicsAlphaBits=3D4</TT> (4 is the highest level of antialiasing =
+allowed - see=20
+the <A =
+href=3D"http://www.cs.wisc.edu/~ghost/doc/GPL/8.15/Use.htm">Ghostview=20
+documentation</A>). The full command line to render a raster could be =
+something=20
+like: <PRE>gs -q -dNOPAUSE -dBATCH -dTextAlphaBits=3D4 =
+-dGraphicsAlphaBits=3D4 -sDEVICE=3Dpng16m -sOutputFile=3Dfile.png =
+file.ps
+</PRE>
+<P>On Mac OS X, the <A =
+href=3D"http://www.pixelglow.com/graphviz/">pixelglow</A>=20
+port uses Apple's Quartz renderer, which enables antialiasing. It also =
+provides=20
+a beautiful document container for its user interface. (One downside is =
+that you=20
+can't run Pixelglow Graphviz as a web server or other background process =
+if your=20
+Mac has 3D graphics, because Quartz wants to get this resource to =
+accelerate=20
+rendering. Another problem is that as of this writing, Pixelglow =
+Graphviz hasn't=20
+been updated in a long time, maybe mid 2004.)=20
+<P>On the Linux bleeding edge, Graphviz has an optional plugin to use =
+the <A=20
+href=3D"http://www.cairographics.org/">cairo</A> back end, which has =
+antialiased,=20
+path-based graphics. If you want this, you must install cairo, which is =
+not part=20
+of Graphviz. Cairo can be built from source, and binary RPMs for Fedora =
+Core 5=20
+(test 2) are available. Then you need to install the optional <A=20
+href=3D"http://www.graphviz.org/pub/graphviz/CURRENT/">graphviz-cairo</A>=
+ plugin.=20
+(n.b. we tried cairo-1.0.2-1.fc4.remi for FC4 - it has errors.)=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q9" name=3DQ9><B>Q9</A>. =
+I can only=20
+get 11x17 output.</B>=20
+<P>It's not us! It's probably your printer setup. If you don't believe =
+this, run=20
+<TT>dot -Tps</TT> and look at the <TT>BoundingBox</TT> header. The =
+coords are in=20
+1/72ths of an inch.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q10" =
+name=3DQ10><B>Q10</A>. How do I=20
+create special symbols and accents in labels?</B>=20
+<P>The following solution only works with the raster drivers that load =
+Truetype=20
+or Type1 fonts! (That means, <TT>-Tgif, -Tpng, -Tjpeg</TT>, and possibly =
+
+<TT>-Tbmp</TT> or <TT>-Txbm</TT> if enabled). Use UTF8 coding, =
+<I>e.g.</I>=20
+&amp;#165; for the Yen currency symbol =C2=A5. Example: <PRE>      graph =
+G {
+            yen [label=3D"&amp;#165;"]
+      }
+</PRE>
+<P>You can look up other examples in this handy <A=20
+href=3D"http://www.graphviz.org/doc/char.html">character set =
+reference</A>.=20
+<P><A name=3DQ10b><B>Q. More generally, how do I use non-ASCII character =
+sets?</B>=20
+</A>
+<P>The following applies to Graphviz 2.8 and later. (In older versions =
+of=20
+Graphviz, you can sometimes get away with simply putting Latin-1 or =
+other UTF-8=20
+characters in the input stream, but the results are not always correct.) =
+
+<P><B>Input:</B> the general idea is to find the <A=20
+href=3D"http://en.wikipedia.org/wiki/Unicode">Unicode</A> value for the =
+glyph you=20
+want, and enter it within a text string "...." or HTML-like label =
+&lt;...&gt;.=20
+<P>For example, the mathematical <IT>forall</IT> sign (=E2=88=80) has =
+the value 0x2200.=20
+There are several ways this can be inserted into a file. One is to write =
+out the=20
+ASCII representation: "&amp;#&lt;nnn&gt;;" where &lt;nnn&gt; is the =
+decimal=20
+representation of the value. The decimal value of 0x2200 is 8704, so the =
+
+character can be specified as "&amp;#8704;" . Alternatively, Graphviz =
+accepts=20
+UTF-8 encoded input. In the case of forall, its UTF-8 representation is =
+3 bytes=20
+whose decimal values are 226 136 128. For convenience, you would =
+probably enter=20
+this using your favorite editor, tuned to your character set of choice. =
+You can=20
+then use the <A=20
+href=3D"http://www.gnu.org/software/libiconv/#TOCdownloading">iconv</A> =
+program to=20
+map the graph from your character set to UTF-8 or Latin-1.=20
+<P>We also accept the HTML symbolic names for Latin-1 characters as =
+suggested <A=20
+href=3D"http://graphviz.org/doc/FAQ.html#Q10">above</A>. (Go to=20
+http://www.research.att.com/~john/docs/html/index.htm and click on =
+Special=20
+symbols and Entities) For example, the cent sign (unicode and Latin-1 =
+value=20
+decimal 162 can be inserted as <PRE>&amp;cent;
+</PRE>
+<P>Note that <B>the graph file must always be a plain text document</B> =
+not a=20
+Word or other rich format file. Any characters not enclosed in "..." or=20
+&lt;...&gt; must be ordinary ASCII characters. In particular, all of the =
+DOT=20
+keywords such as <TT>digraph</TT> or <TT>subgraph</TT> must be ASCII.=20
+<P>Because we cannot always guess the encoding, you should set the graph =
+
+attribute <TT>charset</TT> to <A=20
+href=3D"http://en.wikipedia.org/wiki/UTF-8">UTF-8</A>, <A=20
+href=3D"http://en.wikipedia.org/wiki/Latin-1">Latin1</A> (alias =
+ISO-8859-1 or=20
+ISO-IR-100) or <A href=3D"http://en.wikipedia.org/wiki/Big-5">Big-5</A> =
+for=20
+Traditional Chinese. This can be done in the graph file or on the =
+command line.=20
+For example <TT>charset=3DLatin1</TT>.=20
+<P><B>Output:</B> It is essential that a font which has the glyphs for =
+your=20
+specified characters is available at final rendering time. The choice of =
+this=20
+font depends on the target code generator. For the gd-based raster =
+generators=20
+(PNG, GIF, etc.) you need a TrueType or Type-1 font file on the machine =
+running=20
+the Graphviz program. If Graphviz is built with the <TT>fontconfig</TT> =
+library,=20
+it will be used to find the specified font. Otherwise, Graphviz will =
+look in=20
+various default directories for the font. The directories to be searched =
+include=20
+those specified by the <TT>fontpath</TT> attribute, related environment =
+or shell=20
+variables (see the <A=20
+href=3D"http://www.graphviz.org/doc/info/attrs.html#d:fontpath">fontpath<=
+/A>=20
+entry), and known system font directories. The table <A=20
+href=3D"http://www.graphviz.org/doc/char.html">http://www.graphviz.org/do=
+c/char.html</A>=20
+points out that these glyphs are from the <TT>times.ttf</TT> font. With=20
+fontconfig, it's hard to specify this font. <TT>Times</TT> usually gets =
+resolved=20
+to Adobe Type1 times, which doesn't have all the glyphs seen on that =
+page.) <!--- can someone explain whether Cairo differs from libgd here? =
+--->
+<P>For Postscript, the input must be either the ASCII subset of UTF-8 or =
+
+Latin-1. (We have looked for more general solutions, but it appears that =
+UTF-8=20
+and Unicode are handled differently for every kind of font type in =
+Postscript,=20
+and we don't have time to hack this case-by-case. If someone wants to =
+volunteer=20
+to work on this, let us know.)=20
+<P>For SVG output, we just pass the raw UTF-8 (or other encoding) =
+straight=20
+through to the generated code.=20
+<P>Non-ASCII characters probably won't ever work in Grappa or dotty, =
+which have=20
+their own back end rendering. (Though, Java supports UTF-8, so there's a =
+chance=20
+Grappa also handles raw UTF-8 strings.)=20
+<P>As you can see, this is a sad state of affairs. Our plan is to =
+eventually=20
+migrate Graphviz to the <A href=3D"http://www.pango.org/">pango</A> text =
+
+formatting library, to ameliorate the worst of these complications.=20
+<P><A name=3DQ11><B>Q. How do I get font and color changes in record =
+labels or=20
+other labels?</B> </A>
+<P>This is not possible in record shapes. However, you can do this using =
+<A=20
+href=3D"http://graphviz.org/doc/info/shapes.html#html">HTML-like =
+labels</A>. The=20
+granularity of changes is still at the cell level, but by playing with =
+cell=20
+spacing and padding, you can get pretty much the effect you want. The =
+intention=20
+is to support arbitrary font changes within running text in the =
+not-too-distant=20
+future.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q12" =
+name=3DQ12><B>Q12</A>. In plain=20
+format, splines do not touch the nodes (arrowheads are missing).</B>=20
+<P>Edges are specified as the main spline and, if necessary, arrowheads =
+which=20
+actually abut the node. If the arrowheads are not given, drawing the =
+edge spline=20
+will leave a gap between the edge and the node. This is a bug which has =
+now=20
+solidified into a feature. A workaround is to set <PRE>      edge =
+[dir=3Dnone]
+</PRE>Since the edges have no arrowheads, the spline specification will =
+go all=20
+the way to both nodes.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q13" =
+name=3DQ13><B>Q13</A>. Record=20
+nodes are drawn differently in dot and neato when rankdir=3DLR.</B>=20
+<P>It's true. dot -Grankdir=3DLR rotates record nodes so that their top =
+level=20
+fields are still listed across levels. rankdir=3DLR has no effect in =
+neato. One=20
+workaround is <A =
+href=3D"http://graphviz.org/doc/info/shapes.html#html">HTML-like=20
+records</A> (they don't rotate; the downside is that you have to write =
+in XML).=20
+Another workaround is to enclose record labels in { } to rotate/unrotate =
+the=20
+record contents. See also, <A=20
+href=3D"http://msdn.microsoft.com/library/default.asp?url=3D/library/en-u=
+s/dnhfact/html/hfactor8_5.asp">How=20
+To Avoid Foolish Consistency</A> by Scott Berkun (Microsoft Corp.)=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q14" =
+name=3DQ14><B>Q14</A>. How can I=20
+print a big graph on multiple pages?</B>=20
+<P>The <TT>page</TT> attribute, if set, tells Graphviz to print the =
+graph as an=20
+array of pages of the given size. Thus, the graph <PRE>digraph G {
+  page=3D"8.5,11";
+  ...
+}
+</PRE>will be emitted as 8.5 by 11 inch pages. When printed, the pages =
+can be=20
+tiled to make a drawing of the entire graph. At present, the feature =
+only works=20
+with PostScript output.=20
+<P>Alternatively, there are various tools and viewers which will take a =
+large=20
+picture and allow you to extract page-size pieces, which can then be =
+printed.=20
+<P><A name=3DQ15><B>Q. When I have a red edge it shows up as a solid red =
+in PNG=20
+and GIF formats, but has a black border when rendered to JPEG. </B></A>
+<P>This is an artifact of JPEG's lossy compression algorithm. JPEG isn't =
+very=20
+good for line drawings. PNG is bitmap format of choice. John Ellson =
+wants to=20
+deprecate and eventually remove the JPEG driver, but North is reluctant =
+to=20
+change anything that people might already rely on.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q16" =
+name=3DQ16><B>Q16</A>. How can I=20
+get custom shapes or images in my graph?</B>=20
+<P>Please see the <A=20
+href=3D"http://www.graphviz.org/Documentation/html/shapehowto.html">Shape=
+=20
+HowTo</A> for some approaches. There is no easy way to create custom =
+shapes that=20
+work with dot/neato, dotty (Unix or MS-Windows) and Grappa (the Java =
+front end),=20
+because they don't share any universal back end structure. We're =
+thinking about=20
+it.=20
+<P><A name=3DQ17><B>Q. Sometimes in dotty, right mouse click shows the =
+global menu=20
+but none of the items can be selected.</B> </A>
+<P>Check that the NUMLOCK key is off. It's a <A=20
+href=3D"http://www.research.att.com/~erg/graphviz/bugs/b524.html">known =
+bug</A>.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q18" =
+name=3DQ18><B>Q18</A>. Why does=20
+dotty report a syntax error on a legal dot file?</B>=20
+<P>Typically this error is reported as: <PRE>&gt;&gt; graph parser: =
+syntax error near line 14
+&gt;&gt; context:  &gt;&gt;&gt;  &lt;&lt;&lt; digraph G {
+&gt;&gt; dotty.lefty: giving up on dot
+&gt;&gt; dotty.lefty: graph that causes dot
+&gt;&gt; dotty.lefty: to fail has been saved in file dottybug.dot
+</PRE>Probably there is a command in your shell environment (such as =
+.alias or=20
+.profile) that does output even for non-interactive shells. When this =
+occurs,=20
+those characters go in the pipe to the dot parser and cause this =
+problem. An=20
+easy check is whether other users have the same problem.=20
+<P><A name=3DQ20><B>Q. How can I get some display feature (such as bold =
+lines) in=20
+dotty?</B> </A>
+<P><A name=3Ddotty_note>Dotty</A> has not really changed for many years. =
+
+Therefore, there are myriad features available in Graphviz which it =
+cannot=20
+handle. In some cases, you can use <A=20
+href=3D"http://www.research.att.com/~john/Grappa/">Grappa</A> or <A=20
+href=3D"http://www.graphviz.org/webdot/">webdot</A> for display instead =
+of dotty.=20
+For example, Grappa has generalized polygons (<TT>node =
+[shape=3Dpolygon]</TT>)=20
+that dotty lacks. There are additional interactive viewers available. =
+For=20
+example, see <A href=3D"http://www.graphviz.org/Resources.php">Graphical =
+
+Interfaces</A> and <A =
+href=3D"http://www.graphviz.org/About.php">Viewers</A>. If=20
+you are using Mac OS X, the <A =
+href=3D"http://www.pixelglow.com/graphviz/">Mac=20
+version</A> of Graphviz has a highly recommended GUI.=20
+<P>If the display attribute that you need isn't there already, in dotty, =
+there's=20
+probably no easy way to do it except by rolling up your sleeves and =
+hacking the=20
+dotty code (a lefty script) that interprets and renders graphical =
+attributes.=20
+This is problematic for the same reason as above: there's no universal =
+low-level=20
+driver layer shared across all the Graphviz tools. We recently added an=20
+intermediate rendering language to the layout tools, but the various =
+front ends=20
+don't use it yet. This would be a good project for someone who wants to =
+get=20
+involved here (along with porting dotty to GTK.)=20
+<P><A name=3DQ21><B>Q. How can I get rid of the little circles on edges =
+("edge=20
+handles") in dotty?</B> </A>
+<P>Edit the file dotty.lefty and change the line that says: =
+'edgehandles' =3D 1;=20
+to 'edgehandles' =3D 0; it's around line 110.=20
+<P><A name=3DQ22><B>Q. I already have all the coordinates for the nodes =
+and edges=20
+of my graph and just want to use dot, neato, or dotty to render it. =
+How?</B>=20
+</A>
+<P>Put the graph with layout attributes into a dot file. Then run =
+<TT>neato -s=20
+-n2</TT>. For example: <PRE>neato -s -n2 -Tgif file.dot -o file.gif
+</PRE>Note that if an edge does not have a <TT>pos</TT> attribute =
+defined, neato=20
+will perform whatever edge routing it would normally do. All of the =
+usual=20
+backend attributes (<TT>size</TT>, <TT>overlap</TT>, <TT>page</TT>, =
+etc.) are=20
+available.=20
+<P><A name=3DQ23><B>Q. I already have all the coordinates for the nodes, =
+and I=20
+want dot or neato to route the edges.</B> </A>
+<P>It's not really too convenient to use dot for this. It is possible to =
+use=20
+neato for this, running neato -s -n For example: <PRE>neato -s -n -Tgif =
+file.dot -o file.gif
+</PRE>neato will use the node positions, but use its technique for =
+routing the=20
+edges. There are several things to note. First, the neato edge router is =
+
+different from dot's. Without the built-in top-down bias, it doesn't do =
+as good=20
+a job of avoiding edge overlaps and, at present, it doesn't handle =
+spline=20
+multi-edges at all. Second, by default, neato uses straight lines as =
+edges. To=20
+get spline routing, you have to specify -Gsplines=3Dtrue. And this will =
+only work=20
+if none of the nodes overlap. Since the input graph supplies fixed node=20
+positions, it is the user's task to insure this.=20
+<P><A name=3DQ24><B>Q. I already have all the coordinates for the nodes =
+and edges=20
+of my graph and just want to use dotty to render it. How?</B> </A>
+<P>Just run dotty on it. Dotty will use the given pos attributes.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q25" =
+name=3DQ25><B>Q25</A>. Same as=20
+above, but I have only node coords, not edges.</B>=20
+<P><TT>neato -n</TT> is some help, but neato doesn't handle spline-based =
+
+parallel edges.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q26" =
+name=3DQ26><B>Q26</A>. How can I=20
+make client-side image maps?</B>=20
+<P>Use the -Tcmap command line option (only version 1.8.9 and beyond!)=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q27" =
+name=3DQ27><B>Q27</A>. Why=20
+aren't my server-side maps being recognized? I've checked the HTML!</B>=20
+<P>Make sure that your server has map files enabled. For example, if =
+running=20
+apache, check that httpd.conf has a line like the following: =
+<PRE>AddHandler imap-file map
+</PRE>and that it is not commented out!=20
+<P><A name=3DQ28><B>Q. I've installed Debian Graphviz and it works just =
+fine on=20
+the command line, but when I execute a Perl/CGI script through Apache, =
+no output=20
+is generated.</A> For example, the code <TT>system("/usr/local/bin/dot =
+-Tpng=20
+/tmp/tree.dot -o /tmp/tree.png"); </TT>produces no file=20
+<TT>/tmp/tree.png</TT>.</B>=20
+<P>As best as we can tell, dot dies with no stdout or stderr messages on =
+Debian=20
+systems when run from an Apache cgi program with no HOME set. The =
+workaround is=20
+to provide a HOME directory in the Apache userid's environment.=20
+<P>Someone has also suggested using the <A=20
+href=3D"http://search.cpan.org/search?query=3Dgraphviz&amp;mode=3Dall">Pe=
+rl module for=20
+Graphviz</A>.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q29" =
+name=3DQ29><B>Q29</A>. How can I=20
+get 3D output?</B>=20
+<P>The Graphviz authors have qualms about the gratuitous use of 3D.=20
+<P>Nonetheless, dot -Tvrml generates VRML files. There's no Z coordinate =
+layout=20
+- you specify Z coords yourself in the <TT>z</TT> attribute of nodes, =
+and the Z=20
+coordinates of edges are interpolated. If someone contributes a driver =
+for a=20
+newer, more useful format (OpenGL Performer scene graphs? Open Scene =
+Graphs?=20
+Java3D programs?) we'd like to try it.=20
+<P>neato internally supports layouts in higher dimensions through the=20
+<TT>dim</TT> attribute, e.g. <TT>neato -Gdim=3D7</TT> but there's no way =
+to get=20
+the output unless you invoke neato as a library and inspect ND_pos(n)[i] =
+where n=20
+is a pointer to the relevant node. This would need some (minor) driver =
+work and=20
+a good 7-dimensional viewer. Well, <TT>dim=3D3</TT> ought to be =
+possible.=20
+<H2>Problems</H2><A href=3D"http://graphviz.org/doc/FAQ.html#Q30"=20
+name=3DQ30><B>Q30</A>. How can I avoid node overlaps in neato?</B>=20
+<P>Use the graph attribute <A=20
+href=3D"http://graphviz.org/doc/info/attrs.html#d:overlap"><TT>overlap</T=
+T></A>.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q31" =
+name=3DQ31><B>Q31</A>. How can I=20
+avoid node-edge overlaps in neato?</B>=20
+<P>Use the <TT>overlap</TT> attribute to leave room among the nodes, =
+then use=20
+<TT>-Gsplines=3Dtrue</TT>. <PRE>neato -Goverlap=3D... -Gsplines=3Dtrue =
+-Gsep=3D.1
+</PRE>
+<P>The <TT>sep</TT> argument is the node-edge separation as a ratio of a =
+node's=20
+bounding box. That is, <TT>sep=3D.1</TT> means each node is treated as =
+though it=20
+is 1.1 times larger than it is. The actual value may require some =
+tinkering.=20
+(Don't ask why this isn't just a constant!) Note that this option really =
+slows=20
+down neato, so should be used sparingly and only with modest-sized =
+graphs.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q32" =
+name=3DQ32><B>Q32</A>. Neato=20
+runs forever on a certain example.</B>=20
+<P>First, how big is your graph? Neato is a quadratic algorithm, roughly =
+
+equivalent to statistical multidimensional scaling. If you feed it a =
+graph with=20
+thousands of nodes and edges, it can easily take hours or days. The =
+first thing=20
+to check is to run <TT>neato -v</TT> to get a trace of the output. If =
+the=20
+numbers you see are generally getting smaller, the layout is just taking =
+a long=20
+time. You can set certain parameters, such as <TT>epsilon</TT> or=20
+<TT>maxiter</TT> to shorten the layout time, at the expense of layout =
+quality.=20
+But if your graph is big, who's going to notice?=20
+<P>If you see the numbers repeating, or fluctuating up and down, then =
+neato is=20
+cycling, especially if your graph is small. This should never happen by =
+default=20
+for versions later than 1.13. If it does, please report it as a bug.=20
+<P>If you are using an earlier version of neato, or you used =
+<TT>mode=3DKK</TT>,=20
+cycling is indeed possible. This cycling is very sensitive to the =
+initial=20
+layout. By using the <TT>start</TT> attribute, for example, <PRE>neato =
+-Gstart=3D3
+neato -Gstart=3Drand
+</PRE>the cycling will most likely disappear. Or you can employ the =
+parameters=20
+used for large graphs to stop the layout earlier: <PRE>neato =
+-Gepsilon=3D.01
+neato -Gmaxiter=3D500
+</PRE>
+<P>Note that, if you have a large graph, the generation of edges as =
+splines is a=20
+cubic algorithm, so you would do well to avoid using =
+<TT>splines=3Dtrue</TT>.=20
+(This commment applies to circo, fdp and twopi as well.)=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q33" =
+name=3DQ33><B>Q33</A>. Edge=20
+label placement in neato is bad.</B>=20
+<P>Difficult problem. We're working on it. If anyone has some general =
+label=20
+placement code (e.g. a simulated annealer based on the Marks et al. =
+technique in=20
+<I>Graphics Gems IV</I>), please get in touch.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q34" =
+name=3DQ34><B>Q34</A>. Dot runs=20
+forever on a certain example.</B>=20
+<P>Try dot -v to observe its progress.=20
+<P>Note that it's possible to make graphs whose layout or even parsing =
+is=20
+quadratic in the input size. For example, in dot, <PRE>digraph G {
+    a -&gt; b -&gt; c -&gt; .... -&gt; x -&gt; y -&gt; z
+    a -&gt; z
+    b -&gt; z
+    c -&gt; z
+    /* and so on... */
+	x -&gt; z
+}
+</PRE>The total edge length (therefore the layout time) of this as a =
+ranked=20
+graph is quadratic in the number of nodes. You probably won't encounter =
+the=20
+following, but it is also possible to construct graphs whose parsing =
+takes=20
+quadratic time in the number of attributes, by appending attributes to =
+nodes and=20
+edges after the graph has been loaded. For example: <PRE>digraph G {
+    /* really big graph goes here...with N+1 nodes */
+    n0 -&gt; n1 -&gt; ... -&gt; nN;
+
+    n0 [attr0=3D"whatever",
+        attr1=3D"something else",
+    /* and so on with many more attributes */
+        attrM=3D"something again"]
+}
+</PRE>When an attribute first appears, each object is visited with =
+possible cost=20
+proportional to the number of previously declared attributes. Thus, the =
+running=20
+time for the above would be <I>cN</I> O(<I>M</I>) for some constant =
+<I>c</I>. If=20
+there is any concern about this, the graph should specify the attributes =
+first=20
+before declaring nodes or edges. In practice, this problem is neglible.=20
+<P><A name=3DQ34a><B>Q. Twopi runs forever on a certain example.</B> =
+</A>
+<P>Is your graph is large (many thousands of edges), and did you set =
+<PRE>splines=3Dtrue</PRE>? It takes a lot of cycles to fit all those =
+splines!=20
+<P><A name=3DQ35><B>Q. Neato has unnecessary edge crossings, or has =
+missed an=20
+obvious chance to make a much nicer layout.</B> </A>
+<P>Neato and all similar virtual physical model algorithms rely on =
+heuristic=20
+solutions of optimization problems. The better the solution, the longer =
+it takes=20
+to find. Unfortunately, it is also possible for these heuristics to get =
+stuck in=20
+local minima. Also, it is heavily influenced by the initial position of =
+the=20
+nodes. It is quite possible that if you run neato again, but with a =
+different=20
+random seed value, or more iterations, you'll get a better layout. For =
+example: <PRE>neato -Gstart=3D5 file.dot -Tps -o file.ps
+neato -Gepsilon=3D.0000001 file.dot -Tps -o file.ps
+</PRE>
+<P>In particular, note that there are no guarantees that neato will =
+produce a=20
+planar layout of a planar graph, or expose all or most of a graph's =
+symmetries.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q36" =
+name=3DQ36><B>Q36</A>. Webdot=20
+doesn't work.</B>=20
+<P>We assume you're using Apache and have <A =
+href=3D"http://www.tcl.tk/">TCL</A>=20
+installed. If you don't, it's probably better to just use the <A=20
+href=3D"http://www.graphviz.org/Misc/webdot.pl">webdot perl script</A>.=20
+<P>To debug webdot, first test whether <TT>tclsh</TT> can load the =
+Tcldot shared=20
+library. Try: <PRE>$ tclsh
+% load <B>$prefix</B>/lib/graphviz/libtcldot.so.0
+%
+</PRE>where <B>$prefix</B> is the installation prefix for graphviz; =
+usually /usr=20
+or /usr/local.=20
+<P>Then test whether webdot runs from a shell command. (With webdot we =
+provide a=20
+helper script scaffold.tcl or scaffold.sh that sets up an environment =
+like the=20
+one Apache provides.) For example <PRE>$ scaffold.tcl &gt;out.gif
+can't read "LIBTCLDOT": no such variable
+    while executing
+"file mtime $LIBTCLDOT"
+    invoked from within
+"set t1 [file mtime $LIBTCLDOT]"
+    (file "cgi-bin/webdot" line 67)
+    invoked from within
+"source cgi-bin/webdot
+"
+    (file "scaffold.tcl" line 22)
+</PRE>The above is a strong clue that webdot is not configured properly. =
+
+<P>Finally, test whether webdot runs as a cgi-bin program. It may help =
+to=20
+examine the cgi-bin environment using a simple cgi-bin tcl script like: =
+<PRE>	#!/bin/env tclsh
+	puts "Content-type: text/plain"
+	puts ""
+	foreach e [lsort [array names env]] {puts "$e: $env($e)"}
+</PRE>Save this script as .../cgi-bin/test.tcl, make it executable, then =
+look=20
+at: <A=20
+href=3D"http://localhost/cgi-bin/test.tcl">http://localhost/cgi-bin/test.=
+tcl</A>=20
+<P>Also, if you see something like: <PRE>WebDot Error:
+
+Response Code =3D 403
+</PRE>This usually means that webdot ran succesfully, but was not able =
+to fetch=20
+the remote graph from the URL you gave as an argument. The reason is =
+probably=20
+that your server is behind a firewall that blocks the webdot server, so =
+it=20
+cannot get the graph file. You can either change firewall permissions, =
+put the=20
+graph on a different server, or install webdot locally so you don't need =
+a=20
+remote server to fetch your graph data.=20
+<P>It would be nice if someone hacked webdot to take the contents of a =
+graph as=20
+a cgi-bin argument, so it wouldn't need permission to fetch a graph =
+remotely.=20
+This is left as an exercise for the Open Source Community.=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q37" =
+name=3DQ37><B>Q37</A>. I have=20
+"Font not found" errors, or text labels missing in webdot.</B>=20
+<P>Firstly, recent versions of graphviz will use fontconfig if it is =
+available=20
+on your platform. With fontconfig, this error should not occur, so you =
+may want=20
+to see if an upgrade to graphviz is available, or if a rebuild will add=20
+fontconfig support.=20
+<P>If fontconfig is not available then graphviz tries to resolve =
+fontnames to=20
+fontpaths itself, and uses DOTFONTPATH (or GDFONTPATH) to indicate where =
+it=20
+should look.=20
+<P>For copyright reasons, Graphviz doesn't come with its own fonts. On a =
+Windows=20
+machine, it knows to search in <TT>C:\Windows\Fonts</TT>. On a Unix =
+machine, you=20
+need to set up a directory that contains Truetype fonts. You can get a =
+copy of=20
+some fonts <A=20
+href=3D"http://www.graphviz.org/pub/graphviz/webfonts-1.0-5.noarch.rpm">h=
+ere</A>.=20
+<P>The default DOTFONTPATH is: <PRE>#define DEFAULT_FONTPATH =
+"/usr/X11R6/lib/X11/fonts/TrueType:/usr/X11R6/lib/X11/fonts/truetype:/usr=
+/X11R6/lib/X11/fonts/TTF:/usr/share/fonts/TrueType:/usr/share/fonts/truet=
+ype:/usr/openwin/lib/X11/fonts/TrueType:/usr/X11R6/lib/X11/fonts/Type1"
+</PRE>If your fonts are somewhere else, then you must set that directory =
+in the=20
+webdot script, or recompile Graphviz with the correct DEFAULT_FONTPATH =
+(or set=20
+<TT>fontpath=3D"/your/font/directory"</TT> in every graph you lay out, =
+but that's=20
+pretty clumsy.)=20
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q38" =
+name=3DQ38><B>Q38</A>. My=20
+browser doesn't recognize SVG.</B>=20
+<P>The correct MIME type for svg images is: <TT>image/svg+xml</TT> (note =
+"+" not=20
+"-").=20
+<P>SVG is not built into all browsers; you can get <A=20
+href=3D"http://www.adobe.com/svg/viewer/install/main.html">plugins</A> =
+from Adobe=20
+for Windows, Linux and some other operating systems. <A=20
+href=3D"http://www.mozilla.com/firefox/">Firefox 1.5</A> has a <A=20
+href=3D"http://developer.mozilla.org/en/docs/SVG_in_Firefox_1.5">large =
+subset of=20
+SVG</A> and renders graphviz -Tsvg output though until graphviz 2.8, the =
+fonts=20
+may be too large (thanks for Phil Colbourne at the RailCorp of New South =
+Wales=20
+for this advice).=20
+<P>For help with embedding SVG in HTML pages, see <A=20
+href=3D"http://www.graphviz.org/webdot/svgembed.html">here</A>.=20
+<P>There are several good standalone viewers and editors for SVG. We =
+like <A=20
+href=3D"http://www.inkscape.org/">inkscape</A>. <A=20
+href=3D"http://www.gnome.org/projects/evince/">evince</A> is the =
+standard Gnome=20
+document viewer that handles SVG, at least since version 0.5 (though =
+Phil C.=20
+reports output is blurred) (see also <A =
+href=3D"http://graphviz.org/doc/">eog</A>=20
+(Eye of Gnome)). Commercial tools like Adobe Illustrator and Microsoft =
+Visio can=20
+import SVG (the better to deal with your content, my dear!) If you are =
+using an=20
+older (less bloated) Unix system, you may find tools like <A=20
+href=3D"http://xml.apache.org/batik/">Batik</A> (an SVG renderer in =
+Java) or <A=20
+href=3D"http://www.sodipodi.com/">sodipodi</A> useful, though it seems =
+they are no=20
+longer very actively maintained. sodipodi is faster but both make sharp =
+images -=20
+isn't that the beauty of path-based graphics?=20
+<P><A name=3DQ39><B>Q. libexpat is reported as containing a virus or as =
+a security=20
+hole. Is this a real problem?</B> </A>
+<P>No, this is a false positive reported by various security software. =
+See <A=20
+href=3D"http://www.pcreview.co.uk/forums/thread-1689630.php">http://www.p=
+creview.co.uk/forums/thread-1689630.php</A>=20
+or <A=20
+href=3D"http://spywareblog.com/index.php/2004/11/24/is_libexpat_dll_spywa=
+re">http://spywareblog.com/index.php/2004/11/24/is_libexpat_dll_spyware</=
+A>.=20
+
+<P><A href=3D"http://graphviz.org/doc/FAQ.html#Q40" =
+name=3DQ40><B>Q40</A>. What is=20
+the coordinate transformation between the graph bb and a .png image?</B> =
+
+<OL>
+  <LI>The bb is expanded by 4 graph-units in all directions (pad) to =
+allow for=20
+  finite line widths.=20
+  <LI>Then it is zoomed and/or rotated according to -Gviewport, -Gsize,=20
+  -Glandscape, -Gorientation options. At the default scaling of 1:1, one =
+graph=20
+  unit =3D 1 point (1/72 inch).=20
+  <LI>Then it is paginated, if requested by -Gpage and if the output =
+format=20
+  supports it. Not the -Tpng renderer, yet.=20
+  <LI>Then a margin is added, -Gmargin, in absolute units (inches). The=20
+  top/bottom margin can be set independently of the left/right margin.=20
+  <LI>Then it is converted to device units, according to -Gdpi, or a dpi =
+value=20
+  that is given by the output device, or a default that is provided by =
+each=20
+  render. There are separate dpi values for x and y to allow for =
+non-square=20
+  pixels. Some renderers invert the Y axis and need an offset to place =
+the=20
+  origin in the top left corner. The default dpi for -Tpng is 96dpi=20
+  (approximating the resolution of most computer monitors) so this is =
+where the=20
+  scaling by 96/72 (4/3) comes from. </LI></OL>
+<P>At the renderer api, plugins have a choice of coordinate =
+representation:=20
+<UL>
+  <LI>coordinates in graph-units, and composite transformation data =
+consisting=20
+  of: scaling, rotation, and translation. (used by svg, cairo, ps, =
+renderers)=20
+  <LI>coordinates pre-transformed into device units.=20
+  <LI></LI></UL></BODY></HTML>
+
+------=_NextPart_000_0000_01C7EBF9.33B62E70
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/pspdf.png
+
+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
+
+------=_NextPart_000_0000_01C7EBF9.33B62E70--

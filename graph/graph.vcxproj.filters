@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="graph.pdf" />
+    <None Include="triefa.cP" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="agxbuf.h" />
+    <ClInclude Include="graph.h" />
+    <ClInclude Include="libgraph.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="triefa.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="agxbuf.c" />
+    <ClCompile Include="attribs.c" />
+    <ClCompile Include="edge.c" />
+    <ClCompile Include="graph.c" />
+    <ClCompile Include="graphio.c" />
+    <ClCompile Include="lexer.c" />
+    <ClCompile Include="node.c" />
+    <ClCompile Include="parser.c" />
+    <ClCompile Include="refstr.c" />
+    <ClCompile Include="trie.c" />
+  </ItemGroup>
+</Project>

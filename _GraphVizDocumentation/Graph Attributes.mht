@@ -1,0 +1,4246 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Graph Attributes
+Date: Fri, 31 Aug 2007 18:08:30 +0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0012_01C7EBF9.EFA23E80"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3138
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://graphviz.org/doc/info/attrs.html
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--=0A=
+    This is a generated document.  Do not edit.=0A=
+--><HTML=20
+version=3D2.0><HEAD><TITLE>Graph Attributes</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"MSHTML 6.00.6000.16525" name=3DGENERATOR></HEAD>
+<BODY bgColor=3Dwhite><A name=3Dtop></A>
+<H1 align=3Dcenter>Graph Attributes</H1>
+<HR>
+The table below describes the attributes used by various Graphviz tools. =
+The=20
+table gives the name of the attribute, the graph components (node, edge, =
+etc.)=20
+which use the attribute and the type of the attribute (strings =
+representing=20
+legal values of that type). Where applicable, the table also gives a =
+default=20
+value for the attribute, a minimum allowed setting for numeric =
+attributes, and=20
+certain restrictions on the use of the attribute.=20
+<P>All Graphviz attributes are specified by name-value pairs. Thus, to =
+set the=20
+fillcolor of a node <TT>abc</TT>, one would use=20
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><TT>abc [fillcolor =3D =
+red]</TT></TD></TR></TBODY></TABLE>Similarly, to set=20
+the arrowhead style of an edge <TT>abc -&gt; def</TT>, one would use=20
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><TT>abc -&gt; def [arrowhead =3D=20
+diamond]</TT></TD></TR></TBODY></TABLE>Further details concerning the =
+setting of=20
+attributes can be found in the description of the <A=20
+href=3D"http://www.graphviz.org/doc/info/lang.html">DOT language.</A>=20
+<P>At present, most device-independent units are either inches or <A=20
+name=3Dpoints></A><A=20
+href=3D"http://en.wikipedia.org/wiki/Point_(typography)">points</A>, =
+which we take=20
+as 72 points per inch.=20
+<P><A name=3Dh:undir_note><STRONG>Note:</STRONG></A> Some attributes, =
+such as <A=20
+href=3D"http://graphviz.org/doc/info/attrs.html#d:dir">dir</A> or <A=20
+href=3D"http://graphviz.org/doc/info/attrs.html#d:arrowtail">arrowtail</A=
+>, are=20
+ambiguous when used in <A=20
+href=3D"http://www.graphviz.org/doc/info/lang.html">DOT</A> with an =
+undirected=20
+graph since the head and tail of an edge are meaningless. As a =
+convention, the=20
+first time an undirected edge appears, the <A=20
+href=3D"http://www.graphviz.org/doc/info/lang.html">DOT</A> parser will =
+assign the=20
+left node as the tail node and the right node as the head. For example, =
+the edge=20
+<TT>A -- B</TT> will have tail <TT>A</TT> and head <TT>B</TT>. It is the =
+user's=20
+responsibility to handle such edges consistently. If the edge appears =
+later, in=20
+the format=20
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><TT>B -- A [taillabel =3D =
+"tail"]</TT></TD></TR></TBODY></TABLE>the drawing=20
+will attach the tail label to node <TT>A</TT>. To avoid possible =
+confusion when=20
+such attributes are required, the user is encouraged to use a directed =
+graph. If=20
+it is important to make the graph appear undirected, this can be done =
+using the=20
+<A href=3D"http://graphviz.org/doc/info/attrs.html#d:dir">dir</A>, <A=20
+href=3D"http://graphviz.org/doc/info/attrs.html#d:arrowtail">arrowtail</A=
+> or <A=20
+href=3D"http://graphviz.org/doc/info/attrs.html#d:arrowhead">arrowhead</A=
+>=20
+attributes.=20
+<P>The tools accept standard C representations for <EM>int</EM> and=20
+<EM>double</EM> types. For the <A name=3Dk:bool><EM>bool</EM></A> type, =
+TRUE=20
+values are represented by "true" (case-insensitive) and any non-zero =
+integer,=20
+and FALSE values by "false" (case-insensitive) and zero. In addition, =
+there are=20
+a variety of specialized types such as <EM>arrowType</EM>, =
+<EM>color</EM>,=20
+<EM>pointf</EM> and <EM>rankdir</EM>. Legal values for these types are =
+given at=20
+the end.=20
+<P>In the <A name=3Dh:uses><STRONG>Used By</STRONG></A> field, the =
+characters E,=20
+N, G, S and C represent edges, nodes, the root graph, subgraphs and =
+cluster=20
+subgraphs, respectively. This field indicates which graph component uses =
+the=20
+attribute.=20
+<HR align=3Dcenter width=3D"70%" SIZE=3D3>
+
+<TABLE align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TH>Name</TH>
+    <TH><A href=3D"http://graphviz.org/doc/info/attrs.html#h:uses">Used=20
+By</A></TH>
+    <TH>Type</TH>
+    <TH>Default</TH>
+    <TH>Minimum</TH>
+    <TH>Notes</TH></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:Damping"=20
+      name=3Da:Damping>Damping</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.99</TD>
+    <TD>0.0</TD>
+    <TD>neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:K" =
+name=3Da:K>K</A>=20
+    </TD>
+    <TD>GC</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.3</TD>
+    <TD>0</TD>
+    <TD>fdp only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:URL"=20
+      name=3Da:URL>URL</A> </TD>
+    <TD>ENGC</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>&lt;none&gt;</TD>
+    <TD></TD>
+    <TD>svg, postscript, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:arrowhead"=20
+      name=3Da:arrowhead>arrowhead</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:arrowType">arrowType</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>normal</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:arrowsize"=20
+      name=3Da:arrowsize>arrowsize</A> </TD>
+    <TD>E</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>1.0</TD>
+    <TD>0.0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:arrowtail"=20
+      name=3Da:arrowtail>arrowtail</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:arrowType">arrowType</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>normal</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:bb"=20
+      name=3Da:bb>bb</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:rect">rect</A> </TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD>write only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:bgcolor"=20
+      name=3Da:bgcolor>bgcolor</A> </TD>
+    <TD>GC</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:color">color</A>=20
+</TD>
+    <TD align=3Dmiddle>&lt;none&gt;</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:center"=20
+      name=3Da:center>center</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:charset"=20
+      name=3Da:charset>charset</A> </TD>
+    <TD>G</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>"UTF-8"</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:clusterrank"=20
+      name=3Da:clusterrank>clusterrank</A> </TD>
+    <TD>G</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:clusterMode">clusterMod=
+e</A>=20
+    </TD>
+    <TD align=3Dmiddle>local</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:color"=20
+      name=3Da:color>color</A> </TD>
+    <TD>ENC</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:color">color</A>=20
+      <BR><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:colorList">colorList</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>black</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:colorscheme"=20
+      name=3Da:colorscheme>colorscheme</A> </TD>
+    <TD>ENCG</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:comment"=20
+      name=3Da:comment>comment</A> </TD>
+    <TD>ENG</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:compound"=20
+      name=3Da:compound>compound</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:concentrate"=20
+      name=3Da:concentrate>concentrate</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:constraint" =
+
+      name=3Da:constraint>constraint</A> </TD>
+    <TD>E</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>true</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:decorate"=20
+      name=3Da:decorate>decorate</A> </TD>
+    <TD>E</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:defaultdist"=20
+      name=3Da:defaultdist>defaultdist</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>1+(avg. len)*sqrt(|V|)</TD>
+    <TD>epsilon</TD>
+    <TD>neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:dim"=20
+      name=3Da:dim>dim</A> </TD>
+    <TD>G</TD>
+    <TD>int</TD>
+    <TD align=3Dmiddle>2</TD>
+    <TD>2</TD>
+    <TD>fdp, neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:dir"=20
+      name=3Da:dir>dir</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:dirType">dirType</A> =
+</TD>
+    <TD align=3Dmiddle>forward(directed)<BR>none(undirected)</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:diredgeconstraints"=20
+      name=3Da:diredgeconstraints>diredgeconstraints</A> </TD>
+    <TD>G</TD>
+    <TD>string<BR><A=20
+      href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> =
+</TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD>neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:distortion" =
+
+      name=3Da:distortion>distortion</A> </TD>
+    <TD>N</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.0</TD>
+    <TD>-100.0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:dpi"=20
+      name=3Da:dpi>dpi</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>96.0<BR>0.0</TD>
+    <TD></TD>
+    <TD>svg, bitmap output only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:edgeURL"=20
+      name=3Da:edgeURL>edgeURL</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:edgehref"=20
+      name=3Da:edgehref>edgehref</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:edgetarget" =
+
+      name=3Da:edgetarget>edgetarget</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>&lt;none&gt;</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:edgetooltip"=20
+      name=3Da:edgetooltip>edgetooltip</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, cmap only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:epsilon"=20
+      name=3Da:epsilon>epsilon</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>.0001 * # nodes(mode =3D=3D KK)<BR>.0001(mode =
+=3D=3D major)</TD>
+    <TD></TD>
+    <TD>neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:esep"=20
+      name=3Da:esep>esep</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.8*sep</TD>
+    <TD></TD>
+    <TD>not dot</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:fillcolor"=20
+      name=3Da:fillcolor>fillcolor</A> </TD>
+    <TD>NC</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:color">color</A>=20
+</TD>
+    <TD align=3Dmiddle>lightgrey(nodes)<BR>black(clusters)</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:fixedsize"=20
+      name=3Da:fixedsize>fixedsize</A> </TD>
+    <TD>N</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:fontcolor"=20
+      name=3Da:fontcolor>fontcolor</A> </TD>
+    <TD>ENGC</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:color">color</A>=20
+</TD>
+    <TD align=3Dmiddle>black</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:fontname"=20
+      name=3Da:fontname>fontname</A> </TD>
+    <TD>ENGC</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>"Times-Roman"</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:fontnames"=20
+      name=3Da:fontnames>fontnames</A> </TD>
+    <TD>G</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:fontpath"=20
+      name=3Da:fontpath>fontpath</A> </TD>
+    <TD>G</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>system-dependent</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:fontsize"=20
+      name=3Da:fontsize>fontsize</A> </TD>
+    <TD>ENGC</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>14.0</TD>
+    <TD>1.0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:group"=20
+      name=3Da:group>group</A> </TD>
+    <TD>N</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:headURL"=20
+      name=3Da:headURL>headURL</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:headclip"=20
+      name=3Da:headclip>headclip</A> </TD>
+    <TD>E</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>true</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:headhref"=20
+      name=3Da:headhref>headhref</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:headlabel"=20
+      name=3Da:headlabel>headlabel</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:headport"=20
+      name=3Da:headport>headport</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:portPos">portPos</A> =
+</TD>
+    <TD align=3Dmiddle>center</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:headtarget" =
+
+      name=3Da:headtarget>headtarget</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>&lt;none&gt;</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:headtooltip"=20
+      name=3Da:headtooltip>headtooltip</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, cmap only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:height"=20
+      name=3Da:height>height</A> </TD>
+    <TD>N</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.5</TD>
+    <TD>0.02</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:href"=20
+      name=3Da:href>href</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, postscript, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:label"=20
+      name=3Da:label>label</A> </TD>
+    <TD>ENGC</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>"N"</TD>
+    <TD>(nodes)<BR>"" (otherwise)</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:labelURL"=20
+      name=3Da:labelURL>labelURL</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:labelangle" =
+
+      name=3Da:labelangle>labelangle</A> </TD>
+    <TD>E</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>-25.0</TD>
+    <TD>-180.0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labeldistance"=20
+      name=3Da:labeldistance>labeldistance</A> </TD>
+    <TD>E</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>1.0</TD>
+    <TD>0.0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:labelfloat" =
+
+      name=3Da:labelfloat>labelfloat</A> </TD>
+    <TD>E</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labelfontcolor"=20
+      name=3Da:labelfontcolor>labelfontcolor</A> </TD>
+    <TD>E</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:color">color</A>=20
+</TD>
+    <TD align=3Dmiddle>black</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labelfontname"=20
+      name=3Da:labelfontname>labelfontname</A> </TD>
+    <TD>E</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>"Times-Roman"</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labelfontsize"=20
+      name=3Da:labelfontsize>labelfontsize</A> </TD>
+    <TD>E</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>14.0</TD>
+    <TD>1.0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:labelhref"=20
+      name=3Da:labelhref>labelhref</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:labeljust"=20
+      name=3Da:labeljust>labeljust</A> </TD>
+    <TD>GC</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>"c"</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:labelloc"=20
+      name=3Da:labelloc>labelloc</A> </TD>
+    <TD>GC</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>"t"</TD>
+    <TD>clusters)<BR>"b"(root graphs)</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labeltarget"=20
+      name=3Da:labeltarget>labeltarget</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>&lt;none&gt;</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labeltooltip"=20
+      name=3Da:labeltooltip>labeltooltip</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, cmap only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:landscape"=20
+      name=3Da:landscape>landscape</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:layer"=20
+      name=3Da:layer>layer</A> </TD>
+    <TD>EN</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:layerRange">layerRange<=
+/A>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:layers"=20
+      name=3Da:layers>layers</A> </TD>
+    <TD>G</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:layerList">layerList</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:layersep"=20
+      name=3Da:layersep>layersep</A> </TD>
+    <TD>G</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>" :\t"</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:len"=20
+      name=3Da:len>len</A> </TD>
+    <TD>E</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>1.0(neato)<BR>0.3(fdp)</TD>
+    <TD></TD>
+    <TD>fdp, neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:levelsgap"=20
+      name=3Da:levelsgap>levelsgap</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.0</TD>
+    <TD></TD>
+    <TD>neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:lhead"=20
+      name=3Da:lhead>lhead</A> </TD>
+    <TD>E</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:lp"=20
+      name=3Da:lp>lp</A> </TD>
+    <TD>EGC</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:point">point</A>=20
+</TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD>write only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:ltail"=20
+      name=3Da:ltail>ltail</A> </TD>
+    <TD>E</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:margin"=20
+      name=3Da:margin>margin</A> </TD>
+    <TD>NG</TD>
+    <TD>double<BR><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:pointf">pointf</A> =
+</TD>
+    <TD align=3Dmiddle>&lt;device-dependent&gt;</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:maxiter"=20
+      name=3Da:maxiter>maxiter</A> </TD>
+    <TD>G</TD>
+    <TD>int</TD>
+    <TD align=3Dmiddle>100 * # nodes(mode =3D=3D KK)<BR>200(mode =3D=3D=20
+      major)<BR>600(fdp)</TD>
+    <TD></TD>
+    <TD>fdp, neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:mclimit"=20
+      name=3Da:mclimit>mclimit</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>1.0</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:mindist"=20
+      name=3Da:mindist>mindist</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>1.0</TD>
+    <TD>0.0</TD>
+    <TD>circo only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:minlen"=20
+      name=3Da:minlen>minlen</A> </TD>
+    <TD>E</TD>
+    <TD>int</TD>
+    <TD align=3Dmiddle>1</TD>
+    <TD>0</TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:mode"=20
+      name=3Da:mode>mode</A> </TD>
+    <TD>G</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>"major"</TD>
+    <TD></TD>
+    <TD>neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:model"=20
+      name=3Da:model>model</A> </TD>
+    <TD>G</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>"shortpath"</TD>
+    <TD></TD>
+    <TD>neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:mosek"=20
+      name=3Da:mosek>mosek</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD>neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:nodesep"=20
+      name=3Da:nodesep>nodesep</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.25</TD>
+    <TD>0.02</TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:nojustify"=20
+      name=3Da:nojustify>nojustify</A> </TD>
+    <TD>GCNE</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:normalize"=20
+      name=3Da:normalize>normalize</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD>not dot</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:nslimit"=20
+      name=3Da:nslimit>nslimit</A> <BR><A=20
+      href=3D"http://graphviz.org/doc/info/attrs.html#d:nslimit1"=20
+      name=3Da:nslimit1>nslimit1</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:ordering"=20
+      name=3Da:ordering>ordering</A> </TD>
+    <TD>G</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:orientation"=20
+      name=3Da:orientation>orientation</A> </TD>
+    <TD>N</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.0</TD>
+    <TD>360.0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#dd:orientation"=20
+      name=3Daa:orientation>orientation</A> </TD>
+    <TD>G</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:outputorder"=20
+      name=3Da:outputorder>outputorder</A> </TD>
+    <TD>G</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:outputMode">outputMode<=
+/A>=20
+    </TD>
+    <TD align=3Dmiddle>breadthfirst</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:overlap"=20
+      name=3Da:overlap>overlap</A> </TD>
+    <TD>G</TD>
+    <TD>string<BR><A=20
+      href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> =
+</TD>
+    <TD align=3Dmiddle>true</TD>
+    <TD></TD>
+    <TD>not dot</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:pack"=20
+      name=3Da:pack>pack</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A>=20
+      <BR>int</TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD>not dot</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:packmode"=20
+      name=3Da:packmode>packmode</A> </TD>
+    <TD>G</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:packMode">packMode</A> =
+</TD>
+    <TD align=3Dmiddle>node</TD>
+    <TD></TD>
+    <TD>not dot</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:pad"=20
+      name=3Da:pad>pad</A> </TD>
+    <TD>G</TD>
+    <TD>double<BR><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:pointf">pointf</A> =
+</TD>
+    <TD align=3Dmiddle>1<BR>18</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:page"=20
+      name=3Da:page>page</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:pointf">pointf</A>=20
+    </TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:pagedir"=20
+      name=3Da:pagedir>pagedir</A> </TD>
+    <TD>G</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:pagedir">pagedir</A> =
+</TD>
+    <TD align=3Dmiddle>BL</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:pencolor"=20
+      name=3Da:pencolor>pencolor</A> </TD>
+    <TD>C</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:color">color</A>=20
+</TD>
+    <TD align=3Dmiddle>black</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:peripheries"=20
+      name=3Da:peripheries>peripheries</A> </TD>
+    <TD>NC</TD>
+    <TD>int</TD>
+    <TD align=3Dmiddle>shape default(nodes)<BR>1(clusters)</TD>
+    <TD>0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:pin"=20
+      name=3Da:pin>pin</A> </TD>
+    <TD>N</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD>fdp, neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:pos"=20
+      name=3Da:pos>pos</A> </TD>
+    <TD>EN</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:point">point</A>=20
+      <BR><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:splineType">splineType<=
+/A>=20
+    </TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:quantum"=20
+      name=3Da:quantum>quantum</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.0</TD>
+    <TD>0.0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:rank"=20
+      name=3Da:rank>rank</A> </TD>
+    <TD>S</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:rankType">rankType</A> =
+</TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:rankdir"=20
+      name=3Da:rankdir>rankdir</A> </TD>
+    <TD>G</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:rankdir">rankdir</A> =
+</TD>
+    <TD align=3Dmiddle>TB</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:ranksep"=20
+      name=3Da:ranksep>ranksep</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.5(dot)<BR>1.0(twopi)</TD>
+    <TD>0.02</TD>
+    <TD>twopi, dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:ratio"=20
+      name=3Da:ratio>ratio</A> </TD>
+    <TD>G</TD>
+    <TD>double<BR>string</TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:rects"=20
+      name=3Da:rects>rects</A> </TD>
+    <TD>N</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:rect">rect</A> </TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD>write only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:regular"=20
+      name=3Da:regular>regular</A> </TD>
+    <TD>N</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:remincross" =
+
+      name=3Da:remincross>remincross</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>false</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:resolution" =
+
+      name=3Da:resolution>resolution</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>96.0<BR>0.0</TD>
+    <TD></TD>
+    <TD>svg, bitmap output only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:root"=20
+      name=3Da:root>root</A> </TD>
+    <TD>GN</TD>
+    <TD>string<BR><A=20
+      href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> =
+</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD>graphs)<BR>false(nodes)</TD>
+    <TD>circo, twopi only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:rotate"=20
+      name=3Da:rotate>rotate</A> </TD>
+    <TD>G</TD>
+    <TD>int</TD>
+    <TD align=3Dmiddle>0</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:samehead"=20
+      name=3Da:samehead>samehead</A> </TD>
+    <TD>E</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:sametail"=20
+      name=3Da:sametail>sametail</A> </TD>
+    <TD>E</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:samplepoints"=20
+      name=3Da:samplepoints>samplepoints</A> </TD>
+    <TD>N</TD>
+    <TD>int</TD>
+    <TD align=3Dmiddle>8(output)<BR>20(overlap and image maps)</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:searchsize" =
+
+      name=3Da:searchsize>searchsize</A> </TD>
+    <TD>G</TD>
+    <TD>int</TD>
+    <TD align=3Dmiddle>30</TD>
+    <TD></TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:sep"=20
+      name=3Da:sep>sep</A> </TD>
+    <TD>G</TD>
+    <TD>double<BR><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:pointf">pointf</A> =
+</TD>
+    <TD align=3Dmiddle>0.1</TD>
+    <TD></TD>
+    <TD>not dot</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:shape"=20
+      name=3Da:shape>shape</A> </TD>
+    <TD>N</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:shape">shape</A>=20
+</TD>
+    <TD align=3Dmiddle>ellipse</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:shapefile"=20
+      name=3Da:shapefile>shapefile</A> </TD>
+    <TD>N</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:showboxes"=20
+      name=3Da:showboxes>showboxes</A> </TD>
+    <TD>ENG</TD>
+    <TD>int</TD>
+    <TD align=3Dmiddle>0</TD>
+    <TD>0</TD>
+    <TD>dot only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:sides"=20
+      name=3Da:sides>sides</A> </TD>
+    <TD>N</TD>
+    <TD>int</TD>
+    <TD align=3Dmiddle>4</TD>
+    <TD>0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:size"=20
+      name=3Da:size>size</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:pointf">pointf</A>=20
+    </TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:skew"=20
+      name=3Da:skew>skew</A> </TD>
+    <TD>N</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.0</TD>
+    <TD>-100.0</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:splines"=20
+      name=3Da:splines>splines</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A>=20
+      <BR>string</TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:start"=20
+      name=3Da:start>start</A> </TD>
+    <TD>G</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:startType">startType</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>fdp, neato only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:style"=20
+      name=3Da:style>style</A> </TD>
+    <TD>ENC</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:style">style</A>=20
+</TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:stylesheet" =
+
+      name=3Da:stylesheet>stylesheet</A> </TD>
+    <TD>G</TD>
+    <TD>string</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:tailURL"=20
+      name=3Da:tailURL>tailURL</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:tailclip"=20
+      name=3Da:tailclip>tailclip</A> </TD>
+    <TD>E</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle>true</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:tailhref"=20
+      name=3Da:tailhref>tailhref</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:taillabel"=20
+      name=3Da:taillabel>taillabel</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:lblString">lblString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:tailport"=20
+      name=3Da:tailport>tailport</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:portPos">portPos</A> =
+</TD>
+    <TD align=3Dmiddle>center</TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:tailtarget" =
+
+      name=3Da:tailtarget>tailtarget</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>&lt;none&gt;</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:tailtooltip"=20
+      name=3Da:tailtooltip>tailtooltip</A> </TD>
+    <TD>E</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, cmap only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:target"=20
+      name=3Da:target>target</A> </TD>
+    <TD>ENGC</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+>=20
+      <BR>string</TD>
+    <TD align=3Dmiddle>&lt;none&gt;</TD>
+    <TD></TD>
+    <TD>svg, map only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:tooltip"=20
+      name=3Da:tooltip>tooltip</A> </TD>
+    <TD>NEC</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+>=20
+    </TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>svg, cmap only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:truecolor"=20
+      name=3Da:truecolor>truecolor</A> </TD>
+    <TD>G</TD>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:bool">bool</A> </TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD>bitmap output only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:vertices"=20
+      name=3Da:vertices>vertices</A> </TD>
+    <TD>N</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:pointfList">pointfList<=
+/A>=20
+    </TD>
+    <TD align=3Dmiddle></TD>
+    <TD></TD>
+    <TD>write only</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:viewport"=20
+      name=3Da:viewport>viewport</A> </TD>
+    <TD>G</TD>
+    <TD><A=20
+      =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:viewPort">viewPort</A> =
+</TD>
+    <TD align=3Dmiddle>""</TD>
+    <TD></TD>
+    <TD>bitmap output, cmap, map only</TD></TR>
+  <TR>
+    <TD><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:voro_margin"=20
+      name=3Da:voro_margin>voro_margin</A> </TD>
+    <TD>G</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.05</TD>
+    <TD>0.0</TD>
+    <TD>not dot</TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:weight"=20
+      name=3Da:weight>weight</A> </TD>
+    <TD>E</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>1.0</TD>
+    <TD>0(dot)<BR>1(neato)</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:width"=20
+      name=3Da:width>width</A> </TD>
+    <TD>N</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.75</TD>
+    <TD>0.01</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD><A href=3D"http://graphviz.org/doc/info/attrs.html#d:z" =
+name=3Da:z>z</A>=20
+    </TD>
+    <TD>N</TD>
+    <TD>double</TD>
+    <TD align=3Dmiddle>0.0</TD>
+    <TD>-MAXFLOAT<BR>-1000</TD>
+    <TD></TD></TR></TBODY></TABLE>
+<HR>
+
+<H1>Attribute Descriptions</H1>
+<DL>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:Damping"=20
+  name=3Dd:Damping><STRONG>Damping</STRONG></A>=20
+  <DD>Factor damping force motions. On each iteration, a nodes movement =
+is=20
+  limited to this factor of its potential motion. By being less than =
+1.0, the=20
+  system tends to ``cool'', thereby preventing cycling.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:K"=20
+  name=3Dd:K><STRONG>K</STRONG></A>=20
+  <DD>Spring constant used in virtual physical model. It roughly =
+corresponds to=20
+  an ideal edge length (in inches), in that increasing K tends to =
+increase the=20
+  distance between nodes. Note that the edge attribute <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:len">len</A> can be =
+used to=20
+  override this value for adjacent nodes.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:URL"=20
+  name=3Dd:URL><STRONG>URL</STRONG></A>=20
+  <DD>Hyperlinks incorporated into device-dependent output. At present, =
+used in=20
+  ps2, cmap, i*map and svg formats. For all these formats, URLs can be =
+attached=20
+  to nodes, edges and clusters. URL attributes can also be attached to =
+the root=20
+  graph in ps2, cmap and i*map formats. This serves as the base URL for =
+relative=20
+  URLs in the former, and as the default image map file in the latter.=20
+  <P>For svg, cmapx and imap output, the active area for a node is its =
+visible=20
+  image. For example, an unfilled node with no drawn boundary will only =
+be=20
+  active on its label. For other output, the active area is its bounding =
+box.=20
+  The active area for a cluster is its bounding box. For edges, the =
+active areas=20
+  are small circles where the edge contacts its head and tail nodes. In=20
+  addition, for svg, cmapx and imap, the active area includes a thin =
+polygon=20
+  approximating the edge. The circles may overlap the related node, and =
+the edge=20
+  URL dominates. If the edge has a label, this will also be active. =
+Finally, if=20
+  the edge has a head or tail label, this will also be active.=20
+  <P>Note that, for edges, the attributes <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:headURL">headURL</A>, =
+<A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:tailURL">tailURL</A>, =
+<A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labelURL">labelURL</A> =
+and <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:edgeURL">edgeURL</A> =
+allow=20
+  control of various parts of an edge. Also note that, if active areas =
+of two=20
+  edges overlap, it is unspecified which area dominates. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:arrowhead"=20
+  name=3Dd:arrowhead><STRONG>arrowhead</STRONG></A>=20
+  <DD>Style of arrowhead on the head node of an edge. See also the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:dir">dir</A> =
+attribute, and a=20
+  <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:arrowsize"=20
+  name=3Dd:arrowsize><STRONG>arrowsize</STRONG></A>=20
+  <DD>Multiplicative scale factor for arrowheads.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:arrowtail"=20
+  name=3Dd:arrowtail><STRONG>arrowtail</STRONG></A>=20
+  <DD>Style of arrowhead on the tail node of an edge. See also the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:dir">dir</A> =
+attribute, and a=20
+  <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:bb"=20
+  name=3Dd:bb><STRONG>bb</STRONG></A>=20
+  <DD>Bounding box of drawing in integer points.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:bgcolor"=20
+  name=3Dd:bgcolor><STRONG>bgcolor</STRONG></A>=20
+  <DD>When attached to the root graph, this color is used as the =
+background for=20
+  entire canvas. When a cluster attribute, it is used as the initial =
+background=20
+  for the cluster. If a cluster has a filled <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:style">style</A>, =
+the=20
+  cluster's <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:fillcolor">fillcolor</A=
+> will=20
+  overlay the background color.=20
+  <P>If no background color is specified for the root graph, no graphics =
+
+  operation are performed on the background. This works fine for =
+PostScript but=20
+  for bitmap output, all bits are initialized to something. This means =
+that when=20
+  the bitmap output is included in some other document, all of the bits =
+within=20
+  the bitmap's bounding box will be set, overwriting whatever color or =
+graphics=20
+  where already on the page. If this effect is not desired, and you only =
+want to=20
+  set bits explicitly assigned in drawing the graph, set=20
+  <B>bgcolor</B>=3D"transparent". </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:center"=20
+  name=3Dd:center><STRONG>center</STRONG></A>=20
+  <DD>If true, the drawing is centered in the output canvas.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:charset"=20
+  name=3Dd:charset><STRONG>charset</STRONG></A>=20
+  <DD>Specifies the character encoding used when interpreting string =
+input as a=20
+  text label. The default value is <TT>"UTF-8"</TT>. The other legal =
+value is=20
+  <TT>"iso-8859-1"</TT> or, equivalently, <TT>"Latin1"</TT>. The =
+<B>charset</B>=20
+  attribute is case-insensitive. Note that if the character encoding =
+used in the=20
+  input does not match the <B>charset</B> value, the resulting output =
+may be=20
+  very strange.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:clusterrank"=20
+  name=3Dd:clusterrank><STRONG>clusterrank</STRONG></A>=20
+  <DD>Mode used for handling clusters. If <B>clusterrank</B> is "local", =
+a=20
+  subgraph whose name begins with "cluster" is given special treatment. =
+The=20
+  subgraph is laid out separately, and then integrated as a unit into =
+its parent=20
+  graph, with a bounding rectangle drawn about it. If the cluster has a =
+<A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:label">label</A> =
+parameter,=20
+  this label is displayed within the rectangle. Note also that there can =
+be=20
+  clusters within clusters. At present, the modes "global" and "none" =
+appear to=20
+  be identical, both turning off the special cluster processing.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:color"=20
+  name=3Dd:color><STRONG>color</STRONG></A>=20
+  <DD>Basic drawing color for graphics, not text. For the latter, use =
+the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d.fontcolor">fontcolor</A=
+>=20
+  attribute.=20
+  <P>For edges, the value can either be a single color or a <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:colorList">colorList</A=
+>. In=20
+  the latter case, the edge is drawn using parallel splines or lines, =
+one for=20
+  each color in the list, in the order given. The head arrow, if any, is =
+drawn=20
+  using the first color in the list, and the tail arrow, if any, the =
+second=20
+  color. This supports the common case of drawing opposing edges, but =
+using=20
+  parallel splines instead of separately routed multiedges. For example, =
+the=20
+  graph <PRE>  digraph G {
+    a -&gt; b [dir=3Dboth color=3D"red:blue"]
+  }=20
+  </PRE>yields<BR><IMG =
+src=3D"http://graphviz.org/doc/info/colorlist.gif">=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:colorscheme"=20
+  name=3Dd:colorscheme><STRONG>colorscheme</STRONG></A>=20
+  <DD>This attribute specifies a color scheme namespace. If defined, it=20
+  specifies the context for interpreting color names. In particular, if =
+a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#k:color">color</A> =
+value has=20
+  form <TT>"xxx"</TT> or <TT>"//xxx"</TT>, then the color <TT>xxx</TT> =
+will be=20
+  evaluated according to the current color scheme. If no color scheme is =
+set,=20
+  the standard X11 naming is used. For example, if =
+<TT>colorscheme=3Dbugn9</TT>,=20
+  then <TT>color=3D7</TT> is interpreted as <TT>"/bugn9/7"</TT>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:comment"=20
+  name=3Dd:comment><STRONG>comment</STRONG></A>=20
+  <DD>Comments are inserted into output. Device-dependent=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:compound"=20
+  name=3Dd:compound><STRONG>compound</STRONG></A>=20
+  <DD>If true, allow edges between clusters. (See <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:lhead">lhead</A> and =
+<A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:ltail">ltail</A> =
+below.)=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:concentrate"=20
+  name=3Dd:concentrate><STRONG>concentrate</STRONG></A>=20
+  <DD>If true, use edge concentrators.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:constraint"=20
+  name=3Dd:constraint><STRONG>constraint</STRONG></A>=20
+  <DD>If false, the edge is not used in ranking the nodes. For example, =
+in the=20
+  graph <PRE>  digraph G {
+    a -&gt; c;
+    a -&gt; b;
+    b -&gt; c [constraint=3Dfalse];
+  }
+  </PRE>the edge <CODE>b -&gt; c</CODE> does not add a constraint during =
+rank=20
+  assignment, so the only constraints are that a be above b and c, =
+yielding the=20
+  graph:<BR><IMG src=3D"http://graphviz.org/doc/info/constraint.gif">=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:decorate"=20
+  name=3Dd:decorate><STRONG>decorate</STRONG></A>=20
+  <DD>If true, attach edge label to edge by a 2-segment polyline, =
+underlining=20
+  the label, then going to the closest point of spline.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:defaultdist"=20
+  name=3Dd:defaultdist><STRONG>defaultdist</STRONG></A>=20
+  <DD>This specifies the distance between nodes in separate connected=20
+  components. If set too small, connected components may overlap. Only=20
+  applicable if <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:pack">pack</A>=3Dfalse.=
+=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:dim"=20
+  name=3Dd:dim><STRONG>dim</STRONG></A>=20
+  <DD>Set the number of dimensions used for the layout. The maximum =
+value=20
+  allowed is 10.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:dir"=20
+  name=3Dd:dir><STRONG>dir</STRONG></A>=20
+  <DD>Set edge type for drawing arrowheads. This indicates which ends of =
+the=20
+  edge should be decorated with an arrowhead. The actual style of the =
+arrowhead=20
+  can be specified using the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:arrowhead">arrowhead</A=
+> and=20
+  <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:arrowtail">arrowtail</A=
+>=20
+  attributes. See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#a:diredgeconstraints"=20
+  name=3Dd:diredgeconstraints><STRONG>diredgeconstraints</STRONG></A>=20
+  <DD>Only valid when <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:mode">mode</A>=3D"ipsep=
+". If=20
+  true, constraints are generated for each edge in the largest =
+(heuristic)=20
+  directed acyclic subgraph such that the edge must point downwards. If =
+"hier",=20
+  generates level constraints similar to those used with <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:mode">mode</A>=3D"hier"=
+. The=20
+  main difference is that, in the latter case, only these constraints =
+are=20
+  involved, so a faster solver can be used.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:distortion"=20
+  name=3Dd:distortion><STRONG>distortion</STRONG></A>=20
+  <DD>Distortion factor for <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:shape"><B>shape</B></A>=
+=3Dpolygon.=20
+  Positive values cause top part to be larger than bottom; negative =
+values do=20
+  the opposite.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:dpi"=20
+  name=3Dd:dpi><STRONG>dpi</STRONG></A>=20
+  <DD>This specifies the expected number of pixels per inch on a display =
+device.=20
+  For bitmap output, this guarantees that text rendering will be done =
+more=20
+  accurately, both in size and in placement. For SVG output, it is used =
+to=20
+  guarantee that the dimensions in the output correspond to the correct =
+number=20
+  of points or inches.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:edgeURL"=20
+  name=3Dd:edgeURL><STRONG>edgeURL</STRONG></A>=20
+  <DD>If <B>edgeURL</B> is defined, this is the link used for the =
+non-label=20
+  parts of an edge. This value overrides any <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URL</A> defined =
+for the=20
+  edge. Also, this value is used near the head or tail node unless =
+overridden by=20
+  a <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:headURL">headURL</A> =
+or=20
+  <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:tailURL">tailURL</A> =
+value,=20
+  respectively. See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:edgehref"=20
+  name=3Dd:edgehref><STRONG>edgehref</STRONG></A>=20
+  <DD>Synonym for <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:edgeURL">edgeURL</A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:edgetarget"=20
+  name=3Dd:edgetarget><STRONG>edgetarget</STRONG></A>=20
+  <DD>If the edge has a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URL</A> or <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:edgeURL">edgeURL</A> =
+
+  attribute, this attribute determines which window of the browser is =
+used for=20
+  the URL attached to the non-label part of the edge. Setting it to =
+"_graphviz"=20
+  will open a new window if it doesn't already exist, or reuse it if it =
+does. If=20
+  undefined, the value of the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:target">target</A> =
+is used.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:edgetooltip"=20
+  name=3Dd:edgetooltip><STRONG>edgetooltip</STRONG></A>=20
+  <DD>Tooltip annotation attached to the non-label part of an edge. This =
+is used=20
+  only if the edge has a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URL</A> or <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:edgeURL">edgeURL</A> =
+
+  attribute.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:epsilon"=20
+  name=3Dd:epsilon><STRONG>epsilon</STRONG></A>=20
+  <DD>Terminating condition. If the length squared of all energy =
+gradients are=20
+  &lt; <B>epsilon</B>, the algorithm stops.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:esep"=20
+  name=3Dd:esep><STRONG>esep</STRONG></A>=20
+  <DD>Fraction to increase polygons (multiply coordinates by 1 + esep) =
+for=20
+  purposes of spline edge routing. This should normally be strictly less =
+than <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:sep">sep</A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:fillcolor"=20
+  name=3Dd:fillcolor><STRONG>fillcolor</STRONG></A>=20
+  <DD>Color used to fill the background of a node or cluster assuming <A =
+
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:style">style</A>=3Dfill=
+ed. If=20
+  <B>fillcolor</B> is not defined, <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:color">color</A> is =
+used. (For=20
+  clusters, if <B>color</B> is not defined, <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:bgcolor">bgcolor</A> =
+is used.)=20
+  If this is not defined, the default is used, except for <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:shape"><B>shape</B></A>=
+=3Dpoint=20
+  or when the output format is MIF, which use black by default.=20
+  <P>Note that a cluster inherits the root graph's attributes if =
+defined. Thus,=20
+  if the root graph has defined a <B>fillcolor</B>, this will override a =
+
+  <B>color</B> or <B>bgcolor</B> attribute set for the cluster. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:fixedsize"=20
+  name=3Dd:fixedsize><STRONG>fixedsize</STRONG></A>=20
+  <DD>If true, the node size is specified by the values of the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:width"><B>width</B></A>=
+ and <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:height"><B>height</B></=
+A>=20
+  attributes only and is not expanded to contain the text label.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:fontcolor"=20
+  name=3Dd:fontcolor><STRONG>fontcolor</STRONG></A>=20
+  <DD>Color used for text.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:fontname"=20
+  name=3Dd:fontname><STRONG>fontname</STRONG></A>=20
+  <DD>Font used for text. This very much depends on the output format =
+and, for=20
+  non-bitmap output such as PostScript or SVG, the availability of the =
+font when=20
+  the graph is displayed or printed. As such, it is best to rely on font =
+faces=20
+  that are generally available, such as Times-Roman, Helvetica or =
+Courier.=20
+  <P>If Graphviz was built using the <A=20
+  =
+href=3D"http://pdx.freedesktop.org/~fontconfig/fontconfig-user.html">font=
+config=20
+  library</A>, the latter library will be used to search for the font. =
+However,=20
+  if the <TT>fontname</TT> string contains a slash character "/", it is =
+treated=20
+  as a pathname for the font file, though font lookup will append the =
+usual font=20
+  suffixes.=20
+  <P>If Graphviz does not use fontconfig, <TT>fontname</TT> will be =
+considered=20
+  the name of a Type 1 or True Type font file. If you specify=20
+  <TT>fontname=3Dschlbk</TT>, the tool will look for a file named=20
+  <TT>schlbk.ttf</TT> or <TT>schlbk.pfa</TT> or <TT>schlbk.pfb</TT> in =
+one of=20
+  the directories specified by the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:fontpath">fontpath</A> =
+
+  attribute. The lookup does support various aliases for the common =
+fonts. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:fontnames"=20
+  name=3Dd:fontnames><STRONG>fontnames</STRONG></A>=20
+  <DD>Allows user control of how basic fontnames are represented in SVG =
+output.=20
+  If <TT>fontnames</TT> is undefined or <TT>"svg"</TT>, the output will =
+try to=20
+  use known SVG fontnames. For example, the default font =
+<TT>"Times-Roman"</TT>=20
+  will be mapped to the basic SVG font <TT>"serif"</TT>. This can be =
+overridden=20
+  by setting <TT>fontnames</TT> to <TT>"ps"</TT> or <TT>"gd"</TT>. In =
+the former=20
+  case, known PostScript font names such as <TT>"Times-Roman"</TT> will =
+be used=20
+  in the output. In the latter case, the fontconfig font conventions are =
+used.=20
+  Thus, <TT>"Times-Roman"</TT> would be treated as <TT>"Nimbus Roman No9 =
+
+  L"</TT>. These last two options are useful with SVG viewers that =
+support these=20
+  richer fontname spaces.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:fontpath"=20
+  name=3Dd:fontpath><STRONG>fontpath</STRONG></A>=20
+  <DD>Directory list used by libgd to search for bitmap fonts if =
+Graphviz was=20
+  not built with the fontconfig library. If <B>fontpath</B> is not set, =
+the=20
+  environment variable <TT>DOTFONTPATH</TT> is checked. If that is not =
+set,=20
+  <TT>GDFONTPATH</TT> is checked. If not set, libgd uses its compiled-in =
+font=20
+  path. Note that fontpath is an attribute of the root graph.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:fontsize"=20
+  name=3Dd:fontsize><STRONG>fontsize</STRONG></A>=20
+  <DD>Font size, <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#points">in=20
+  points</A>, used for text.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:group"=20
+  name=3Dd:group><STRONG>group</STRONG></A>=20
+  <DD>If the end points of an edge belong to the same group, i.e., have =
+the same=20
+  group attribute, parameters are set to avoid crossings and keep the =
+edges=20
+  straight.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:headURL"=20
+  name=3Dd:headURL><STRONG>headURL</STRONG></A>=20
+  <DD>If <B>headURL</B> is defined, it is output as part of the head =
+label of=20
+  the edge. Also, this value is used near the head node, overriding any =
+<A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URL</A> value. =
+See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:headclip"=20
+  name=3Dd:headclip><STRONG>headclip</STRONG></A>=20
+  <DD>If true, the head of an edge is clipped to the boundary of the =
+head node;=20
+  otherwise, the end of the edge goes to the center of the node, or the =
+center=20
+  of a port, if applicable.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:headhref"=20
+  name=3Dd:headhref><STRONG>headhref</STRONG></A>=20
+  <DD>Synonym for <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:headURL">headURL</A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:headlabel"=20
+  name=3Dd:headlabel><STRONG>headlabel</STRONG></A>=20
+  <DD>Text label to be placed near head of edge. See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:headport"=20
+  name=3Dd:headport><STRONG>headport</STRONG></A>=20
+  <DD>Indicates where on the head node to attach the head of the edge. =
+In the=20
+  default case, the edge is aimed towards the center of the node, and =
+then=20
+  clipped at the node boundary. See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:headtarget"=20
+  name=3Dd:headtarget><STRONG>headtarget</STRONG></A>=20
+  <DD>If the edge has a <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:headURL">headURL</A>, =
+this=20
+  attribute determines which window of the browser is used for the URL. =
+Setting=20
+  it to "_graphviz" will open a new window if it doesn't already exist, =
+or reuse=20
+  it if it does. If undefined, the value of the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:target">target</A> =
+is used.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:headtooltip"=20
+  name=3Dd:headtooltip><STRONG>headtooltip</STRONG></A>=20
+  <DD>Tooltip annotation attached to the head of an edge. This is used =
+only if=20
+  the edge has a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:headURL">headURL</A> =
+
+  attribute.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:height"=20
+  name=3Dd:height><STRONG>height</STRONG></A>=20
+  <DD>Height of node, in inches. This is taken as the initial, minimum =
+height of=20
+  the node. If <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:fixedsize"><B>fixedsize=
+</B></A>=20
+  is true, this will be the final height of the node. Otherwise, if the =
+node=20
+  label requires more height to fit, the node's height will be increased =
+to=20
+  contain the label. Note also that, if the output format is dot, the =
+value=20
+  given to <B>height</B> will be the final value.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:href"=20
+  name=3Dd:href><STRONG>href</STRONG></A>=20
+  <DD>Synonym for <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URL</A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:label"=20
+  name=3Dd:label><STRONG>label</STRONG></A>=20
+  <DD>Text label attached to objects. If a node's <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:shape">shape</A> is =
+record,=20
+  then the label can have a <A=20
+  href=3D"http://graphviz.org/doc/info/shapes.html#record">special =
+format</A>=20
+  which describes the record layout.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:labelURL"=20
+  name=3Dd:labelURL><STRONG>labelURL</STRONG></A>=20
+  <DD>If <B>labelURL</B> is defined, this is the link used for the label =
+of an=20
+  edge. This value overrides any <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URL</A> defined =
+for the=20
+  edge.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:labelangle"=20
+  name=3Dd:labelangle><STRONG>labelangle</STRONG></A>=20
+  <DD>This, along with <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labeldistance">labeldis=
+tance</A>,=20
+  determine where the headlabel (taillabel) are placed with respect to =
+the head=20
+  (tail) in polar coordinates. The origin in the coordinate system is =
+the point=20
+  where the edge touches the node. The ray of 0 degrees goes from the =
+origin=20
+  back along the edge, parallel to the edge at the origin.=20
+  <P>The angle, in degrees, specifies the rotation from the 0 degree =
+ray, with=20
+  positive angles moving counterclockwise and negative angles moving =
+clockwise.=20
+  </P>
+  <DT><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#a:labeldistance"=20
+  name=3Dd:labeldistance><STRONG>labeldistance</STRONG></A>=20
+  <DD>Multiplicative scaling factor adjusting the distance that the=20
+  headlabel(taillabel) is from the head(tail) node. The default distance =
+is 10=20
+  points. See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labelangle">labelangle<=
+/A> for=20
+  more details.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:labelfloat"=20
+  name=3Dd:labelfloat><STRONG>labelfloat</STRONG></A>=20
+  <DD>If true, allows edge labels to be less constrained in position. In =
+
+  particular, it may appear on top of other edges.=20
+  <DT><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#a:labelfontcolor"=20
+  name=3Dd:labelfontcolor><STRONG>labelfontcolor</STRONG></A>=20
+  <DD>Color used for headlabel and taillabel. If not set, defaults to =
+edge's=20
+  fontcolor.=20
+  <DT><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#a:labelfontname"=20
+  name=3Dd:labelfontname><STRONG>labelfontname</STRONG></A>=20
+  <DD>Font used for headlabel and taillabel. If not set, defaults to =
+edge's=20
+  fontname.=20
+  <DT><A =
+href=3D"http://graphviz.org/doc/info/attrs.html#a:labelfontsize"=20
+  name=3Dd:labelfontsize><STRONG>labelfontsize</STRONG></A>=20
+  <DD>Font size, <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#points">in=20
+  points</A>, used for headlabel and taillabel. If not set, defaults to =
+edge's=20
+  fontsize.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:labelhref"=20
+  name=3Dd:labelhref><STRONG>labelhref</STRONG></A>=20
+  <DD>Synonym for <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labelURL">labelURL</A>.=
+=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:labeljust"=20
+  name=3Dd:labeljust><STRONG>labeljust</STRONG></A>=20
+  <DD>Justification for cluster labels. If "r", the label is =
+right-justified=20
+  within bounding rectangle; if "l", left-justified; else the label is =
+centered.=20
+  Note that a subgraph inherits attributes from its parent. Thus, if the =
+root=20
+  graph sets <B>labeljust</B> to "l", the subgraph inherits this value.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:labelloc"=20
+  name=3Dd:labelloc><STRONG>labelloc</STRONG></A>=20
+  <DD>Top/bottom placement of graph and cluster labels. If the attribute =
+is "t",=20
+  place label at the top; if the attribute is "b", place label at the =
+bottom. By=20
+  default, root graph labels go on the bottom and cluster labels go on =
+the top.=20
+  Note that a subgraph inherits attributes from its parent. Thus, if the =
+root=20
+  graph sets <B>labelloc</B> to "b", the subgraph inherits this value.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:labeltarget"=20
+  name=3Dd:labeltarget><STRONG>labeltarget</STRONG></A>=20
+  <DD>If the edge has a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URL</A> or <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labelURL">labelURL</A> =
+
+  attribute, this attribute determines which window of the browser is =
+used for=20
+  the URL attached to the label. Setting it to "_graphviz" will open a =
+new=20
+  window if it doesn't already exist, or reuse it if it does. If =
+undefined, the=20
+  value of the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:target">target</A> =
+is used.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:labeltooltip" =
+
+  name=3Dd:labeltooltip><STRONG>labeltooltip</STRONG></A>=20
+  <DD>Tooltip annotation attached to label of an edge. This is used only =
+if the=20
+  edge has a <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URL</A> or=20
+  <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:labelURL">labelURL</A> =
+
+  attribute.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:landscape"=20
+  name=3Dd:landscape><STRONG>landscape</STRONG></A>=20
+  <DD>If true, the graph is rendered in landscape mode. Synonymous with =
+<A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:rotate"><TT>rotate=3D90=
+</TT></A>=20
+  or <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:orientation"><TT>orient=
+ation=3Dlandscape</TT></A>.=20
+
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:layer"=20
+  name=3Dd:layer><STRONG>layer</STRONG></A>=20
+  <DD>Specifies layers in which the node or edge is present.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:layers"=20
+  name=3Dd:layers><STRONG>layers</STRONG></A>=20
+  <DD>Specifies a linearly ordered list of layer names attached to the =
+graph The=20
+  graph is then output in separate layers. Only those components =
+belonging to=20
+  the current output layer appear. For more information, see the page <A =
+
+  href=3D"http://www.graphviz.org/Documentation/html/layers/">How to use =
+drawing=20
+  layers (overlays)</A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:layersep"=20
+  name=3Dd:layersep><STRONG>layersep</STRONG></A>=20
+  <DD>Specifies the separator characters used to split the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:layers">layers =
+</A>attribute=20
+  into a list of layer names.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:len"=20
+  name=3Dd:len><STRONG>len</STRONG></A>=20
+  <DD>Preferred edge length, in inches.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:levelsgap"=20
+  name=3Dd:levelsgap><STRONG>levelsgap</STRONG></A>=20
+  <DD>Specifies strictness of level constraints in neato when <TT><A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:mode">mode</A>=3D"ipsep=
+" or=20
+  "hier"</TT>. Larger positive values mean stricter constraints, which =
+demand=20
+  more separation between levels. On the other hand, negative values =
+will relax=20
+  the constraints by allowing some overlap between the levels.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:lhead"=20
+  name=3Dd:lhead><STRONG>lhead</STRONG></A>=20
+  <DD>Logical head of an edge. When <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:compound"><B>compound</=
+B></A>=20
+  is true, if <B>lhead</B> is defined and is the name of a cluster =
+containing=20
+  the real head, the edge is clipped to the boundary of the cluster. See =
+<A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:lp"=20
+  name=3Dd:lp><STRONG>lp</STRONG></A>=20
+  <DD>Label position, <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#points">in points</A>. =
+The=20
+  position indicates the center of the label.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:ltail"=20
+  name=3Dd:ltail><STRONG>ltail</STRONG></A>=20
+  <DD>Logical tail of an edge. When <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:compound"><B>compound</=
+B></A>=20
+  is true, if <B>ltail</B> is defined and is the name of a cluster =
+containing=20
+  the real tail, the edge is clipped to the boundary of the cluster. See =
+<A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:margin"=20
+  name=3Dd:margin><STRONG>margin</STRONG></A>=20
+  <DD>For graphs, this sets x and y margins of canvas, in inches. If the =
+margin=20
+  is a single double, both margins are set equal to the given value.=20
+  <P>Note that the margin is not part of the drawing but just empty =
+space left=20
+  around the drawing. It basically corresponds to a translation of =
+drawing, as=20
+  would be necessary to center a drawing on a page. Nothing is actually =
+drawn in=20
+  the margin. To actually extend the background of a drawing, see the <A =
+
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:pad">pad</A> =
+attribute.=20
+  <P>For nodes, this attribute specifies space left around the node's =
+label. By=20
+  default, the value is <TT>0.11,0.055</TT>. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:maxiter"=20
+  name=3Dd:maxiter><STRONG>maxiter</STRONG></A>=20
+  <DD>Sets the number of iterations used.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:mclimit"=20
+  name=3Dd:mclimit><STRONG>mclimit</STRONG></A>=20
+  <DD>Multiplicative scale factor used to alter the MinQuit (default =3D =
+8) and=20
+  MaxIter (default =3D 24) parameters used during crossing minimization. =
+These=20
+  correspond to the number of tries without improvement before quitting =
+and the=20
+  maximum number of iterations in each pass.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:mindist"=20
+  name=3Dd:mindist><STRONG>mindist</STRONG></A>=20
+  <DD>Specifies the minimum separation between all nodes.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:minlen"=20
+  name=3Dd:minlen><STRONG>minlen</STRONG></A>=20
+  <DD>Minimum edge length (rank difference between head and tail).=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:mode"=20
+  name=3Dd:mode><STRONG>mode</STRONG></A>=20
+  <DD>Technique for optimizing the layout. If <B>mode</B> is =
+<TT>"major"</TT>,=20
+  neato uses stress majorization. If <B>mode</B> is <TT>"KK"</TT>, neato =
+uses a=20
+  version of the gradient descent method. The only advantage to the =
+latter=20
+  technique is that it is sometimes appreciably faster for small (number =
+of=20
+  nodes &lt; 100) graphs. A significant disadvantage is that it may =
+cycle.=20
+  <P>There are two new, experimental modes in neato, "hier", which adds =
+a=20
+  top-down directionality similar to the layout used in dot, and =
+"ipsep", which=20
+  allows the graph to specify minimum vertical and horizontal distances =
+between=20
+  nodes. (See the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:sep">sep</A> =
+attribute.) </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:model"=20
+  name=3Dd:model><STRONG>model</STRONG></A>=20
+  <DD>This value specifies how the distance matrix is computed for the =
+input=20
+  graph. The distance matrix specifies the ideal distance between every =
+pair of=20
+  nodes. neato attemps to find a layout which best achieves these =
+distances. By=20
+  default, it uses the length of the shortest path, where the length of =
+each=20
+  edge is given by its <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:len">len</A> =
+attribute. If=20
+  <B>model</B> is <TT>"circuit"</TT>, neato uses the circuit resistance =
+model to=20
+  compute the distances. This tends to emphasize clusters. If =
+<B>model</B> is=20
+  <TT>"subset"</TT>, neato uses the subset model. This sets the edge =
+length to=20
+  be the number of nodes that are neighbors of exactly one of the end =
+points,=20
+  and then calculates the shortest paths. This helps to separate nodes =
+with high=20
+  degree.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:mosek"=20
+  name=3Dd:mosek><STRONG>mosek</STRONG></A>=20
+  <DD>If Graphviz is built with MOSEK defined, mode=3Dipsep and =
+mosek=3Dtrue, the=20
+  Mosek software (www.mosek.com) is use to solve the ipsep constraints.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:nodesep"=20
+  name=3Dd:nodesep><STRONG>nodesep</STRONG></A>=20
+  <DD>Minimum space between two adjacent nodes in the same rank, in =
+inches.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:nojustify"=20
+  name=3Dd:nojustify><STRONG>nojustify</STRONG></A>=20
+  <DD>By default, the justification of multi-line labels is done within =
+the=20
+  largest context that makes sense. Thus, in the label of a polygonal =
+node, a=20
+  left-justified line will align with the left side of the node (shifted =
+by the=20
+  prescribed <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:margin">margin</A>). =
+In record=20
+  nodes, left-justified line will line up with the left side of the =
+enclosing=20
+  column of fields. If <B>nojustify</B> is <TT>"true"</TT>, multi-line =
+labels=20
+  will be justified in the context of itself. For example, if the =
+attribute is=20
+  set, the first label line is long, and the second is shorter and=20
+  left-justified, the second will align with the left-most character in =
+the=20
+  first line, regardless of how large the node might be.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:normalize"=20
+  name=3Dd:normalize><STRONG>normalize</STRONG></A>=20
+  <DD>If set, normalize coordinates of final layout so that the first =
+point is=20
+  at the origin, and then rotate the layout so that the first edge is=20
+  horizontal.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:nslimit"=20
+  name=3Dd:nslimit><STRONG>nslimit</STRONG></A> ,
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:nslimit1"=20
+  name=3Dd:nslimit1><STRONG>nslimit1</STRONG></A>=20
+  <DD>Used to set number of iterations in network simplex applications.=20
+  <B>nslimit</B> is used in computing node x coordinates, =
+<B>nslimit1</B> for=20
+  ranking nodes. If defined, # iterations =3D <B>nslimit(1)</B> * # =
+nodes;=20
+  otherwise, # iterations =3D MAXINT.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:ordering"=20
+  name=3Dd:ordering><STRONG>ordering</STRONG></A>=20
+  <DD>If "out" for a graph G, and n is a node in G, then edges n-&gt;* =
+appear=20
+  left-to-right in the same order in which they are defined. If "in", =
+the edges=20
+  *-&gt;n appear left-to-right in the same order in which they are =
+defined for=20
+  all nodes n.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:orientation"=20
+  name=3Dd:orientation><STRONG>orientation</STRONG></A>=20
+  <DD>Angle, in degrees, used to rotate node shapes.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#aa:orientation" =
+
+  name=3Ddd:orientation><STRONG>orientation</STRONG></A>=20
+  <DD>If "[lL]*", set graph orientation to landscape Used only if <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:rotate"><B>rotate</B></=
+A> is=20
+  not defined.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:outputorder"=20
+  name=3Dd:outputorder><STRONG>outputorder</STRONG></A>=20
+  <DD>Specify order in which nodes and edges are drawn.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:overlap"=20
+  name=3Dd:overlap><STRONG>overlap</STRONG></A>=20
+  <DD>Determines if and how node overlaps should be removed. Nodes are =
+first=20
+  enlarged using the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:sep"><B>sep</B></A> =
+attribute.=20
+  If "true" , overlaps are retained. If the value is "scale", overlaps =
+are=20
+  removed by uniformly scaling in x and y. If the value converts to =
+"false",=20
+  node overlaps are removed by a Voronoi-based technique. If the value =
+is=20
+  "scalexy", x and y are separately scaled to remove overlaps. If the =
+value is=20
+  "orthoxy" or "orthoyx", overlaps are moved by optimizing two =
+constraint=20
+  problems, one for the x axis and one for the y. The suffix indicates =
+which=20
+  axis is processed first. If the value is "ortho", the technique is =
+similar to=20
+  "orthoxy" except a heuristic is used to reduce the bias between the =
+two=20
+  passes. If the value is "ortho_yx", the technique is the same as =
+"ortho",=20
+  except the roles of x and y are reversed. The values "portho", =
+"porthoxy",=20
+  "porthoxy", and "portho_yx" are similar to the previous four, except =
+only=20
+  pseudo-orthogonal ordering is enforced.=20
+  <P>If the value is "compress", the layout will be scaled down as much =
+as=20
+  possible without introducing any overlaps, obviously assuming there =
+are none=20
+  to begin with.=20
+  <P>If the value is "ipsep", and the layout is done by neato with <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:mode">mode</A>=3D"ipsep=
+", the=20
+  overlap removal constraints are incorporated into the layout algorithm =
+itself.=20
+  N.B. At present, this only supports one level of clustering.=20
+  <P>If the value is "vpsc", overlap removal is similarly to "ortho", =
+except=20
+  quadratic optimization is used to minimize node displacement. N.B. At =
+present,=20
+  this mode only works when <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:mode">mode</A>=3D"ipsep=
+".=20
+  <P>Except for fdp, the layouts assume <TT>overlap=3D"true"</TT> as the =
+default.=20
+  Fdp first uses a number of passes using built-in, force-directed =
+technique to=20
+  remove overlaps. Thus, fdp accepts <B>overlap</B> with an integer =
+prefix=20
+  followed by a colon, specifying the number of tries. If there is no =
+prefix, no=20
+  initial tries will be performed. If there is nothing following a =
+colon, none=20
+  of the above methods will be attempted. By default, fdp uses=20
+  <TT>overlap=3D"9:portho"</TT>. Note that <TT>overlap=3D"true"</TT>,=20
+  <TT>overlap=3D"0:true"</TT> and <TT>overlap=3D"0:"</TT> all turn off =
+all overlap=20
+  removal.=20
+  <P>Except for the Voronoi method, all of these transforms preserve the =
+
+  orthogonal ordering of the original layout. That is, if the x =
+coordinates of=20
+  two nodes are originally the same, they will remain the same, and if =
+the x=20
+  coordinate of one node is originally less than the x coordinate of =
+another,=20
+  this relation will still hold in the transformed layout. The similar=20
+  properties hold for the y coordinates. This is not quite true for the =
+"porth*"=20
+  cases. For these, orthogonal ordering is only preserved among nodes =
+related by=20
+  an edge.=20
+  <P><B>NOTE</B>The methods "orthoxy" and "orthoyx" are still evolving. =
+The=20
+  semantics of these may change, or these methods may disappear =
+altogether. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:pack"=20
+  name=3Dd:pack><STRONG>pack</STRONG></A>=20
+  <DD>This is true if the value of pack is "true" (case-insensitive) or =
+a=20
+  non-negative integer. If true, each connected component of the graph =
+is laid=20
+  out separately, and then the graphs are packed tightly. If pack has an =
+
+  integral value, this is used as the size, in <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#points">points</A>, of =
+a margin=20
+  around each part; otherwise, a default margin of 8 is used. If pack is =
+
+  interpreted as false, the entire graph is laid out together. The =
+granularity=20
+  and method of packing is influenced by the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:packmode">packmode</A> =
+
+  attribute.=20
+  <P>For layouts which always do packing, such a twopi, the <B>pack</B>=20
+  attribute is just used to set the margin. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:packmode"=20
+  name=3Dd:packmode><STRONG>packmode</STRONG></A>=20
+  <DD>This indicates the granularity and method used for packing (cf. <A =
+
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:packMode">packMode</A>)=
+. Note=20
+  that defining <B>packmode</B> will automatically turn on packing as =
+though one=20
+  had set <B>pack=3Dtrue</B>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:pad"=20
+  name=3Dd:pad><STRONG>pad</STRONG></A>=20
+  <DD>The pad attribute specifies how much, in inches, to extend the =
+drawing=20
+  area around the minimal area needed to draw the graph. If the pad is a =
+single=20
+  double, both the x and y pad values are set equal to the given value. =
+This=20
+  area is part of the drawing and will be filled with the background =
+color, if=20
+  appropriate.=20
+  <P>Normally, a small pad is used for aesthetic reasons, especially =
+when a=20
+  background color is used, to avoid having nodes and edges abutting the =
+
+  boundary of the drawn region. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:page"=20
+  name=3Dd:page><STRONG>page</STRONG></A>=20
+  <DD>Width and height of output pages, in inches. If this is set and is =
+smaller=20
+  than the size of the layout, a rectangular array of pages of the =
+specified=20
+  page size is overlaid on the layout, with origins aligned in the =
+lower-left=20
+  corner, thereby partitioning the layout into pages. The pages are then =
+
+  produced one at a time, in <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:pagedir">pagedir</A> =
+order.=20
+  <P>At present, this only works for PostScript output. For other types =
+of=20
+  output, one should use another tool to split the output into multiple =
+output=20
+  files. Or use the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:viewport">viewport</A> =
+to=20
+  generate multiple files. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:pagedir"=20
+  name=3Dd:pagedir><STRONG>pagedir</STRONG></A>=20
+  <DD>If the <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:page">page</A>=20
+  attribute is set and applicable, this attribute specifies the order in =
+which=20
+  the pages are emitted. This is limited to one of the 8 row or column =
+major=20
+  orders.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:pencolor"=20
+  name=3Dd:pencolor><STRONG>pencolor</STRONG></A>=20
+  <DD>Color used to draw the bounding box around a cluster. If =
+<B>pencolor</B>=20
+  is not defined, <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:color"><B>color</B></A>=
+ is=20
+  used. If this is not defined, <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:bgcolor">bgcolor</A> =
+is used.=20
+  If this is not defined, the default is used.=20
+  <P>Note that a cluster inherits the root graph's attributes if =
+defined. Thus,=20
+  if the root graph has defined a <B>pencolor</B>, this will override a=20
+  <B>color</B> or <B>bgcolor</B> attribute set for the cluster. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:peripheries"=20
+  name=3Dd:peripheries><STRONG>peripheries</STRONG></A>=20
+  <DD>Set number of peripheries used in polygonal shapes and cluster =
+boundaries.=20
+  Note that <A =
+href=3D"http://graphviz.org/doc/info/shapes.html#epsf">user-defined=20
+  shapes</A> are treated as a form of box shape, so the default =
+peripheries=20
+  value is 1 and the user-defined shape will be drawn in a bounding =
+rectangle.=20
+  Setting <TT>peripheries=3D0</TT> will turn this off. Also, 1 is the =
+maximum=20
+  peripheries value for clusters.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:pin"=20
+  name=3Dd:pin><STRONG>pin</STRONG></A>=20
+  <DD>If true and the node has a pos attribute on input, neato prevents =
+the node=20
+  from moving from the input position. This property can also be =
+specified in=20
+  the pos attribute itself (cf. the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:point">point</A> =
+type).=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:pos"=20
+  name=3Dd:pos><STRONG>pos</STRONG></A>=20
+  <DD>Position of node, or spline control points. For nodes, the =
+position=20
+  indicates the center of the node. On output, the coordinates are in <A =
+
+  href=3D"http://graphviz.org/doc/info/attrs.html#points">points</A>.=20
+  <P>In neato and fdp, pos can be used to set the initial position of a =
+node. By=20
+  default, the coordinates are assumed to be in inches. However, the <A=20
+  href=3D"http://graphviz.org/doc/info/command.html#d:s">-s</A> command =
+line flag=20
+  can be used to specify different units.=20
+  <P>When the <A =
+href=3D"http://graphviz.org/doc/info/command.html#d:n">-n</A>=20
+  command line flag is used with neato, it is assumed the positions have =
+been=20
+  set by one of the layout programs, and are therefore in points. Thus,=20
+  <TT>neato -n</TT> can accept input correctly without requiring a =
+<TT>-s</TT>=20
+  flag and, in fact, ignores any such flag. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:quantum"=20
+  name=3Dd:quantum><STRONG>quantum</STRONG></A>=20
+  <DD>If <B>quantum</B> &gt; 0.0, node label dimensions will be rounded =
+to=20
+  integral multiples of the quantum.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:rank"=20
+  name=3Dd:rank><STRONG>rank</STRONG></A>=20
+  <DD>Rank constraints on the nodes in a subgraph. If =
+<B>rank</B>=3D"same", all=20
+  nodes are placed on the same rank. If <B>rank</B>=3D"min", all nodes =
+are placed=20
+  on the minimum rank. If <B>rank</B>=3D"source", all nodes are placed =
+on the=20
+  minimum rank, and the only nodes on the minimum rank belong to some =
+subgraph=20
+  whose rank attribute is "source" or "min". Analogous criteria hold for =
+
+  <B>rank</B>=3D"max" and <B>rank</B>=3D"sink". (Note: the minimum rank =
+is topmost=20
+  or leftmost, and the maximum rank is bottommost or rightmost.)=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:rankdir"=20
+  name=3Dd:rankdir><STRONG>rankdir</STRONG></A>=20
+  <DD>Sets direction of graph layout. For example, if =
+<B>rankdir</B>=3D"LR", and=20
+  barring cycles, an edge <CODE>T -&gt; H;</CODE> will go from left to =
+right. By=20
+  default, graphs are laid out from top to bottom.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:ranksep"=20
+  name=3Dd:ranksep><STRONG>ranksep</STRONG></A>=20
+  <DD>In dot, this gives the desired rank separation, in inches. This is =
+the=20
+  minimum vertical distance between the bottom of the nodes in one rank =
+and the=20
+  tops of nodes in the next. If the value contains "equally", the =
+centers of all=20
+  ranks are spaced equally apart. Note that both settings are possible, =
+e.g.,=20
+  ranksep =3D "1.2 equally". In twopi, specifies radial separation of =
+concentric=20
+  circles.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:ratio"=20
+  name=3Dd:ratio><STRONG>ratio</STRONG></A>=20
+  <DD>Sets the aspect ratio (drawing height/drawing width) for the =
+drawing. Note=20
+  that this is adjusted before the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:size"><B>size</B></A>=20
+  attribute constraints are enforced.=20
+  <P>If <B>ratio</B> is numeric, it is taken as the desired aspect =
+ratio. Then,=20
+  if the actual aspect ratio is less than the desired ratio, the drawing =
+height=20
+  is scaled up to achieve the desired ratio; if the actual ratio is =
+greater than=20
+  that desired ratio, the drawing width is scaled up.=20
+  <P>If <B>ratio</B> =3D "fill" and the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:size"><B>size</B></A>=20
+  attribute is set, node positions are scaled, separately in both x and =
+y, so=20
+  that the final drawing exactly fills the specified size.=20
+  <P>If <B>ratio</B> =3D "compress" and the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:size"><B>size</B></A>=20
+  attribute is set, dot attempts to compress the initial layout to fit =
+in the=20
+  given size. This achieves a tighter packing of nodes but reduces the =
+balance=20
+  and symmetry. This feature only works in dot.=20
+  <P>If <B>ratio</B> =3D "expand", the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:size"><B>size</B></A>=20
+  attribute is set, and both the width and the height of the graph are =
+less than=20
+  the value in <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:size"><B>size</B></A>, =
+node=20
+  positions are scaled uniformly until at least one dimension fits <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:size"><B>size</B></A> =
+exactly.=20
+  Note that this is distinct from using <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:size"><B>size</B></A> =
+as the=20
+  desired size, as here the drawing is expanded before edges are =
+generated and=20
+  all node and text sizes remain unchanged.=20
+  <P>If <B>ratio</B> =3D "auto", the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:page"><B>page</B></A>=20
+  attribute is set and the graph cannot be drawn on a single page, then =
+<A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:size"><B>size</B></A> =
+is set=20
+  to an ``ideal'' value. In particular, the size in a given dimension =
+will be=20
+  the smallest integral multiple of the page size in that dimension =
+which is at=20
+  least half the current size. The two dimensions are then scaled =
+independently=20
+  to the new size. This feature only works in dot. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:rects"=20
+  name=3Dd:rects><STRONG>rects</STRONG></A>=20
+  <DD>Rectangles for fields of records, <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#points">in points</A>. =
+
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:regular"=20
+  name=3Dd:regular><STRONG>regular</STRONG></A>=20
+  <DD>If true, force polygon to be regular.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:remincross"=20
+  name=3Dd:remincross><STRONG>remincross</STRONG></A>=20
+  <DD>If true and there are multiple clusters, run cross minimization a =
+second=20
+  time.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:resolution"=20
+  name=3Dd:resolution><STRONG>resolution</STRONG></A>=20
+  <DD>This is a synonym for the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:dpi">dpi</A> =
+attribute.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:root"=20
+  name=3Dd:root><STRONG>root</STRONG></A>=20
+  <DD>This specifies nodes to be used as the center of the layout and =
+the root=20
+  of the generated spanning tree. As a graph attribute, this gives the =
+name of=20
+  the node. As a node attribute (circo only), it specifies that the node =
+should=20
+  be used as a central node. In twopi, this will actually be the central =
+node.=20
+  In circo, the block containing the node will be central in the drawing =
+of its=20
+  connected component. If not defined, twopi will pick a most central =
+node, and=20
+  circo will pick a random node.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:rotate"=20
+  name=3Dd:rotate><STRONG>rotate</STRONG></A>=20
+  <DD>If 90, set drawing orientation to landscape.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:samehead"=20
+  name=3Dd:samehead><STRONG>samehead</STRONG></A>=20
+  <DD>Edges with the same head and the same <B>samehead</B> value are =
+aimed at=20
+  the same point on the head. See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:sametail"=20
+  name=3Dd:sametail><STRONG>sametail</STRONG></A>=20
+  <DD>Edges with the same tail and the same <B>sametail</B> value are =
+aimed at=20
+  the same point on the tail. See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:samplepoints" =
+
+  name=3Dd:samplepoints><STRONG>samplepoints</STRONG></A>=20
+  <DD>If the input graph defines the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:vertices"><B>vertices</=
+B></A>=20
+  attribute, and output is dot or xdot, this gives the number of points =
+used for=20
+  a node whose shape is a circle or ellipse. It plays the same role in =
+neato,=20
+  when adjusting the layout to avoid overlapping nodes, and in image =
+maps.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:searchsize"=20
+  name=3Dd:searchsize><STRONG>searchsize</STRONG></A>=20
+  <DD>During network simplex, maximum number of edges with negative cut =
+values=20
+  to search when looking for one with minimum cut value.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:sep"=20
+  name=3Dd:sep><STRONG>sep</STRONG></A>=20
+  <DD>Fraction to increase polygons (multiply coordinates by 1 + sep) =
+for=20
+  purposes of determining overlap. Guarantees a minimal non-zero =
+distance=20
+  between nodes. If unset but <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:esep">esep</A> is =
+defined,=20
+  <TT>sep</TT> will be set to <TT>esep/0.8</TT>. If <TT>esep</TT> is =
+unset, the=20
+  default value is used.=20
+  <P>When <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:overlap">overlap</A>=3D=
+"ipsep"=20
+  or "vpsc", <TT>sep</TT> gives a minimum distance, in inches, to be =
+left=20
+  between nodes. In this case, if <TT>sep</TT> is a pointf, the x and y=20
+  separations can be specified separately. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:shape"=20
+  name=3Dd:shape><STRONG>shape</STRONG></A>=20
+  <DD>Set the shape of a node.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:shapefile"=20
+  name=3Dd:shapefile><STRONG>shapefile</STRONG></A>=20
+  <DD>If defined, shapefile specifies a file containing user-supplied =
+node=20
+  content. The <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:shape"><B>shape</B></A>=
+ of the=20
+  node is set to box. The image in the shapefile must be rectangular. =
+The image=20
+  formats supported as well as the precise semantics of how the file is =
+used=20
+  depends on the <A =
+href=3D"http://www.graphviz.org/doc/info/output.html">output=20
+  format</A>. For further details, see <A=20
+  =
+href=3D"http://www.graphviz.org/Documentation/html/shapehowto.html#ext_im=
+age">External=20
+  PostScript files</A>.=20
+  <P>There is one exception to this usage. If <B>shape</B> is set to =
+"epsf",=20
+  shapefile gives a filename containing a definition of the node in =
+PostScript.=20
+  The graphics defined must be contain all of the node content, =
+including any=20
+  desired boundaries. For further details, see <A=20
+  =
+href=3D"http://www.graphviz.org/Documentation/html/shapehowto.html#ext_ps=
+">External=20
+  PostScript files</A>. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:showboxes"=20
+  name=3Dd:showboxes><STRONG>showboxes</STRONG></A>=20
+  <DD>Print guide boxes in PostScript at the beginning of routesplines =
+if 1, or=20
+  at the end if 2. (Debugging)=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:sides"=20
+  name=3Dd:sides><STRONG>sides</STRONG></A>=20
+  <DD>Number of sides if <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:shape"><B>shape</B></A>=
+=3Dpolygon.=20
+
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:size"=20
+  name=3Dd:size><STRONG>size</STRONG></A>=20
+  <DD>Maximum width and height of drawing, in inches. If defined and the =
+drawing=20
+  is too large, the drawing is uniformly scaled down so that it fits =
+within the=20
+  given size.=20
+  <P>If <TT>size</TT> ends in an exclamation point (<TT>!</TT>), then it =
+is=20
+  taken to be the desired size. In this case, if both dimensions of the =
+drawing=20
+  are less than <TT>size</TT>, the drawing is scaled up uniformly until =
+at least=20
+  one dimension equals its dimension in <TT>size</TT>.=20
+  <P>Note that there is some interaction between the <B>size</B> and <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:ratio"><B>ratio</B></A>=
+=20
+  attributes. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:skew"=20
+  name=3Dd:skew><STRONG>skew</STRONG></A>=20
+  <DD>Skew factor for <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:shape"><B>shape</B></A>=
+=3Dpolygon.=20
+  Positive values skew top of polygon to right; negative to left.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:splines"=20
+  name=3Dd:splines><STRONG>splines</STRONG></A>=20
+  <DD>Controls how, and if, edges are represented. If true, edges are =
+drawn as=20
+  splines routed around nodes; if false, edges are drawn as line =
+segments. If=20
+  set to "", no edges are drawn at all.=20
+  <P>(1 March 2007) The values <TT>line</TT> and <TT>spline</TT> can be =
+used as=20
+  synonyms for <TT>false</TT> and <TT>true</TT>, respectively. In =
+addition, the=20
+  value <TT>polyline</TT> specifies that edges should be drawn as =
+polylines.=20
+  <P>By default, the attribute is unset. How this is interpreted depends =
+on the=20
+  layout. For dot, the default is to draw edges as splines. For all =
+other=20
+  layouts, the default is to draw edges as line segments. Note that for =
+these=20
+  latter layouts, if <TT>splines=3D"true"</TT>, this requires =
+non-overlapping=20
+  nodes (cf. <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:overlap"><B>overlap</B>=
+</A>).=20
+  If fdp is used for layout and <TT>splines=3D"compound"</TT>, then the =
+edges are=20
+  drawn to avoid clusters as well as nodes. </P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:start"=20
+  name=3Dd:start><STRONG>start</STRONG></A>=20
+  <DD>Parameter used to determine the initial layout of nodes. If unset, =
+the=20
+  nodes are randomly placed in a unit square with the same seed is =
+always used=20
+  for the random number generator, so the initial placement is =
+repeatable.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:style"=20
+  name=3Dd:style><STRONG>style</STRONG></A>=20
+  <DD>Set style for node or edge. For cluster subgraph, if "filled", the =
+cluster=20
+  box's background is filled.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:stylesheet"=20
+  name=3Dd:stylesheet><STRONG>stylesheet</STRONG></A>=20
+  <DD>A URL or pathname specifying an XML style sheet, used in SVG =
+output.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:tailURL"=20
+  name=3Dd:tailURL><STRONG>tailURL</STRONG></A>=20
+  <DD>If <B>tailURL</B> is defined, it is output as part of the tail =
+label of=20
+  the edge. Also, this value is used near the tail node, overriding any =
+<A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:URL">URL</A> value. =
+See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:tailclip"=20
+  name=3Dd:tailclip><STRONG>tailclip</STRONG></A>=20
+  <DD>If true, the tail of an edge is clipped to the boundary of the =
+tail node;=20
+  otherwise, the end of the edge goes to the center of the node, or the =
+center=20
+  of a port, if applicable.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:tailhref"=20
+  name=3Dd:tailhref><STRONG>tailhref</STRONG></A>=20
+  <DD>Synonym for <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:tailURL">tailURL</A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:taillabel"=20
+  name=3Dd:taillabel><STRONG>taillabel</STRONG></A>=20
+  <DD>Text label to be placed near tail of edge. See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:tailport"=20
+  name=3Dd:tailport><STRONG>tailport</STRONG></A>=20
+  <DD>Indicates where on the tail node to attach the tail of the edge. =
+See <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#h:undir_note">limitation<=
+/A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:tailtarget"=20
+  name=3Dd:tailtarget><STRONG>tailtarget</STRONG></A>=20
+  <DD>If the edge has a <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:tailURL">tailURL</A>, =
+this=20
+  attribute determines which window of the browser is used for the URL. =
+Setting=20
+  it to "_graphviz" will open a new window if it doesn't already exist, =
+or reuse=20
+  it if it does. If undefined, the value of the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:target">target</A> =
+is used.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:tailtooltip"=20
+  name=3Dd:tailtooltip><STRONG>tailtooltip</STRONG></A>=20
+  <DD>Tooltip annotation attached to the tail of an edge. This is used =
+only if=20
+  the edge has a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:tailURL">tailURL</A> =
+
+  attribute.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:target"=20
+  name=3Dd:target><STRONG>target</STRONG></A>=20
+  <DD>If the object has a URL, this attribute determines which window of =
+the=20
+  browser is used for the URL. See <A=20
+  =
+href=3D"http://www.w3.org/TR/html401/present/frames.html#adef-target">W3C=
+=20
+  documentation</A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:tooltip"=20
+  name=3Dd:tooltip><STRONG>tooltip</STRONG></A>=20
+  <DD>Tooltip annotation attached to the node or edge. If unset, =
+Graphviz will=20
+  use the object's <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:label">label</A> if =
+defined.=20
+  Note that if the label is a record specification or an HTML-like =
+label, the=20
+  resulting tooltip may be unhelpful. In this case, if tooltips will be=20
+  generated, the user should set a <TT>tooltip</TT> attribute =
+explicitly.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:truecolor"=20
+  name=3Dd:truecolor><STRONG>truecolor</STRONG></A>=20
+  <DD>If set explicitly to true or false, the value determines whether =
+or not=20
+  internal bitmap rendering relies on a truecolor color model or uses a =
+color=20
+  palette. If the attribute is unset, truecolor is not used unless there =
+is a <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:shapefile">shapefile</A=
+>=20
+  property for some node in the graph. The output model will use the =
+input model=20
+  when possible.=20
+  <P>Use of color palettes results in less memory usage during creation =
+of the=20
+  bitmaps and smaller output files.=20
+  <P>Usually, the only time it is necessary to specify the truetype =
+model is if=20
+  the graph uses more than 256 colors. However, if one uses <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:bgcolor">bgcolor</A>=3D=
+transparent=20
+  with a color palette, font antialiasing can show up as a fuzzy white =
+area=20
+  around characters. Using <B>truecolor</B>=3Dtrue avoids this problem. =
+</P>
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:vertices"=20
+  name=3Dd:vertices><STRONG>vertices</STRONG></A>=20
+  <DD>If the input graph defines this attribute, the node is polygonal, =
+and=20
+  output is dot or xdot, this attribute provides the coordinates of the =
+vertices=20
+  of the node's polygon, in inches. If the node is an ellipse or circle, =
+the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:samplepoints">samplepoi=
+nts</A>=20
+  attribute affects the output.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:viewport"=20
+  name=3Dd:viewport><STRONG>viewport</STRONG></A>=20
+  <DD>Clipping window on final drawing.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:voro_margin"=20
+  name=3Dd:voro_margin><STRONG>voro_margin</STRONG></A>=20
+  <DD>Factor to scale up drawing to allow margin for expansion in =
+Voronoi=20
+  technique. dim' =3D (1+2*margin)*dim.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:weight"=20
+  name=3Dd:weight><STRONG>weight</STRONG></A>=20
+  <DD>Weight of edge. In dot, the heavier the weight, the shorter, =
+straighter=20
+  and more vertical the edge is. In neato, the heavier the weight, the =
+more=20
+  neato will try to place the end points so that the length of the edge =
+is <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:len">len</A>.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:width"=20
+  name=3Dd:width><STRONG>width</STRONG></A>=20
+  <DD>Width of node, in inches. This is taken as the initial, minimum =
+width of=20
+  the node. If <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:fixedsize"><B>fixedsize=
+</B></A>=20
+  is true, this will be the final width of the node. Otherwise, if the =
+node=20
+  label requires more width to fit, the node's width will be increased =
+to=20
+  contain the label. Note also that, if the output format is dot, the =
+value=20
+  given to <B>width</B> will be the final value.=20
+  <DT><A href=3D"http://graphviz.org/doc/info/attrs.html#a:z"=20
+  name=3Dd:z><STRONG>z</STRONG></A>=20
+  <DD>Provides z coordinate value for 3D layouts and displays. If the =
+graph has=20
+  <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:dim"><B>dim</B></A> =
+set to=20
+  3 (or more), neato will use a node's <B>z</B> value for the z =
+coordinate of=20
+  its initial position if its <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:pos"><B>pos</B></A> =
+attribute=20
+  is also defined.=20
+  <P>Even if no <B>z</B> values are specified in the input, it is =
+necessary to=20
+  declare a <B>z</B> attribute for nodes, e.g, using =
+<TT>node[z=3D""]</TT> in=20
+  order to get z values on output. Thus, setting <TT>dim=3D3</TT> but =
+not=20
+  declaring <B>z</B> will cause <TT>neato -Tvrml</TT> to layout the =
+graph in 3D=20
+  but project the layout onto the xy-plane for the rendering. If the =
+<B>z</B>=20
+  attribute is declared, the final rendering will be in 3D. =
+</P></DD></DL>
+<HR>
+
+<H1>Attribute Type Descriptions</H1>The following list gives the legal =
+strings=20
+corresponding to values of the given types.=20
+<DL>
+  <DT><A name=3Dk:arrowType><STRONG>arrowType</STRONG></A>=20
+  <DD>
+  <TABLE>
+    <TBODY>
+    <TR>
+      <TD>"normal"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_normal.gif">=20
+      <TD>"inv"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_inv.gif"></TD>
+    <TR>
+      <TD>"dot"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_dot.gif">=20
+      <TD>"invdot"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_invdot.gif"></TD>
+    <TR>
+      <TD>"odot"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_odot.gif">=20
+      <TD>"invodot"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_invodot.gif"></TD>
+    <TR>
+      <TD>"none"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_none.gif">=20
+      <TD>"tee"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_tee.gif"></TD>
+    <TR>
+      <TD>"empty"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_empty.gif">=20
+      <TD>"invempty"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_invempty.gif"></TD>
+    <TR>
+      <TD>"diamond"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_diamond.gif">=20
+      <TD>"odiamond"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_odiamond.gif"></TD>
+    <TR>
+      <TD>"ediamond"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_ediamond.gif">=20
+      <TD>"crow"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_crow.gif"></TD>
+    <TR>
+      <TD>"box"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_box.gif">=20
+      <TD>"obox"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_obox.gif"></TD>
+    <TR>
+      <TD>"open"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_open.gif">=20
+      <TD>"halfopen"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_halfopen.gif"></TD>
+    <TR>
+      <TD>"vee"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/a_open.gif"> =
+</TR></TBODY></TABLE>
+  <P>These are the basic set of backward-compatible arrow shapes. In =
+addition,=20
+  there is a grammar of <A =
+href=3D"http://graphviz.org/doc/info/arrows.html">arrow=20
+  shapes</A> which can be used to describe a collection of 1260 arrow =
+shapes as=20
+  modifications of a primitive set of 9 arrows. The basic arrows shown =
+above=20
+  contain all of the primitive shapes (<TT>box</TT>, <TT>crow</TT>,=20
+  <TT>diamond</TT>, <TT>dot</TT>, <TT>inv</TT>, <TT>none</TT>, =
+<TT>normal</TT>,=20
+  <TT>tee</TT>, <TT>vee</TT>) plus ones that can be derived from the =
+grammar=20
+  (<TT>odot</TT>, <TT>invdot</TT>, <TT>invodot</TT>, <TT>obox</TT>,=20
+  <TT>odiamond</TT>) plus some supported as special cases for=20
+  backward-compatibility (<TT>ediamond</TT>, <TT>open</TT>, =
+<TT>halfopen</TT>,=20
+  <TT>empty</TT>, <TT>invempty</TT>). </P>
+  <DT><A name=3Dk:clusterMode><STRONG>clusterMode</STRONG></A>=20
+  <DD>"local","global","none"=20
+  <DT><A name=3Dk:color><STRONG>color</STRONG></A>=20
+  <DD>Colors can be specified using one of four formats.=20
+  <TABLE>
+    <TBODY>
+    <TR>
+      <TD>"#%2x%2x%2x"
+      <TD>Red-Green-Blue (RGB)</TD>
+    <TR>
+      <TD>"#%2x%2x%2x%2x"
+      <TD>Red-Green-Blue-Alpha (RGBA)</TD>
+    <TR>
+      <TD>H[,&nbsp;]+S[,&nbsp;]+V
+      <TD>Hue-Saturation-Value (HSV) 0.0 &lt;=3D H,S,V &lt;=3D 1.0</TD>
+    <TR>
+      <TD>string
+      <TD><A href=3D"http://graphviz.org/doc/info/colors.html">color=20
+    name</A></TD></TR></TBODY></TABLE>The specification for the RGB and =
+RGBA=20
+  formats are the format strings used by <TT>sscanf</TT> to scan the =
+color=20
+  value. Thus, these values have the form "#RGB" or "#RGBA", where R, G, =
+B, and=20
+  A each consist of 2 hexidecimal digits, and can be separated by =
+whitespace.=20
+  HSV colors have the form of 3 numbers between 0 and 1, separated by =
+whitespace=20
+  or commas.=20
+  <P>String-valued color specifications are case-insensitive and =
+interpreted in=20
+  the context of the current color scheme, as specified by the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:colorscheme">colorschem=
+e</A>=20
+  attribute. If this is undefined, the X11 naming scheme will be used. =
+An=20
+  initial <TT>"/"</TT> character can be used to override the use of the=20
+  <TT>colorscheme</TT> attribute. In particular, a single initial =
+<TT>"/"</TT>=20
+  will cause the string to be evaluated using the default X11 naming. If =
+the=20
+  color value has the form <TT>"/ssss/yyyy"</TT>, the name <TT>yyyy</TT> =
+is=20
+  interpreted using the schema <TT>ssss</TT>. If the color scheme name =
+is empty,=20
+  i.e., the color has the form <TT>"//yyyy"</TT>, the =
+<TT>colorscheme</TT>=20
+  attribute is used. Thus, the forms <TT>"yyyy"</TT> and =
+<TT>"//yyyy"</TT> are=20
+  equivalent.=20
+  <P>At present, Graphviz recognizes the default color scheme =
+<TT>X11</TT>, and=20
+  the <A=20
+  =
+href=3D"http://www.personal.psu.edu/faculty/c/a/cab38/ColorBrewer/ColorBr=
+ewer_intro.html">Brewer=20
+  color schemes</A>. Please note that Brewer color schemes are covered =
+by this=20
+  <A =
+href=3D"http://graphviz.org/doc/info/colors.html#brewer_license">license<=
+/A>.=20
+
+  <P>Examples:<BR>
+  <TABLE border=3D1>
+    <TBODY>
+    <TR>
+      <TH>Color
+      <TH>RGB
+      <TH>HSV
+      <TH>String</TR>=20
+    <TR>
+      <TD align=3Dmiddle bgColor=3D#ffffff>White
+      <TD>"#ffffff"
+      <TD>"0.000 0.000 1.000"
+      <TD>"white"</TD>
+    <TR>
+      <TD align=3Dmiddle bgColor=3D#000000><FONT =
+color=3Dwhite>Black</FONT>
+      <TD>"#000000"
+      <TD>"0.000 0.000 0.000"
+      <TD>"black"</TD>
+    <TR>
+      <TD align=3Dmiddle bgColor=3D#ff0000>Red
+      <TD>"#ff0000"
+      <TD>"0.000 1.000 1.000"
+      <TD>"red"</TD>
+    <TR>
+      <TD align=3Dmiddle bgColor=3D#40e0d0>Turquoise
+      <TD>"#40e0d0"
+      <TD>"0.482 0.714 0.878"
+      <TD>"turquoise"</TD>
+    <TR>
+      <TD align=3Dmiddle bgColor=3D#a0522d>Sienna
+      <TD>"#a0522d"
+      <TD>"0.051 0.718 0.627"
+      <TD>"sienna"</TD></TR></TBODY></TABLE>
+  <P>Note that some output formats, e.g., <A=20
+  href=3D"http://graphviz.org/doc/info/output.html#a:mif">mif</A>, only =
+support a=20
+  limited number of specific colors.=20
+  <P>The string value <TT>transparent</TT> can be used to indicate no =
+color.=20
+  This is only available in the output formats ps, svg, fig, vmrl, and =
+the=20
+  bitmap formats. It can be used whenever a color is needed but is most =
+useful=20
+  with the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:bgcolor">bgcolor</A> =
+
+  attribute. Usually, the same effect can be achieved by setting <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:style">style</A> to=20
+  <TT>invis</TT>. </P>
+  <DT><A name=3Dk:colorList><STRONG>colorList</STRONG></A>=20
+  <DD>A colon-separated list of color values: <I>C</I>(:<I>C</I>)* where =
+each=20
+  <I>C</I> is a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#k:color">color</A> =
+value.=20
+  <DT><A name=3Dk:dirType><STRONG>dirType</STRONG></A>=20
+  <DD>For an edge <CODE>T -&gt; H;</CODE>=20
+  <TABLE>
+    <TBODY>
+    <TR>
+      <TD>"forward"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/forward.gif">=20
+      <TD>"back"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/back.gif"></TD>
+    <TR>
+      <TD>"both"
+      <TD><IMG src=3D"http://graphviz.org/doc/info/both.gif">=20
+      <TD>"none"
+      <TD><IMG=20
+  =
+src=3D"http://graphviz.org/doc/info/nohead.gif"></TD></TR></TBODY></TABLE=
+>For=20
+  undirected edges <CODE>T -- H;</CODE>, one of the nodes, usually the =
+righthand=20
+  one, is treated as the head for the purpose of interpreting "forward" =
+and=20
+  "back".=20
+  <DT><A name=3Dk:escString><STRONG>escString</STRONG></A>=20
+  <DD>string allowing escape sequences which are replaced according to =
+the=20
+  context. For node attributes, the substring "\N" is replaced by the =
+name of=20
+  the node, and the substring "\G" by the name of the graph. For graph =
+or=20
+  cluster attributes, the substring "\G" is replaced by the name of the =
+graph or=20
+  cluster. For edge attributes, the substring "\E" is replaced by the =
+name of=20
+  the edge, the substring "\G" is replaced by the name of the graph or =
+cluster,=20
+  and the substrings "\T" and "\H" by the names of the tail and head =
+nodes,=20
+  respectively. The name of an edge is the string formed from the name =
+of the=20
+  tail node, the appropriate edge operator ("--" or "-&gt;") and the =
+name of the=20
+  head node.=20
+  <P>In addition, if the associated attribute is <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#a:label">label</A>, <A =
+
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#a:headlabel">headlabel</A=
+> or <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#a:taillabel">taillabel</A=
+>, the=20
+  escape sequences "\n", "\l" and "\r" divide the label into lines, =
+centered,=20
+  left-justified, and right-justified, respectively. </P>
+  <DT><A name=3Dk:layerList><STRONG>layerList</STRONG></A>=20
+  <DD>list of strings separated by characters from the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#a:layersep">layersep</A> =
+
+  attribute (by default, colons, tabs or spaces), defining <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#a:layer">layer</A> =
+names and=20
+  implicitly numbered 1,2,...=20
+  <DT><A name=3Dk:layerRange><STRONG>layerRange</STRONG></A>=20
+  <DD>layerId or layerId<B>s</B>layerId,<BR>where layerId =3D "all", a =
+decimal=20
+  integer or a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#a:layer">layer</A> =
+name. (An=20
+  integer i corresponds to layer i.) The string <B>s</B> consists of 1 =
+or more=20
+  separator characters specified by the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#a:layersep">layersep</A> =
+
+  attribute.=20
+  <DT><A name=3Dk:lblString><STRONG>lblString</STRONG></A>=20
+  <DD>an <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:escString">escString</A=
+> or an=20
+  <A href=3D"http://graphviz.org/doc/info/shapes.html#html">HTML =
+label</A>.=20
+  <DT><A name=3Dk:outputMode><STRONG>outputMode</STRONG></A>=20
+  <DD>"breadthfirst","nodesfirst","edgesfirst" These specify the order =
+in which=20
+  nodes and edges are drawn in concrete output. The default =
+"breadthfirst" is=20
+  the simplest, but when the graph layout does not avoid edge-node =
+overlap, this=20
+  mode will sometimes have edges drawn over nodes and sometimes on top =
+of nodes.=20
+  If the mode "nodesfirst" is chosen, all nodes are drawn first, =
+followed by the=20
+  edges. This guarantees an edge-node overlap will not be mistaken for =
+an edge=20
+  ending at a node. On the other hand, usually for aesthetic reasons, it =
+may be=20
+  desirable that all edges appear beneath nodes, even if the resulting =
+drawing=20
+  is ambiguous. This can be achieved by choosing "edgesfirst".=20
+  <DT><A name=3Dk:packMode><STRONG>packMode</STRONG></A>=20
+  <DD>"node","clust","graph" These specify the granularity of packing =
+connected=20
+  components when the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:pack">pack</A> =
+attribute is=20
+  true. A value of "node" causes packing at the node and edge label, =
+with no=20
+  overlapping of these objects. This produces a layout with the least =
+area, but=20
+  it also allows interleaving, where a node of one component may lie =
+between two=20
+  nodes in another component. A value of "graph" does a packing using =
+the=20
+  bounding box of the component. Thus, there will be a rectangular =
+region around=20
+  a component free of elements of any other component. A value of =
+"clust"=20
+  guarantees that top-level clusters are kept intact. What effect a =
+value has=20
+  also depends on the layout algorithm. For example, neato does not =
+support=20
+  clusters, so a value of "clust" will have the same effect as the =
+default=20
+  "node" value.=20
+  <DT><A name=3Dk:pagedir><STRONG>pagedir</STRONG></A>=20
+  <DD>"BL", "BR", "TL", "TR", "RB", "RT", "LB", "LT". These specify the =
+8 row or=20
+  column major orders for traversing a rectangular array, the first =
+character=20
+  corresponding to the major order and the second to the minor order. =
+Thus, for=20
+  "BL", the major order is from bottom to top, and the minor order is =
+from left=20
+  to right. This means the bottom row is traversed first, from left to =
+right,=20
+  then the next row up, from left to right, and so on, until the topmost =
+row is=20
+  traversed.=20
+  <DT><A name=3Dk:point><STRONG>point</STRONG></A>=20
+  <DD>"%f,%f"('!') representing the point (x,y). The optional '!' =
+indicates the=20
+  node position should not change (input-only).=20
+  <P>If <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:dim">dim</A> is 3 or=20
+  more, <B>point</B> may also have the format "%f,%f,%f"('!') to =
+represent the=20
+  point (x,y,z). </P>
+  <DT><A name=3Dk:pointf><STRONG>pointf</STRONG></A>=20
+  <DD>"%lf,%lf" representing the point (x,y).=20
+  <DT><A name=3Dk:pointfList><STRONG>pointfList</STRONG></A>=20
+  <DD>list of pointf, separated by spaces.=20
+  <DT><A name=3Dk:portPos><STRONG>portPos</STRONG></A>=20
+  <DD>modifier indicating where on a node an edge should be aimed. It =
+has the=20
+  form <TT><I>portname</I>[:<I>compass_point</I>]</TT> or=20
+  <TT><I>compass_point</I></TT>. If the first form is used, the =
+corresponding=20
+  node must either have <A=20
+  href=3D"http://graphviz.org/doc/info/shapes.html#record">record</A> =
+shape with=20
+  one of its fields having the given <I>portname</I>, or have an <A=20
+  href=3D"http://graphviz.org/doc/info/shapes.html#html">HTML-like =
+label</A>, one=20
+  of whose components has a <TT>PORT</TT> attribute set to =
+<I>portname</I>. In=20
+  this case, the edge is aimed for the center of the corresponding =
+field.=20
+  <P>If a compass point is used, it must have the form=20
+  <TT>"n","ne","e","se","s","sw","w","nw"</TT>. This modifies the edge =
+placement=20
+  to aim for the corresponding compass point on the port or, in the =
+second form=20
+  where no <I>portname</I> is supplied, on the node itself.=20
+  <P>This attribute can be attached to an edge using the <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:headport">headport</A> =
+and <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#k:tailport">tailport</A> =
+
+  attributes, or as part of the edge description as in=20
+  <CENTER><TT>node1:port1 -&gt; node2:port5:nw;</TT> </CENTER>
+  <P>Note that it is legal to have a portname the same as one of the =
+compass=20
+  points. In this case, this reference will be resolved to the port. =
+Thus, if=20
+  node <TT>A</TT> has a port <TT>w</TT>, then <TT>headport=3Dw</TT> will =
+refer to=20
+  the port and not the compass point. At present, in this case, there is =
+no way=20
+  to specify that the compass point should be used. </P>
+  <DT><A name=3Dk:rankType><STRONG>rankType</STRONG></A>=20
+  <DD>"same", "min", "source", "max", "sink"=20
+  <DT><A name=3Dk:rankdir><STRONG>rankdir</STRONG></A>=20
+  <DD>"TB", "LR", "BT", "RL", corresponding to directed graphs drawn =
+from top to=20
+  bottom, from left to right, from bottom to top, and from right to =
+left,=20
+  respectively.=20
+  <DT><A name=3Dk:rect><STRONG>rect</STRONG></A>=20
+  <DD>"%d,%d,%d,%d" The rect llx,lly,urx,ury gives the coordinates, in =
+points,=20
+  of the lower-left corner (llx,lly) and the upper-right corner =
+(urx,ury).=20
+  <DT><A name=3Dk:shape><STRONG>shape</STRONG></A>=20
+  <DD>A string specifying the <A=20
+  href=3D"http://graphviz.org/doc/info/shapes.html">shape</A> of a node. =
+There are=20
+  three main types of shapes : <A=20
+  =
+href=3D"http://graphviz.org/doc/info/shapes.html#polygon">polygon-based</=
+A>, <A=20
+  =
+href=3D"http://graphviz.org/doc/info/shapes.html#record">record-based</A>=
+ and <A=20
+  =
+href=3D"http://graphviz.org/doc/info/shapes.html#epsf">user-defined</A>. =
+
+  <DT><A name=3Dk:splineType><STRONG>splineType</STRONG></A>=20
+  <DD>spline ( ';' spline )*<BR>
+  <TABLE>
+    <TBODY>
+    <TR>
+      <TD align=3Dright>where spline
+      <TD>=3D
+      <TD>(endp)? (startp)? point (triple)+</TD>
+    <TR>
+      <TD align=3Dright>and triple
+      <TD>=3D
+      <TD>point point point</TD>
+    <TR>
+      <TD align=3Dright>and endp
+      <TD>=3D
+      <TD>"e,%d,%d"</TD>
+    <TR>
+      <TD align=3Dright>and startp
+      <TD>=3D
+      <TD>"s,%d,%d"</TD></TR></TBODY></TABLE>If a spline has points =
+p<SUB>1</SUB>=20
+  p<SUB>2</SUB> p<SUB>3</SUB> ... p<SUB>n</SUB>, (n =3D 1 (mod 3)), the =
+points=20
+  correspond to the control points of a B-spline from p<SUB>1</SUB> to=20
+  p<SUB>n</SUB>. If startp is given, it touches one node of the edge, =
+and the=20
+  arrowhead goes from p<SUB>1</SUB> to startp. If startp is not given,=20
+  p<SUB>1</SUB> touches a node. Similarly for p<SUB>n</SUB> and endp.=20
+  <DT><A name=3Dk:startType><STRONG>startType</STRONG></A>=20
+  <DD>has the syntax <TT>[<I>style</I>][<I>seed</I>]</TT>.=20
+  <P>If <I>style</I> is present, it must be one of the strings=20
+  <TT>"regular"</TT>, <TT>"self"</TT>, or <TT>"random"</TT>. In the =
+first case,=20
+  the nodes are placed regularly about a circle. In the second case, an=20
+  abbreviated version of neato is run to obtain the initial layout. In =
+the last=20
+  case, the nodes are placed randomly in a unit square.=20
+  <P>If <I>seed</I> is present, it specifies a seed for the random =
+number=20
+  generator. If <I>seed</I> is a positive number, this is used as the =
+seed. If=20
+  it is anything else, the current time, and possibly the process id, is =
+used to=20
+  pick a seed, thereby making the choice more random. In this case, the =
+seed=20
+  value is stored in the graph.=20
+  <P>If the value is just <TT>"random"</TT>, a time-based seed is =
+chosen.=20
+  <P>Note that input positions, specified by a node's <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:pos">pos</A> =
+attribute, are=20
+  only used when the style is <TT>"random"</TT>. </P>
+  <DT><A name=3Dk:style><STRONG>style</STRONG></A>=20
+  <DD>styleItem ( ',' styleItem )*<BR>
+  <TABLE>
+    <TBODY>
+    <TR>
+      <TD align=3Dright>where styleItem
+      <TD>=3D
+      <TD>name or name'('args')'</TD>
+    <TR>
+      <TD align=3Dright>and args
+      <TD>=3D
+      <TD>name ( ',' name )*</TD>
+    <TR>
+      <TD align=3Dright>and name
+      <TD>=3D
+      <TD>[^)(, &nbsp;][^)(,]*</TD></TR></TBODY></TABLE>Note that =
+whitespace=20
+  characters are ignored, except for names which can contain them. A =
+name cannot=20
+  contain any comma, or left or right parenthesis, and it cannot begin =
+with a=20
+  whitespace character.=20
+  <P>At present, the recognized style names are "dashed", "dotted", =
+"solid",=20
+  "invis" and "bold" for nodes and edges, and "filled", "diagonals" and=20
+  "rounded" for nodes only. The styles "filled" and "rounded" are =
+recognized for=20
+  clusters. Additional styles are available in device-dependent form. =
+Style=20
+  lists are passed to device drivers, which can use this to generate =
+appropriate=20
+  output.=20
+  <P>The <A name=3Dd:setlinewidth><TT>setlinewidth</TT></A> style value =
+can be=20
+  used for more control over the width of edges and node borders than is =
+allowed=20
+  by <TT>bold</TT>. This style value takes an argument, specifying the =
+width of=20
+  the line in <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#points">points</A>. =
+For example,=20
+  <TT>style=3D"bold"</TT> is equivalent to =
+<TT>style=3D"setlinewidth(2)"</TT>. </P>
+  <DT><A name=3Dk:viewPort><STRONG>viewPort</STRONG></A>=20
+  <DD>"%lf,%lf,%lf,%lf,%lf" The viewPort "W,H,Z,x,y" specifies a =
+viewport for=20
+  the final image. The pair (W,H) gives the dimensions (width and =
+height) of the=20
+  viewport image, in <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#points">points</A>, in =
+the=20
+  original graph drawing. The optional Z is the zoom factor, i.e., the =
+resulting=20
+  image will be Z*W by Z*H points in size. By default, Z is 1. The =
+optional pair=20
+  (x,y) give the position in the graph, in <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#points">points</A>, of =
+the=20
+  center of the viewport. To focus on a particular node, (x,y) can be =
+set to the=20
+  <A href=3D"http://graphviz.org/doc/info/attrs.html#a:pos">pos</A> =
+attribute=20
+  "x,y" of the node. By default, (x,y) is the center of the graph =
+bounding box,=20
+  i.e., (bbx/2,bby/2), where "bbx,bby" is the value of the bounding box=20
+  attribute <A =
+href=3D"http://graphviz.org/doc/info/attrs.html#a:bb">bb</A>.=20
+</DD></DL></BODY></HTML>
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/colorlist.gif
+
+R0lGODlhUwCbAOMAAP///wAAAP7//9/f319fXz8/P7+/vx8fH5+fn39/f/8AAAAA/wAAAAAAAAAA
+AAAAACH5BAEAAAIALAAAAABTAJsAAAT+EMhJq7046827/2AojmRpnmiqrmzrvjAXxLQV3Hiu5zWq
+j7/eB7ciCjPGV/IIuDGdQihTIoXNpjbrFWvbqrzcC7hUDWPKIrRZPB6212zSGy4G0kHzc/5eUSP5
+eEOAIXsThYMUh36IcRuHjIYyLgMElQUGMYWPIARXBwWZki0EoAAHm2mOqCADCKeZe6seCQQDr1ai
+LAmesoKOLgEHErdKuSunBq4BBgPFqi0IwQa7Bc0ti4mQHY+9d5vda6jYjONZ2nWp59lA4EflSO01
+7xrzWPW/iPFdfPeBcPrPuPQjA9DDQB8HDSYssrBLwS880kRUt6PiDnUgFmBEoXFjiQX+ID2SANlR
+ZAiSJU12QJlS5QaWLj2wbBnzwsyaGmbSxDlB506ePnla8BlSaE+iRisokPAz6VIATY0+jSp0alIM
+Vq9ayKqVAteuEr6CFduVrFazV9E6ZQrWK9u2Yd/CVStVblu6Ve2O1ZtWgd+/f88CHlx2sN+xhp8K
+NoyY8F3HjQM/ljyX8mS4EyxfxhyXc+ekFkM3jDIRT2lvoxOlPrHk2mpCD2XEpjdboTw6tanklniN
+HERto18rASdcixyRvXY7c6PyXmxrNL6tSEAsukEW1UPJxq5ctbEU2bXTa3FqQIFgCMT/4U4g2Q1M
+y9cf2xKtFLCA870Px5d/Qvgv36FlUN0BwsR3BnleBJAALvypUJ4ECdh3H34pGFDAAZUsaFyAyF1X
+k3QuidOda4Q0Z4dH3RS3nxwjmhBci+wAmA+JqDEYjjww7kPaEzmqplxrAgkH5D+nKTRkPqJZpFWP
+njXp5JMXRAAAOw==
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/constraint.gif
+
+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
+aZqmYZCAQE5a7cVZS7H33rZt27Zt2ypIQCAnrfbirKXYe2/btm3btm0UJCCQk1Z7/3HWVOy9t23b
+tm3bNkgAICCQk1Z7cdZUSAGBnLTai7PevPufQUJCICet9uKsrRACAjlptRdnvXn3P4OElBDISau9
+OGsJhZQQyEmrvTjrzbv/GCTkFBDISau9OGso5BQQyEmrvTjrzbv/FyTkFBDISau9OGso5BQQyEmr
+vTjrzbv/FyTkhEBOWu3FWUso5IRATlrtxVlv3v2/ICElBHLSai/OmkIhJQRy0movznrz7r8FCTkh
+kJNWe3HWFAo5IZCTVntx1pt3/ytISAmBnLTai7O2UEgJgZy02ouz3rz7X0FCCgjkpNVenDUWQkAB
+gZy02ouz3rz7X0FCQiAnrfbirP+1EAICOWm1F2e9efe/goSEQE5a7cVZayEEBHLSai/OevPuLyQg
+kJMCIQQEctJqL856AyGggEBOCgQEctJqL856cw6FnLRSACQEctJqL856TyEgAFDISSuFQE5a7cVZ
+bw2FlBDISSuFQkoI5KTVXpz1BlBICYGctFIopIRATlrtxVnvKQQUEMhJq7VCiHvvvdd1XZCQEMhJ
+q7VCiHvvvdd1XQAkJARy0mpvFUJgjDGGYQAkJARy0mpvFUJgjDGGYRMkBARy0movnkLknHOGQUJA
+ICet9uIpRM45ZxkACQGBnLTai68QOeecUZAQEMhJq734CpFzztkFCQjkpNVenKX/0FrrCxIQyEmr
+vThLobXWGSQEBHLSai/OVAittTZBQkAgJ6324kyF0FprFiQgkJNWe3HGQmutAUhAICet9uKMhdZa
+T5AQEMhJq704ayG01hckBARy0movzloIrbUGCQGBnLTai7OWQuy9SZAQEMhJq704aynE3lsFCQGB
+nLTai7OmQuy9QUJAICet9uKsqRB7bxQkIJCTVntx1lbsvSEBgZy02ouztmLvPUECAjlptRdnjcXe
+GRIQyEmrvThrLPbeACQEBHLSai/OGgux9wUJAYGctNqLs8ZC7L1BAgI5abUXZ63F3hcSEMhJq704
+ay321pCAQE5a7cVZbyA4nyAB/4GctNqLs95AcH5BAgI5abUXHCIwxniCBARy0mqtuPfee+91UZCA
+QE5a7ZVCYIwrHEJAICet9l4hMMYACgGBnLTai7PeQAgI5KTVXiAwxldAAYGctNqLBZ5CYAoJCOSk
+1V6c9Z6C8woSEMhJq71TCIwxppCAQE4KoJASAjmngEBOWu3FWe8pOK8gAYGctNo7hRhGFIggkJNW
+e6fAEwo5JwRSCgjkpNXeOkgRZkAgJ632SoExrgICOWm1dwqRxilQHAjkpNVeKfCEQk4qARAQyEmr
+vXSUMkaBBgI5abVXCowxFVBAICet9k4hJhIGAjlptVdCISet1kIgJ632UiKOJP8FAjlptVcKgTGm
+UEAgJ632TiHmEAICOWm1Vwo8oZCTCgCAgEBOWu2lRWCM8YQEBHLSai8QGOMroAAAACEgkJNWe6XA
+Ewo5BQRyAkEppZRSKqCAQE5a7b0CY1wFBHLSau8UYg5hIJCTVnulwFMIAYGcFIhaa61VFigGBHLS
+aq8VGOMqIJCTVnunEBMJBIGctNorBcYYCAjkpNVeSkSaA2PMggQEctJqLxACY2xhEWmcQiCQk1Z7
+pRAYYwCFgEBOWu2dQwgEDjwQyEmrvUAIjLGFAgI5abVXjlREQRDISau9U2CMp4BATlrtpceIcjDG
+LEhAICet9k6BMcYYY9gECQj/5KTVWnHvvffe66IgAYGctNpLBcYYY4xhACQgkJNWe4HAGGOMMQyA
+BARy0mpvFQJjjDGGXZAQEMhJq71ACIwxxhh2QUJAICet9lqBMcYYYxckIJCTVnunwBhjjLELEhDI
+Sau9WGCMMcZYBQkI5KTV3iowxhhjrIIEBHLSai8GQuScc5ZVkBAQyEmrvVUIjDHGGDZBQkAgJ632
+YilEzjln2QQJAYGctNp7hcAYY4xhACQEBHLSai+mQuScc5YBkBAQyEmrvRgIkXPOWQZAQkAgJ632
+4ityzjljkIBATlrtxVXknHPGIAGBnLTaizMQQmutZZAQEMhJq734CpFzzhkF/wkBgZy02oszFVpr
+fUECAjlptRdnKbTW+oIEBHLSai/OVwittTZBQkAgJ6324kyF0FprEyQEBHLSai/OWgitdQYJAYGc
+tNqLMxZCa51BQkAgJ6324qypEAICOWm1twohMMYYwzAAEhICOWm1twohMMYYwzAMEhICOWm1Vghx
+7733uq4LEhICOWm1Vghx7733uq7LgoSUEMhJK4VCSgjkpNVenPUGUEgJgZy0UiikhEBOWu3FWW8N
+hZy0UgjkpNVenPXeUMhJK4VATlrtxVlvzgUEctJqL856806hgEBOWu3FWW/e/QdDcSRL80RTdWVb
+94VjeaZr+8Zzfed7/wcGhRVDYtF4RCaVS2bT+YRGpVNq1XrNQSIAOw==
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_normal.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX25+RhPDxIgg+pi63PyAJ4WPqcvsvEpvgYxB8TF1u/0NC+Ji63P6LxA+Cb0HwMXW5/Q8J
+4WPqblBC+Ji6S/GRYAfBx9Tl9j8khI+pqxSb4GPqKsXHAwiCj6nL7X9ICB9TVyk+pi63E3xMXW7/
+QxLCx9RNik3wMXWV4uMBBMHH1OX2PySEj6m7QQnhY+ouxT+CHwQfU5fb/5AQPqYut/8i8Qn+BcHH
+1OX2PySEj6nL7b9IQvh4QfAxdbn9DwnhY+py+0NHEsLH1OX2ByQhfExdbv9/+EgIH1OX2x+QED6m
+Lrc/hCSEj6nL7Q9ICB9Tl9sfRhLCx9TldichfExdbn8YAUkIH1OX25kkhI+py+0PoyEhfExdbmcS
+wsfU5faHEZEQPqYutysJ4WPqcvvDmEhC+Ji63I4kIXxMXW5/GBVJCB9Tl9uNJISPqcvtDyMjCeFj
+6nI7JYSPqcvtD+MjIXxMXW6mED6mLrc/jJIkhI+py42UED6mLrc/jPKQED6mLrdRCB9Tl9sfRqlI
+QviYuryUED6mLrc/jLKRhPAxdfkoIXxMXW5/GGUkMeFj6mZQQviYutz+MMp5SEz4mKoRFMLH1OX2
+h1FORmITfEyk2AQfU5cx2x9GOSeJj4kEH1OX2x9GOWkkIXxMXW5/GOWk1V6c9ebdfzAUR7I0TzRV
+V7Z1X3giCgA7
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_inv.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x82EofgY+py+wOSED6mLrc/TCQ+wcfU5fY/JISPqcvtDw2JfwQfU5fb/5AQPqbuBiWE
+j6nLSPExCD6mLrf/ISF8TF2l2AQfU5cpPiLBx9Tl9j8khI+pqxQfU5fbCT6mLrf/IQnhY+omxSb4
+mLpM8REJPqYut/8hIXxM3Q1KCB9Tl5PiI8HH1OX2PySEj6nL7Q8RiR8EH1OX2/+QED6mLrc/ZCQm
+fExdbv9DQviYutz+0JGE8DF1uf0BSQgfU5fbHz4SwsfU5fYHJISPqcvtD/8hCeFj6nL7AxLCx9Tl
+9oeRhPAxdbndSQgfU5fbH0ZAEsLH1OV2JgnhY+py+8NoSAgfU5fbmYTwMXW5/WFEJISPqcvtSkL4
+mLrc/jAmkhA+pi63I0kIH1OX2x9GRRLCx9TldiMJ4WPqcvvDyEhC+Ji63E4J4WPqcvvD+EgIH1OX
+mymEj6nL7Q+jJAnhY+pyIyWEj6nL7Q+jPCSEj6nLbRTCx9Tl9odRKpIQPqYuLyWEj6nL7Q+jbCQh
+fExdPkoIH1OX2x9GGUlM+Ji6GZQQPqYutz+Mch4SEz6magSF8DF1uf1hlJOR2AQfEyk2wcfU5faH
+Uc5J4mMiwcfU5faHUU4hGkkIH1OX2x9GOWm1F2e9efcfDMWRLM0TTdWVbd0XnogCADs=
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_dot.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x8aEhsAwAg+pi63PyAJ4WPqcvtDEj8AIAg+pi63/yEhfExdbv9H4h9AEHxMXW7/Q0L4
+mLoblBA+pi4bxceAIPiYutz+h4TwMXWVYhN8TF0Gio8BQfAxdbn9DwnhY+oqxcfU5XaCj6nL7X9I
+QviYukmxCT6mLgPFx4Ag+Ji63P6HhPAxdTcoIXxMXTaKjwFB8DF1uf0PCeFj6nL7PxL/AILgY+py
++x8SwsfU5faHJH4AQBB8TF1u/0NC+Ji63P4QkNgAAEbwMXW5/QFJCB9Tl//bHz4SwsfU5fYHJISP
+qcvtDyEJ4WPqcvsDEsLH1OX2h5GE8DF1ud1JCB9Tl9sfRkASwsfU5XYmCeFj6nL7w2hICB9Tl9uZ
+hPAxdbn9YUQkhI+py+1KQviYutz+MCaSED6mLrcjSQgfU5fbH0ZFEsLH1OV2IwnhY+py+8PISEL4
+mLrcTgnhY+py+8P4SAgfU5ebKYSPqcvtD6MkCeFj6nIjJYSPqcvtD6M8JISPqcttFMLH1OX2h1Eq
+khA+pi4vJYSPqcvtD6NsJCF8TF0+SggfU5fbH0YZSUz4mLoZlBA+pi63P4xyHhITPqZqBIXwMXW5
+/WGUk5HYBB8TKTbBx9Qy5faHUc5J4mMiwcfU5faHUU4aSQgfU5fbH0Y5abUXZ7159x8MxZEszRNN
+1ZVt3ReeiAIAOw==
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_invdot.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x+Q2AQfMyKC4GPqcvsDkhA+pi63O4kfBB+B4hN8TF1u/0NC+Ji63N4k/hF8oPhH8DF1
+uf0PCeFj6m5QQviYihQfAwCA4mMQfExdbv9DQviYukqxCT6mHsXHgEwk+Ji63P6HhPAxdZXiY+py
+O8HH1OX2PyQhfEzdpNgEH1OP4mNAJhJ8TF1u/0NC+Ji6G5QQPqYixccg2BQfCT6mLrf/ISF8TF1u
+bxL/CP5R/CD4mLrc/oeE8DF1ud1J/CD4iBFB8DF1uf0PCeFj6nL7k9gEH//TIlRVKaWUUgqQhPAx
+dbn94SMhfExdbn9AQviYutz+EJIQPqYutz8gIXxMXW5/GEkIH1OX252E8DF1uf1hBCQhfExdbmeS
+ED6mLrc/jIaE8DF1uZ1JCB9Tl9sfRkRC+Ji63K4khI+py+0PYyIJ4WPqcjuShPAxdbn9YVQkIXxM
+XW43khA+pi63P4yMJISPqcvtlBA+pi63P4yPhPAxdbmZQviYutz+MEqSED6mLjdSQviYutz+MMpD
+QviYutxGIXxMXW5/GKUiCeFj6vJSQviYutz+MMpGEsLH1OWjhPAxdbn9YZSRxISPqZtBCeFj6nL7
+wyjnITHhY6pGUAgfU5dA2x9GORmJTfAxkWITfExdbn8Y5ZwkPiYSfExdbn8Y5aSRhPAxdbn9YZST
+Vntx1pt3/8FQHMnSPNFUXdnWfeGJKAA7
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_odot.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x8aEhsAwAg+pi63PyAJ4WPqcvtDkgDAAIBC+Ji63P6HhPAxdbn9H0kIO8KC4GPqcvsf
+EsLH1N2ghPAxddkoIXyIgCD4mLrc/oeE8DF1lWITfExdBgrhX0AQfExdbv9DQviYukrxMXV5Cf5F
+BMHH1OX2PyQhfEzdpNgEH1OXgUL4FxAEH1OX2/+QED6m7gYlhI+py0YJ4UMEBMHH1OX2PySEj6nL
+7f9IQtgRFgQfU5fb/5AQPqYutz8kCQAMACiEj6nL7X9ICB9Tl9sfAhIbAP/ACD6mLrc/IAnhY+py
++8NHQviYutz+gITwMXW5/SEkIXxMXW5/QEL4mLrc/jCSED6mLrc7CeFj6nL7wwhIQviYutzOJCF8
+TF1ufxgNCeFj6nI7kxA+pi63P4yIhPAxdbldSQgfU5fbH8ZEEsLH1OV2JAnhY+py+8OoSEL4mLrc
+biQhfExdbn8YGUkIH1OX2ykhfExdbn8YHwnhY+pyM4XwMXW5/WGUJCF8TF1upITwMXW5/WGUh4Tw
+MXW5jUL4mLrc/jBKRRLCx9TlpYTwMXW5/WGUjSSEj6nLRwnhY+py+8MoI4kJH1M3gxLCx9Tl9odR
+zkNiwsdUjaAQPqYutz8+jHIyEpvgYyLFJviYutz+MMo5SXxMJPiYutz+MMpJIwnhY+py+8MoJ632
+4qw37/6DoTiSpXmiqbqyrfvCE1EAOw==
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_invodot.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x+Q2AQfMyKC4GPqcvsDkhA+pi63O0kAYAQfgeITfExdbv9DQviYutzeJCHsiDug+Efw
+MXW5/Q8J4WPqblBC+JiKEQQfIpDiYxB8TF1u/0NC+Ji6SrEJPqZerFHA+IgEH1OX2/+QED6mrlJ8
+TF0j+EfxMYPgY+py+x+SED6mblJsgo+pF2sUMD4iwcfU5fY/JISPqbtBCeFjKkYQfIhAoPhI8DF1
+uf0PCeFj6nJ7k4SwI+6O4gfBx9Tl9j8khI+py+1OEgAYwUeMCIKPqcvtf/9ICB9Tl9ufxCb4mBah
+qkoppZRSgCSEj6nL7Q8fCeFj6nL7AxLCx9Tl9oeQhPAxdbn9AQnhY+py+8NIQviYutzuJISPqcvt
+DyMgCeFj6nI7k4TwMXW5/WE0JISPqcvtTEL4mLrc/jAiEsLH1OV2JSF8TF1ufxgTSQgfU5fbkSSE
+j6nL7Q+jIgnhY+pyu5GE8DF1uf1hZCQhfExdbqeE8DF1uf1hfCSEj6nLzRTCx9Tl9odRkoTwMXW5
+kRLCx9Tl9odRHhLCx9TlNgrhY+py+8MoFUkIH1OXlxLCx9Tl9odRNpIQPqYuHyWEj6nL7Q+jjCQm
+fEzdDEoIH1OX2x9GOQ9LiQkfUzWCQviYutz+MMrJSGyCj4kUm+Bj6nL7wyjnJPExkeBj6nL7wygn
+jSSEj6nL7Q+jnLTai7PevPsPhuJIluaJpurKtu4LT0QBADs=
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_none.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x8+khA+pi63PyAJ4WPqcvtDR0L4mLrc/oeE8DF1uf2hIyF8TF1u/0NC+Ji6G5QQPqYu
+d1IIH1OX2/+QED6mrlJsgo+py40UwsfU5fY/JISPqasUH1OX2wk+pi63/yEJ4WPqJsUm+Ji63Egh
+fExdbv9DQviYuhuUED6mLndSCB9Tl9v/kBA+pi63P3QkhI+py+1/SAgfU5fbHzoSwsfU5fY/JISP
+qcvtDx1JCB9Tl9sfkITwMXW5/eEjIXxMXW5/QEL4mLrc/hCSED6mLrc/IP8hfExdbn8YSQgfU5fb
+nYTwMXW5/WEEJCF8TF1uZ5IQPqYutz+MhoTwMXW5nUkIH1OX2x9GREL4mLrcriSEj6nL7Q9jIgnh
+Y+pyO5KE8DF1uf1hVCQhfExdbjeSED6mLrc/jIwkhI+py+2UED6mLrc/jI+E8DF1uZlC+Ji63P4w
+SpIQPqYuN1JC+Ji63P4wykNC+Ji63EYhfExdbn8YpSIJ4WPq8lJC+Ji63P4wykYSwsfU5aOE8DF1
+uf1hlJHEhI+pm0EJ4WPqcvvDKOchMeFjqkZQCB9Tl9sfRjkZiU3wMZFiE3xMXW5/GOWcJD4mEnxM
+XW5/GOWkkYTwMXW5/WEYlJNWe3HWm3f/wVAcydI80VRd2dZ94YkoADs=
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_tee.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz9UJAZAEHxM
+XW5/QEL4mLrc/lCRGGAEH1OX2x+QhPAxdbn9YSIxIAg+pi63/yEhfExdbn+YSAwIgo+py+1/SAgf
+U3eDEsLH1OWmGBAEH1OX2/+QED6mrlJsgo+py0wxIAg+pi63/yEhfExdpfiYutxO8DF1uf0PSQgf
+UzcpNsHH1GWmGBAEH1OX2/+QED6m7gYlhI+py00xIAg+pi63/yEhfExdbn+YSAwIgo+py+1/SAgf
+U5fbHyYSA4LgY+py+x8SwsfU5faHicQAI/iYutz+gCSEj6nL7Q8TiQEQBP8fU5fbH5AQPqYutz9U
+JAZAEHxMXW5/QEL4mLrc/jCSED6mLrc7CeFj6nL7wwhIQviYutzOJCF8TF1ufxgNCeFj6nI7kxA+
+pi63P4yIhPAxdbldSQgfU5fbH8ZEEsLH1OV2JAnhY+py+8OoSEL4mLrcbiQhfExdbn8YGUkIH1OX
+2ykhfExdbn8YHwnhY+pyM4XwMXW5/WGUJCF8TF1upITwMXW5/WGUh4TwMXW5jUL4mLrc/jBKRRLC
+x9TlpYTwMXW5/WGUjSSEj6nLRwnhY+py+8MoI4kJH1M3gxLCx9Tl9odRzkNiwsdUjaAQPqYutz+M
+cjISm+BjIsUm+Ji63P4vMMo5SXxMJPiYutz+MMpJIwnhY+py+8MoJ6324qw37/6DoTiSpXmiqbqy
+rfvCE1EAOw==
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_empty.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX25+RhPDxIgg+pi63PyAJ4WPqcvsvEiSC4GMQfExdbv9DQviYutz+iwQAiCD4FgQfU5fb
+/5AQPqbuBiWEj6m7QfAj4iwIPqYut/8hIXxMXaXYBB9TV4PgX0RYEHxMXW7/Q0L4mLpK8TF1GQk+
+WkQQfExdbv9DEsLH1E2KTfAxdTUIvkVEGIXwMXW5/Q8J4WPqblBC+Ji6GwQ7Iu6C4GPqcvsfEsLH
+1OX2XyRIRBD8C4KPqcvtf0gIH1OX23+RhPDxguBj6nL7HxLCx9Tl9oeOJP+Ej6nL7Q9IQviYutz+
+8JEQPqYutz8gIXxMXW5/CEkIH1OX2x+QED6mLrc/jCSEj6nL7U5C+Ji63P4wApIQPqYutzNJCB9T
+l9sfRkNC+Ji63M4khI+py+0PIyIhfExdblcSwsfU5faHMZGE8DF1uR1JQviYutz+MCqSED6mLrcb
+SQgfU5fbH0ZGEsLH1OV2SggfU5fbH8ZHQviYutxMIXxMXW5/GCVJCB9TlxspIXxMXW5/GOUhIXxM
+XW6jED6mLrc/jFKRhPAxdXkpIXxMXW5/GGUjCeFj6vJRQviYutz+MMpIYsLH1M2ghPAxdbn9YZTz
+kJjwMVUjKISPqcvtD6M9nIzEJviYSLEJPqYutz+Mck4SHxMJPqYutz+MctJIQviYutz+MMpJq704
+6827/2AojmRpnmiqrmzrvvBEFAA7
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_invempty.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x82EofgY+py+wOSED6mLrc/TCSGEXxMXW7/Q0L4mLrc/tCQGABgBB9Tl9v/kBA+pu4G
+JYSPqctICeFDBMHH1OX2PySEj6mrFJvgY+pyUEL4F0HwMXW5/Q8J4WPqKsXH1OUk+GgRBB9Tl9v/
+kITwMXWTYhN8TF0OSkLwLYLgY+py+x8SwsfU3aCE8DF1OSkm7AiCj6nL7X9ICB9Tl9sfIhIHjOBj
+6nL7HxLCx9Tl9oeMxISPqcvtf0gIH1OX2x86khA+pi63PyAJ4WPqcvvDR/9C+Ji63P6AhPAxdbn9
+ISQhfExdbn9AQviYutz+MJIQPqYutzsJ4WPqcvvDCEhC+Ji63M4kIXxMXW5/GA0J4WPqcjuTED6m
+Lrc/jIiE8DF1uV1JCB9Tl9sfxkQSwsfU5XYkCeFj6nL7w6hIQviYutxuJCF8TF1ufxgZSQgfU5fb
+KSF8TF1ufxgfCeFj6nIzhfAxdbn9YZQkIXxMXW6khPAxdbn9YZSHhPAxdbmNQviYutz+MEpFEsLH
+1OWlhPAxdbn9YZSNJISPqctHCeFj6nL7wygjiQkfUzeDEsLH1OX2h1HOQ2LCx1SNoBA+pi63P4xy
+MhKb4GMixSb4mLrc/jAuyjlJfEwk+Ji63P4wykkjCeFj6nL7wygnrfbirDfv/oOhOJKleaKpurKt
++8ITUQA7
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_diamond.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x8aEsK3CIKPqcvtD0hC+Ji63P6PxCb4QfAxdbn9DwnhY+py+zcS3wh2EHxMXW7/Q0L4
+mLoblBA+pi5TfAwACIKPqcvtf0gIH1NXKTbBx9RNio8JQfAxdbn9DwnhY+oqxcfU5XaCj6nL7X9I
+QviYukmxCT6mblJ8TAiCj6nL7X9ICB9Td4MSwsfUXYqPBgBB8DF1uf0PCeFj6nL7NxL/AACC4GPq
+cvsfEsLH1OX2dyR+EOwg+Ji63P6HhPAxdbn9H4lD8CGC4GPqcvsDkhA+pv8utz8EJIR/QfAxdbn9
+AQnhY+py+0NIQviYutz+gITwMXW5/WEkIXxMXW53EsLH1OX2hxGQhPAxdbmdSUL4mLrc/jAaEsLH
+1OV2JiF8TF1ufxgRCeFj6nK7khA+pi63P4yJJISPqcvtSBLCx9Tl9odRkYTwMXW53UhC+Ji63P4w
+MpIQPqYut1NC+Ji63P4wPhLCx9TlZgrhY+py+8MoSUL4mLrcSAnhY+py+8MoDwnhY+pyG4XwMXW5
+/WGUiiSEj6nLSwnhY+py+8MoG0kIH1OXjxLCx9Tl9odRRhITPqZuBiWEj6nL7Q+jnIfEhI+pGkEh
+fExdbn8Y5WQkNsHHRIo1TfAxdbn9YZRzkviYSPAxdbn9YZSTRhLCx9Tl9odRTlrtxVlv3v0HQ3Ek
+S/NEU3VlW/eFJ6IAOw==
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_odiamond.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x8aEsK3CIKPqcvtD0hC+Ji63P6PJDCCHwQfU5fb/5AQPqYut38jCWHHWRB8TF1u/0NC
++Ji6G5QQPqYuB8G3iAuCj6nL7X9ICB9TVyk2wcfUzaAQPkIEBMHH1OX2PySEj6mrFB9Tl43gY0YQ
+fExdbv9DEsLH1E2KTfAxdTMIPloEBMHH1OX2PySEj6m7QQnhY+puUAj/4oLgY+py+x8SwsfU5fZv
+JIQPgUHwMXW5/Q8J4WPqcvs7EgAggmAHwcfU5fY/JISPqcvt/0iCIPgQQf/wMXW5/QFJCB9Tl9sf
+AhLCvyD4mLrc/oCE8DF1uf0hJCF8TF1uf0BC+Ji63P4wkhA+pi63OwnhY+py+8MISEL4mLrcziQh
+fExdbn8YDQnhY+pyO5MQPqYutz+MiITwMXW5XUkIH1OX2x/GRBLCx9TldiQJ4WPqcvvDqEhC+Ji6
+3G4kIXxMXW5/GBlJCB9Tl9spIXxMXW5/GB8J4WPqcjOF8DF1uf1hlCQhfExdbqSE8DF1uf1hlIeE
+8DF1uY1C+Ji63P4wSkUSwsfU5aWE8DF1uf1hlI0khI+py0cJ4WPqcvvDKCOJCR9TN4MSwsfU5faH
+Uc5DYsLHVI2gED6mLrc/P4xyMhKb4GMixSb4mLrc/jDKOUl8TCT4mLrc/jDKSSMJ4WPqcvvDKCet
+9uKsN+/+g6E4kqV5oqm6sq37whNRADs=
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_ediamond.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x8aEsK3CIKPqcvtD0hC+Ji63P6PJDCCHwQfU5fb/5AQPqYut38jCWHHWRB8TF1u/0NC
++Ji6G5QQPqYuB8G3iAuCj6nL7X9ICB9TVyk2wcfUzaAQPkIEBMHH1OX2PySEj6mrFB9Tl43gY0YQ
+fExdbv9DEsLH1E2KTfAxdTMIPloEBMHH1OX2PySEj6m7QQnhY+puUAj/4oLgY+py+x8SwsfU5fZv
+JIQPgUHwMXW5/Q8J4WPqcvs7EgAggmAHwcfU5fY/JISPqcvt/0iCIPgQQf/wMXW5/QFJCB9Tl9sf
+AhLCvyD4mLrc/oCE8DF1uf0hJCF8TF1uf0BC+Ji63P4wkhA+pi63OwnhY+py+8MISEL4mLrcziQh
+fExdbn8YDQnhY+pyO5MQPqYutz+MiITwMXW5XUkIH1OX2x/GRBLCx9TldiQJ4WPqcvvDqEhC+Ji6
+3G4kIXxMXW5/GBlJCB9Tl9spIXxMXW5/GB8J4WPqcjOF8DF1uf1hlCQhfExdbqSE8DF1uf1hlIeE
+8DF1uY1C+Ji63P4wSkUSwsfU5aWE8DF1uf1hlI0khI+py0cJ4WPqcvvDKCOJCR9TN4MSwsfU5faH
+Uc5DYsLHVI2gED6mLrc/P4xyMhKb4GMixSb4mLrc/jDKOUl8TCT4mLrc/jDKSSMJ4WPqcvvDKCet
+9uKsN+/+g6E4kqV5oqm6sq37whNRADs=
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_crow.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz9sJEEQfExd
+bn9AQviYutz+cJEYRvAxdbn9AUkIH1OX2x8iEgMgCD6mLrf/ISF8TF1ufwhIHIIdBB9Tl9v/kBA+
+pu4GJYSPqctHsQl+EHxMXW7/Q0L4mLpKsQk+pi5TbIJvQfAxdbn9DwnhY+oqxcfU5XaCj6nL7X9I
+QviYukmxCT6mLlNsgm9B8DF1uf0PCeFj6m5QQviYunwUm+AHwcfU5fY/JISPqcvtDwGJQ7CD4GPq
+cvsfEsLH1OX2h4jEAAiCj6nL7X9ICB9Tl9sfKhLDCD6mLrc/IAnhY+py+/9DRhIEwcfU5fYHJISP
+qcvtDyEJ4WPqcvsDEsLH1OX2h5GE8DF1ud1JCB9Tl9sfRkASwsfU5XYmCeFj6nL7w2hICB9Tl9uZ
+hPAxdbn9YUQkhI+py+1KQviYutz+MCaSED6mLrcjSQgfU5fbH0ZFEsLH1OV2IwnhY+py+8PISEL4
+mLrcTgnhY+py+8P4SAgfU5ebKYSPqcvtD6MkCeFj6nIjJYSPqcvtD6M8JISPqcttFMLH1OX2h1Eq
+khA+pi4vJYSPqcvtD6NsJCF8TF0+SggfU5fbH0YZSUz4mLoZlBA+pi63P4xyHhITPqZqBIXwMXW5
+/WGUk5HYBB8TKTbBx9Qy5faHUc5J4mMiwcfU5faHUU4aSQgfU5fbH0Y5abUXZ7159x8MxZEszRNN
+1ZVt3ReeiAIAOw==
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_box.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2/+R+IgEH1OX2x+QhPAxdbn9HYmPR/Axdbn9DwnhY+py+zsSH4/gY+py+x8SwsfU3aCE
+8DF12Sg+HsHH1OX2PySEj6mrFJvgY+oyUHw8go+py+1/SAgfU1cpPqYutxN8TF1u/0MSwsfUTYpN
+8DF1GSg+HsHH1OX2PySEj6m7QQnhY+qyUXw8go+py+1/SAgfU5fb35H4eAQfU5fb/5AQPqYut78j
+8fEIPqYut/8hIXxMXW5/R+IjEnxMXW5/QBLCx9Tl9nckPhoEwcfU5fYHJP+Ej6nL7Q8hCeFj6nL7
+AxLCx9Tl9oeRhPAxdbndSQgfU5fbH0ZAEsLH1OV2JgnhY+py+8NoSAgfU5fbmYTwMXW5/WFEJISP
+qcvtSkL4mLrc/jAmkhA+pi63I0kIH1OX2x9GRRLCx9TldiMJ4WPqcvvDyEhC+Ji63E4J4WPqcvvD
++EgIH1OXmymEj6nL7Q+jJAnhY+pyIyWEj6nL7Q+jPCSEj6nLbRTCx9Tl9odRKpIQPqYuLyWEj6nL
+7Q+jbCQhfExdPkoIH1OX2x9GGUlM+Ji6GZQQPqYutz+Mch4SEz6magSF8DF1uf1hlJOR2AQfEyk2
+wcfU5faHUc5J4mMiwccn1OX2h1FOGkkIH1OX2x9GOWm1F2e9efcfDMWRLM0TTdWVbd0XnogCADs=
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_obox.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2/+R+IgEH1OX2x+QhPAxdbn9HQnhYwTBx9Tl9j8khI+py+3vSAgfIwg+pi63/yEhfEzd
+DUoIH1OXjUL4GEHwMXW5/Q8J4WPqKsUm+Ji6DBTCxwiCj6nL7X9ICB9TVyk+pi4vwccIgo+py+1/
+SEL4mLpJsQk+pi4DhfAxguBj6nL7HxLCx9TdoITwMXXZKISPEQQfU5fb/5AQPqYut78jIXyMIPiY
+utz+h4TwMXW5/R0J4WMEwcfU5fY/JISPqcvt70gIHyOC4GPqcvsDkhA+pv8ut78j8dEgCD6mLrc/
+ICF8TF1ufwhJCB9Tl9sfkBA+pi63P4wkhI+py+1OQviYutz+MAKSED6mLrczSQgfU5fbH0ZDQviY
+utzOJISPqcvtDyMiIXxMXW5XEsLH1OX2hzGRhPAxdbkdSUL4mLrc/jAqkhA+pi63G0kIH1OX2x9G
+RhLCx9TldkoIH1OX2x/GR0L4mLrcTCF8TF1ufxglSQgfU5cbKSF8TF1ufxjlISF8TF1uoxA+pi63
+P4xSkYTwMXV5KSF8TF1ufxhlIwnhY+ryUUL4mLrc/jDKSGLCx9TNoITwMXW5/WGU85CY8DFVIyiE
+j6nL7Q+jnIzEJviYSLE1CT6mLrc/jHJOEh8TCT6mLrc/jHLSSEL4mLrc/jDKSau9OOvNu/9gKI5k
+aZ5oqq5s677wRBQAOw==
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_open.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz8jCeEjBsHH
+1OX2BySEj6nL7d9ITPgIEQQfU5fbH5CE8DF1uf0diQn/guBj6nL7HxLCx9Tl9ockDsEPgo+py+1/
+SAgfU3eDEsLH1OWk2AAAQfAxdbn9DwnhY+oqxSb4mLqsFBsgCD6mLrf/ISF8TF2l+Ji63E7wMXW5
+/Q9JCB9TNyk2wcfUZaXYAEHwMXW5/Q8J4WPqblBC+Ji6nBQbACAIPqYut/8hIXxMXW5/SOIQ/CD4
+mLrc/oeE8DF1uf0diQn/guBj6nL7HxLCx9Tl9mckJnyECIKPqcvtD0hC+P+Yutz+iySEjxgEH1OX
+2x+QED6mLrc/hCSEj6nL7Q9ICB9Tl9sfRhLCx9TldichfExdbn8YAUkIH1OX25kkhI+py+0PoyEh
+fExdbmcSwsfU5faHEZEQPqYutysJ4WPqcvvDmEhC+Ji63I4kIXxMXW5/GBVJCB9Tl9uNJISPqcvt
+DyMjCeFj6nI7JYSPqcvtD+MjIXxMXW6mED6mLrc/jJIkhI+py42UED6mLrc/jPKQED6mLrdRCB9T
+l9sfRqlIQviYuryUED6mLrc/jLKRhPAxdfkoIXxMXW5/GGUkMeFj6mZQQviYutz+MMp5SEz4mKoR
+FMLH1OX2h1FORmITfEw3pNgEH1OX2x9GOSeJj4kEH1OX2x9GOWkkIXxMXW5/GOWk1V6c9ebdfzAU
+R7I0TzRVV7Z1X3giCgA7
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_halfopen.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz8jCeEjBsHH
+1OX2BySEj6nL7d9ITPgIEQQfU5fbH5CE8DF1uf0diQn/guBj6nL7HxLCx9Tl9ockDsEPgo+py+1/
+SAgfU3eDEsLH1OWk2AAAQfAxdbn9DwnhY+oqxSb4mLqsFBsgCD6mLrf/ISF8TF2l+Ji63E7wMXW5
+/Q9JCB9TNyk2wcfU5UYK4WPqcvsfEsLH1N2ghPAxdbmTQviYutz+h4TwMXW5/aEjIXxMXW7/Q0L4
+mLrc/tCRED6mLrf/ISF8TF1uf+hIQviYutz+gCSEj6nL7Q8fCeFj6nL7A/8SwsfU5faHkITwMXW5
+/QEJ4WPqcvvDSEL4mLrc7iSEj6nL7Q8jIAnhY+pyO5OE8DF1uf1hNCSEj6nL7UxC+Ji63P4wIhLC
+x9TldiUhfExdbn8YE0kIH1OX25EkhI+py+0PoyIJ4WPqcruRhPAxdbn9YWQkIXxMXW6nhPAxdbn9
+YXwkhI+py80UwsfU5faHUZKE8DF1uZESwsfU5faHUR4SwsfU5TYK4WPqcvvDKBVJCB9Tl5cSwsfU
+5faHUTaSED6mLh8lhI+py+0Po4wkJnxM3QxKCB9Tl9sfRjkPiQkfUzWCQviYutz+MMrJSGyCj4kU
+m+Bj6nL7wyjnJPExkeAoY+py+8MoJ40khI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC09EAQA7
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/forward.gif
+
+R0lGODlh8QA2AKIAAP///////gAAAH9/f9/f3x8fH5+fn7+/vyH5BAEAAAEALAAAAADxADYAAAP/
+CLrc/jDKSau9OOvNu/9gKI5kaZ5oqq5s674MIgi63P4wykmrtUgQdLn9YZSTVuuQ6HIzgi63P4xy
+0iqR6HIzgi63P4xy0uqQqCLocjOKKoIutz+MctKKRBVBl5tRVBF0uf1hlJNSJIqgy+2ORBF0uf1h
+lJNGJIqgy+2ORBF0uf1hlJM+JIqgy+3fkCiCLrc/jHLShUQRdLn9GxJF0OX2h1FOqpAIgi63P1xI
+BEGX2x9GOScSQdDl9ocLiSDocvvDKKdEIgi63P7wIREEXW5/GOV8SARBl9sfPiSCoMvtD6OcDwmC
+Lrc/jAoJgi63P4xyNiQIutz+MCokCLrc/jDK/8mQCIIutz+MDIkg6HL7wygnQCIIutz+MDIkgqDL
+7Q+jnAAJgi63P4wQCYIutz+MUiJB0OX2hxEiQdDl9odRRiSCoMvtD6NEIgi63P4wSodEEHS5/WGU
+SARBl9sfRumQCIIutz+MUiERBF1ufxglQyIIutz+MEqFRBB0uf1hlAyJIOhy+8MoGRJB0OX2h1Eq
+JIKgy+0Po2RIBEGX2x9GuZAg6HL7wygdEgRdbn8YpUKCoMvtD6N0SBB0uf1hlAoJgi63P4wSIkHQ
+5faHUSJB0OX2h1FCJAi63P4wSiSCoMvtD6OESARBl9sfRohEEHS5/WGUEIkg6HL7wxiRIOhy+//D
+KCUSBF1ufxghEgRdbn8YpUSCoMvtDyNEgqDL7Q+jnAAJgi63P4wOCYIutz+McgIkCLrc/jA+JAi6
+3P4KiS4j6HK7I0HQ5faH0SFB0OV2R6IKACiqCLrc7kgQdLn9YXRIBEGX218hGQARBKBC0OV2RyII
+utz+MDIkgqDL7Y9MhAAQSOQQdLn9kQiCLrc/jA0Jgi63/0ICACIIagi63P5IEHS5/R0SQdDlFQRd
+bn+FRBBURRB0uf0VEgRdbn8YGxIEXW7/h0QQdLn9GRIEXW5/h0QXQXeFmTHGmEIiCKoiCLrc/goJ
+gi63P4wNCYIut/9DIgi63P4MCYIut79Dorv/CLqCoMvtr5AIgqoIgi63v0KCoMvtD2NDgqDL7f+Q
+CIIutz9DgqDL7e+Q6PICgiDocvsrJIKgKoKgy+2vkCDocvvDyJAIgi63/0MiCLrc/gyJLrc/jA6B
+Lre/QqK7CLrc/gqJIOhy+8PIkCDocvs/JIKgy+3PkCDocvs7JLqsgACCoMvtr5AIgqoIgi63v0KC
+oMvtD2NDgqDL7f+QCIIutz9DgqDL7e+Q6AqCrgozY4wxhUQQVEUQdLn9FRIEXW5/GBsSBF1u/4dE
+EHS5/RkSBF1uf4dEEXRZBUGX218hEQRVEQRdbn+FBEGX2x/GhgRBl9v/IREEXW5/hgRBl9sf/0aG
+BEGX218hEQRVEQRdbn+FBEGX2x/GhkQQdLn9GzIRQtDl9ldIBEGX2x9GhkQQdLn9kYkQAAKJHIIu
+tz8SQdDl9ofRIUHQ5fZnSFQRdLn9FRIEXW5/GB0SBF1udySqAICiiqDL7Y4EQZfbH8aHBEGX2x9G
+OQESBF1ufxgdEgRdbn8Y5QRIEHS5/WGESBB0uf1hlBIJgi63P4wQCYIutz+MUiJB0OX2hzEiEQRd
+bn8YJUQiCLrc/jBCJIKgy+0Po4RIBEGX2x9GiQRBl9sfRgmRIOhy+8MokSDocvvDKCESBF1ufxil
+QoKgy+0Po3RIEHS5/WGUCgmCLrc/jNIhQf/Q5faHUS4kgqDL7Q+jZEgEQZfbH0apkAiCLrc/jJIh
+EQRdbn8YJUMiCLrc/jBKhUQQdLn9YZQMiSDocvvDKBUSQdDl9odROiSCoMvtD6NEIgi63P4wSodE
+EHS5/WGUSARBl9sfRhmRIOhy+8MIkSDocvvDKCUSBF1ufxghEgRdbn8Y5QRIBEGX2x9GhkQQdLn9
+YZQTIBEEXW5/GBkSQdDl9odRToYEQZfbH0aFBEGX2x9GORsSBF1ufxgVEgRdbn8Y5XxIBEGX2x8+
+JIKgy+0Po5wPiSDocvvDh0QQdLn9YZRTIhEEXW5/uJAIgi63P4xyTiSCoMvtDxcSQdDl9oebUU6q
+kCiCLrd/Q6IIutz+MMpJFxJF0OX2b0gUQZfbH0Y56UOiCLrc7kgUQZfbH0Y5aUSiCLrc7kgUQZfb
+H0Y5KUWiiqDLzSiqCLrc/jDKSSsSVQRdbkZRRdDl9odRTlodEl1uRtDl9odRTlolEl1uRtDl9odR
+TlqtQ4Kgy+0Po5y0WosEQZfbH0Y5abUXZ7159x8MxZEszROtkAQAOw==
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/back.gif
+
+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
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/both.gif
+
+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
+T7RCEgA7
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/nohead.gif
+
+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
+k1Z7cdabd//BUBzJ0jzRCkkAOw==
+
+------=_NextPart_000_0012_01C7EBF9.EFA23E80--

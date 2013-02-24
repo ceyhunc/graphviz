@@ -1,0 +1,842 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Arrow Shapes
+Date: Fri, 31 Aug 2007 18:09:04 +0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0092_01C7EBFA.03B8E9F0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3138
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://graphviz.org/doc/info/arrows.html
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--=0A=
+    This is a generated document.  Do not edit.=0A=
+--><HTML=20
+version=3D2.0><HEAD><TITLE>Arrow Shapes</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"MSHTML 6.00.6000.16525" name=3DGENERATOR></HEAD>
+<BODY bgColor=3Dwhite><A name=3Dtop></A>
+<H1 align=3Dcenter>Arrow Shapes</H1>
+<HR>
+Arrow shapes can be specified and named using the following simple =
+grammar.=20
+Terminals are shown in bold font and nonterminals in italics. Literal =
+characters=20
+are given in single quotes. Square brackets [ and ] enclose optional =
+items.=20
+Vertical bars | separate alternatives.=20
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD align=3Dright><I>arrowname</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft><I>aname</I> [ <I>aname</I> ]</TD></TR>
+  <TR>
+    <TD align=3Dright><I>aname</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft>[ <I>modifiers</I> ] <I>shape</I></TD></TR>
+  <TR>
+    <TD align=3Dright><I>modifiers</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft>[ <B>'o'</B> ] [ <I>side</I> ]</TD></TR>
+  <TR>
+    <TD align=3Dright><I>side</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft><B>'l'</B></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>'r'</B></TD></TR>
+  <TR>
+    <TD align=3Dright><I>shape</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft><B>box</B></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>crow</B></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>diamond</B></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>dot</B></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>inv</B></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>none</B></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>normal</B></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>tee</B></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>vee</B></TD></TR></TBODY></TABLE>
+<P>The primitive shapes are:=20
+<CENTER>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>"box"
+    <TD><IMG src=3D"http://graphviz.org/doc/info/a_box.gif">=20
+    <TD>"crow"
+    <TD><IMG src=3D"http://graphviz.org/doc/info/a_crow.gif">=20
+    <TD>"diamond"
+    <TD><IMG src=3D"http://graphviz.org/doc/info/a_diamond.gif"> </TD>
+  <TR>
+    <TD>"dot"
+    <TD><IMG src=3D"http://graphviz.org/doc/info/a_dot.gif">=20
+    <TD>"inv"
+    <TD><IMG src=3D"http://graphviz.org/doc/info/a_inv.gif">=20
+    <TD>"none"
+    <TD><IMG src=3D"http://graphviz.org/doc/info/a_none.gif"> </TD>
+  <TR>
+    <TD>"normal"
+    <TD><IMG src=3D"http://graphviz.org/doc/info/a_normal.gif">=20
+    <TD>"tee"
+    <TD><IMG src=3D"http://graphviz.org/doc/info/a_tee.gif">=20
+    <TD>"vee"
+    <TD><IMG src=3D"http://graphviz.org/doc/info/a_open.gif">=20
+</TD></TR></TBODY></TABLE></CENTER>
+<P>As for the modifiers:=20
+<DL>
+  <DT>'l'=20
+  <DD>Clip the shape, leaving only the part to the left of the edge.=20
+  <DT>'r'=20
+  <DD>Clip the shape, leaving only the part to the right of the edge.=20
+  <DT>'o'=20
+  <DD>Use an open (non-filled) version of the shape. </DD></DL>Left and =
+right are=20
+defined as those directions determined by looking from the edge towards =
+the=20
+point where the arrow "touches" the node.=20
+<P>As an example, the arrow shape <TT>lteeoldiamond</TT> is parsed as =
+<TT>'l'=20
+'tee' 'o' 'l' 'diamond'</TT> and corresponds to the shape=20
+<CENTER><IMG src=3D"http://graphviz.org/doc/info/a_lteeoldiamond.gif">=20
+</CENTER>Note that the first arrow shape specified occurs closest to the =
+node.=20
+The second arrow shape, if provided, occurs further from the node.=20
+<P>Not all syntactically legal combinations of modifiers are meaningful =
+or=20
+semantically valid. For example, none of the modifiers make any sense =
+with=20
+<TT>none</TT>. The following table indicates which modifiers are allowed =
+with=20
+which shapes.=20
+<P>
+<CENTER>
+<TABLE border=3D2>
+  <TBODY>
+  <TR align=3Dmiddle>
+    <TH>Modifier</TH>
+    <TH>box=20
+    <TH>crow=20
+    <TH>diamond=20
+    <TH>dot=20
+    <TH>inv=20
+    <TH>none=20
+    <TH>normal=20
+    <TH>tee=20
+    <TH>vee </TR>
+  <TR align=3Dmiddle>
+    <TD>'l'/'r'
+    <TD>X
+    <TD>X
+    <TD>X
+    <TD>&nbsp;
+    <TD>X
+    <TD>&nbsp;
+    <TD>X
+    <TD>X
+    <TD>X</TD>
+  <TR align=3Dmiddle>
+    <TD>'o'=20
+    <TD>X
+    <TD>&nbsp;
+    <TD>X
+    <TD>X
+    <TD>X
+    <TD>&nbsp;
+    <TD>X
+    <TD>&nbsp;
+    <TD>&nbsp;</TD></TR></TBODY></TABLE></CENTER>
+<P>This yields 36 different arrow shapes. The optional second shape can=20
+independently be any of the 36, but since <TT>nonenone</TT> is =
+redundant, there=20
+are 36 * 35 =3D 1260 different combinations.=20
+<P>The following display contains the 36 combinations possible with a =
+single=20
+arrow shape. The node attached to the arrow is not drawn but would =
+appear on the=20
+right side of the edge.=20
+<P>
+<CENTER>
+<TABLE>
+  <TBODY>
+  <TR align=3Dmiddle>
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_box.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_lbox.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_rbox.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_obox.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_olbox.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_orbox.gif"> </TD>
+  <TR align=3Dmiddle>
+    <TD>box=20
+    <TD>lbox=20
+    <TD>rbox=20
+    <TD>obox=20
+    <TD>olbox=20
+    <TD>orbox </TD>
+  <TR align=3Dmiddle>
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_crow.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_lcrow.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_rcrow.gif"> </TD>
+  <TR align=3Dmiddle>
+    <TD>crow=20
+    <TD>lcrow=20
+    <TD>rcrow </TD>
+  <TR align=3Dmiddle>
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_diamond.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_ldiamond.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_rdiamond.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_odiamond.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_oldiamond.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_ordiamond.gif"> =
+</TD>
+  <TR align=3Dmiddle>
+    <TD>diamond=20
+    <TD>ldiamond=20
+    <TD>rdiamond=20
+    <TD>odiamond=20
+    <TD>oldiamond=20
+    <TD>ordiamond </TD>
+  <TR align=3Dmiddle>
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_dot.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_odot.gif"> </TD>
+  <TR align=3Dmiddle>
+    <TD>dot=20
+    <TD>odot </TD>
+  <TR align=3Dmiddle>
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_inv.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_linv.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_rinv.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_oinv.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_olinv.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_orinv.gif"> </TD>
+  <TR align=3Dmiddle>
+    <TD>inv=20
+    <TD>linv=20
+    <TD>rinv=20
+    <TD>oinv=20
+    <TD>olinv=20
+    <TD>orinv </TD>
+  <TR align=3Dmiddle>
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_none.gif"> </TD>
+  <TR align=3Dmiddle>
+    <TD>none </TD>
+  <TR align=3Dmiddle>
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_normal.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_lnormal.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_rnormal.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_onormal.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_olnormal.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_ornormal.gif"> </TD>
+  <TR align=3Dmiddle>
+    <TD>normal=20
+    <TD>lnormal=20
+    <TD>rnormal=20
+    <TD>onormal=20
+    <TD>olnormal=20
+    <TD>ornormal </TD>
+  <TR align=3Dmiddle>
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_tee.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_ltee.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_rtee.gif"> </TD>
+  <TR align=3Dmiddle>
+    <TD>tee=20
+    <TD>ltee=20
+    <TD>rtee </TD>
+  <TR align=3Dmiddle>
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_vee.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_lvee.gif">=20
+    <TD><IMG src=3D"http://graphviz.org/doc/info/aa_rvee.gif"> </TD>
+  <TR align=3Dmiddle>
+    <TD>vee=20
+    <TD>lvee=20
+    <TD>rvee </TD></TR></TBODY></TABLE></CENTER></BODY></HTML>
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_box.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2/+R+IgEH1OX2x+QhPAxdbn9HYmPR/Axdbn9DwnhY+py+zsSH4/gY+py+x8SwsfU3aCE
+8DF12Sg+HsHH1OX2PySEj6mrFJvgY+oyUHw8go+py+1/SAgfU1cpPqYutxN8TF1u/0MSwsfUTYpN
+8DF1GSg+HsHH1OX2PySEj6m7QQnhY+qyUXw8go+py+1/SAgfU5fb35H4eAQfU5fb/5AQPqYut78j
+8fEIPqYut/8hIXxMXW5/R+IjEnxMXW5/QBLCx9Tl9nckPhoEwcfU5fYHJP+Ej6nL7Q8hCeFj6nL7
+AxLCx9Tl9oeRhPAxdbndSQgfU5fbH0ZAEsLH1OV2JgnhY+py+8NoSAgfU5fbmYTwMXW5/WFEJISP
+qcvtSkL4mLrc/jAmkhA+pi63I0kIH1OX2x9GRRLCx9TldiMJ4WPqcvvDyEhC+Ji63E4J4WPqcvvD
++EgIH1OXmymEj6nL7Q+jJAnhY+pyIyWEj6nL7Q+jPCSEj6nLbRTCx9Tl9odRKpIQPqYuLyWEj6nL
+7Q+jbCQhfExdPkoIH1OX2x9GGUlM+Ji6GZQQPqYutz+Mch4SEz6magSF8DF1uf1hlJOR2AQfEyk2
+wcfU5faHUc5J4mMiwccn1OX2h1FOGkkIH1OX2x9GOWm1F2e9efcfDMWRLM0TTdWVbd0XnogCADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_crow.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz9sJEEQfExd
+bn9AQviYutz+cJEYRvAxdbn9AUkIH1OX2x8iEgMgCD6mLrf/ISF8TF1ufwhIHIIdBB9Tl9v/kBA+
+pu4GJYSPqctHsQl+EHxMXW7/Q0L4mLpKsQk+pi5TbIJvQfAxdbn9DwnhY+oqxcfU5XaCj6nL7X9I
+QviYukmxCT6mLlNsgm9B8DF1uf0PCeFj6m5QQviYunwUm+AHwcfU5fY/JISPqcvtDwGJQ7CD4GPq
+cvsfEsLH1OX2h4jEAAiCj6nL7X9ICB9Tl9sfKhLDCD6mLrc/IAnhY+py+/9DRhIEwcfU5fYHJISP
+qcvtDyEJ4WPqcvsDEsLH1OX2h5GE8DF1ud1JCB9Tl9sfRkASwsfU5XYmCeFj6nL7w2hICB9Tl9uZ
+hPAxdbn9YUQkhI+py+1KQviYutz+MCaSED6mLrcjSQgfU5fbH0ZFEsLH1OV2IwnhY+py+8PISEL4
+mLrcTgnhY+py+8P4SAgfU5ebKYSPqcvtD6MkCeFj6nIjJYSPqcvtD6M8JISPqcttFMLH1OX2h1Eq
+khA+pi4vJYSPqcvtD6NsJCF8TF0+SggfU5fbH0YZSUz4mLoZlBA+pi63P4xyHhITPqZqBIXwMXW5
+/WGUk5HYBB8TKTbBx9Qy5faHUc5J4mMiwcfU5faHUU4aSQgfU5fbH0Y5abUXZ7159x8MxZEszRNN
+1ZVt3ReeiAIAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_diamond.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x8aEsK3CIKPqcvtD0hC+Ji63P6PxCb4QfAxdbn9DwnhY+py+zcS3wh2EHxMXW7/Q0L4
+mLoblBA+pi5TfAwACIKPqcvtf0gIH1NXKTbBx9RNio8JQfAxdbn9DwnhY+oqxcfU5XaCj6nL7X9I
+QviYukmxCT6mblJ8TAiCj6nL7X9ICB9Td4MSwsfUXYqPBgBB8DF1uf0PCeFj6nL7NxL/AACC4GPq
+cvsfEsLH1OX2dyR+EOwg+Ji63P6HhPAxdbn9H4lD8CGC4GPqcvsDkhA+pv8utz8EJIR/QfAxdbn9
+AQnhY+py+0NIQviYutz+gITwMXW5/WEkIXxMXW53EsLH1OX2hxGQhPAxdbmdSUL4mLrc/jAaEsLH
+1OV2JiF8TF1ufxgRCeFj6nK7khA+pi63P4yJJISPqcvtSBLCx9Tl9odRkYTwMXW53UhC+Ji63P4w
+MpIQPqYut1NC+Ji63P4wPhLCx9TlZgrhY+py+8MoSUL4mLrcSAnhY+py+8MoDwnhY+pyG4XwMXW5
+/WGUiiSEj6nLSwnhY+py+8MoG0kIH1OXjxLCx9Tl9odRRhITPqZuBiWEj6nL7Q+jnIfEhI+pGkEh
+fExdbn8Y5WQkNsHHRIo1TfAxdbn9YZRzkviYSPAxdbn9YZSTRhLCx9Tl9odRTlrtxVlv3v0HQ3Ek
+S/NEU3VlW/eFJ6IAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_dot.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x8aEhsAwAg+pi63PyAJ4WPqcvtDEj8AIAg+pi63/yEhfExdbv9H4h9AEHxMXW7/Q0L4
+mLoblBA+pi4bxceAIPiYutz+h4TwMXWVYhN8TF0Gio8BQfAxdbn9DwnhY+oqxcfU5XaCj6nL7X9I
+QviYukmxCT6mLgPFx4Ag+Ji63P6HhPAxdTcoIXxMXTaKjwFB8DF1uf0PCeFj6nL7PxL/AILgY+py
++x8SwsfU5faHJH4AQBB8TF1u/0NC+Ji63P4QkNgAAEbwMXW5/QFJCB9Tl//bHz4SwsfU5fYHJISP
+qcvtDyEJ4WPqcvsDEsLH1OX2h5GE8DF1ud1JCB9Tl9sfRkASwsfU5XYmCeFj6nL7w2hICB9Tl9uZ
+hPAxdbn9YUQkhI+py+1KQviYutz+MCaSED6mLrcjSQgfU5fbH0ZFEsLH1OV2IwnhY+py+8PISEL4
+mLrcTgnhY+py+8P4SAgfU5ebKYSPqcvtD6MkCeFj6nIjJYSPqcvtD6M8JISPqcttFMLH1OX2h1Eq
+khA+pi4vJYSPqcvtD6NsJCF8TF0+SggfU5fbH0YZSUz4mLoZlBA+pi63P4xyHhITPqZqBIXwMXW5
+/WGUk5HYBB8TKTbBx9Qy5faHUc5J4mMiwcfU5faHUU4aSQgfU5fbH0Y5abUXZ7159x8MxZEszRNN
+1ZVt3ReeiAIAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_inv.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x82EofgY+py+wOSED6mLrc/TCQ+wcfU5fY/JISPqcvtDw2JfwQfU5fb/5AQPqbuBiWE
+j6nLSPExCD6mLrf/ISF8TF2l2AQfU5cpPiLBx9Tl9j8khI+pqxQfU5fbCT6mLrf/IQnhY+omxSb4
+mLpM8REJPqYut/8hIXxM3Q1KCB9Tl5PiI8HH1OX2PySEj6nL7Q8RiR8EH1OX2/+QED6mLrc/ZCQm
+fExdbv9DQviYutz+0JGE8DF1uf0BSQgfU5fbHz4SwsfU5fYHJISPqcvtD/8hCeFj6nL7AxLCx9Tl
+9oeRhPAxdbndSQgfU5fbH0ZAEsLH1OV2JgnhY+py+8NoSAgfU5fbmYTwMXW5/WFEJISPqcvtSkL4
+mLrc/jAmkhA+pi63I0kIH1OX2x9GRRLCx9TldiMJ4WPqcvvDyEhC+Ji63E4J4WPqcvvD+EgIH1OX
+mymEj6nL7Q+jJAnhY+pyIyWEj6nL7Q+jPCSEj6nLbRTCx9Tl9odRKpIQPqYuLyWEj6nL7Q+jbCQh
+fExdPkoIH1OX2x9GGUlM+Ji6GZQQPqYutz+Mch4SEz6magSF8DF1uf1hlJOR2AQfEyk2wcfU5faH
+Uc5J4mMiwcfU5faHUU4hGkkIH1OX2x9GOWm1F2e9efcfDMWRLM0TTdWVbd0XnogCADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_none.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX2x8+khA+pi63PyAJ4WPqcvtDR0L4mLrc/oeE8DF1uf2hIyF8TF1u/0NC+Ji6G5QQPqYu
+d1IIH1OX2/+QED6mrlJsgo+py40UwsfU5fY/JISPqasUH1OX2wk+pi63/yEJ4WPqJsUm+Ji63Egh
+fExdbv9DQviYuhuUED6mLndSCB9Tl9v/kBA+pi63P3QkhI+py+1/SAgfU5fbHzoSwsfU5fY/JISP
+qcvtDx1JCB9Tl9sfkITwMXW5/eEjIXxMXW5/QEL4mLrc/hCSED6mLrc/IP8hfExdbn8YSQgfU5fb
+nYTwMXW5/WEEJCF8TF1uZ5IQPqYutz+MhoTwMXW5nUkIH1OX2x9GREL4mLrcriSEj6nL7Q9jIgnh
+Y+pyO5KE8DF1uf1hVCQhfExdbjeSED6mLrc/jIwkhI+py+2UED6mLrc/jI+E8DF1uZlC+Ji63P4w
+SpIQPqYuN1JC+Ji63P4wykNC+Ji63EYhfExdbn8YpSIJ4WPq8lJC+Ji63P4wykYSwsfU5aOE8DF1
+uf1hlJHEhI+pm0EJ4WPqcvvDKOchMeFjqkZQCB9Tl9sfRjkZiU3wMZFiE3xMXW5/GOWcJD4mEnxM
+XW5/GOWkkYTwMXW5/WEYlJNWe3HWm3f/wVAcydI80VRd2dZ94YkoADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_normal.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz+EJISPqcvt
+D0gIH1OX25+RhPDxIgg+pi63PyAJ4WPqcvsvEpvgYxB8TF1u/0NC+Ji63P6LxA+Cb0HwMXW5/Q8J
+4WPqblBC+Ji6S/GRYAfBx9Tl9j8khI+pqxSb4GPqKsXHAwiCj6nL7X9ICB9TVyk+pi63E3xMXW7/
+QxLCx9RNik3wMXWV4uMBBMHH1OX2PySEj6m7QQnhY+ouxT+CHwQfU5fb/5AQPqYut/8i8Qn+BcHH
+1OX2PySEj6nL7b9IQvh4QfAxdbn9DwnhY+py+0NHEsLH1OX2ByQhfExdbv9/+EgIH1OX2x+QED6m
+Lrc/hCSEj6nL7Q9ICB9Tl9sfRhLCx9TldichfExdbn8YAUkIH1OX25kkhI+py+0PoyEhfExdbmcS
+wsfU5faHEZEQPqYutysJ4WPqcvvDmEhC+Ji63I4kIXxMXW5/GBVJCB9Tl9uNJISPqcvtDyMjCeFj
+6nI7JYSPqcvtD+MjIXxMXW6mED6mLrc/jJIkhI+py42UED6mLrc/jPKQED6mLrdRCB9Tl9sfRqlI
+QviYuryUED6mLrc/jLKRhPAxdfkoIXxMXW5/GGUkMeFj6mZQQviYutz+MMp5SEz4mKoRFMLH1OX2
+h1FORmITfEyk2AQfU5cx2x9GOSeJj4kEH1OX2x9GOWkkIXxMXW5/GOWk1V6c9ebdfzAUR7I0TzRV
+V7Z1X3giCgA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_tee.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz9UJAZAEHxM
+XW5/QEL4mLrc/lCRGGAEH1OX2x+QhPAxdbn9YSIxIAg+pi63/yEhfExdbn+YSAwIgo+py+1/SAgf
+U3eDEsLH1OWmGBAEH1OX2/+QED6mrlJsgo+py0wxIAg+pi63/yEhfExdpfiYutxO8DF1uf0PSQgf
+UzcpNsHH1GWmGBAEH1OX2/+QED6m7gYlhI+py00xIAg+pi63/yEhfExdbn+YSAwIgo+py+1/SAgf
+U5fbHyYSA4LgY+py+x8SwsfU5faHicQAI/iYutz+gCSEj6nL7Q8TiQEQBP8fU5fbH5AQPqYutz9U
+JAZAEHxMXW5/QEL4mLrc/jCSED6mLrc7CeFj6nL7wwhIQviYutzOJCF8TF1ufxgNCeFj6nI7kxA+
+pi63P4yIhPAxdbldSQgfU5fbH8ZEEsLH1OV2JAnhY+py+8OoSEL4mLrcbiQhfExdbn8YGUkIH1OX
+2ykhfExdbn8YHwnhY+pyM4XwMXW5/WGUJCF8TF1upITwMXW5/WGUh4TwMXW5jUL4mLrc/jBKRRLC
+x9TlpYTwMXW5/WGUjSSEj6nLRwnhY+py+8MoI4kJH1M3gxLCx9Tl9odRzkNiwsdUjaAQPqYutz+M
+cjISm+BjIsUm+Ji63P4vMMo5SXxMJPiYutz+MMpJIwnhY+py+8MoJ6324qw37/6DoTiSpXmiqbqy
+rfvCE1EAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_open.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz8jCeEjBsHH
+1OX2BySEj6nL7d9ITPgIEQQfU5fbH5CE8DF1uf0diQn/guBj6nL7HxLCx9Tl9ockDsEPgo+py+1/
+SAgfU3eDEsLH1OWk2AAAQfAxdbn9DwnhY+oqxSb4mLqsFBsgCD6mLrf/ISF8TF2l+Ji63E7wMXW5
+/Q9JCB9TNyk2wcfUZaXYAEHwMXW5/Q8J4WPqblBC+Ji6nBQbACAIPqYut/8hIXxMXW5/SOIQ/CD4
+mLrc/oeE8DF1uf0diQn/guBj6nL7HxLCx9Tl9mckJnyECIKPqcvtD0hC+P+Yutz+iySEjxgEH1OX
+2x+QED6mLrc/hCSEj6nL7Q9ICB9Tl9sfRhLCx9TldichfExdbn8YAUkIH1OX25kkhI+py+0PoyEh
+fExdbmcSwsfU5faHEZEQPqYutysJ4WPqcvvDmEhC+Ji63I4kIXxMXW5/GBVJCB9Tl9uNJISPqcvt
+DyMjCeFj6nI7JYSPqcvtD+MjIXxMXW6mED6mLrc/jJIkhI+py42UED6mLrc/jPKQED6mLrdRCB9T
+l9sfRqlIQviYuryUED6mLrc/jLKRhPAxdfkoIXxMXW5/GGUkMeFj6mZQQviYutz+MMp5SEz4mKoR
+FMLH1OX2h1FORmITfEw3pNgEH1OX2x9GOSeJj4kEH1OX2x9GOWkkIXxMXW5/GOWk1V6c9ebdfzAU
+R7I0TzRVV7Z1X3giCgA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/a_lteeoldiamond.gif
+
+R0lGODlhnwA8AJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAACfADwAAAL/hI+py+0Po5y02ouz
+3rz7D4biSJbmiabqyrYtEcLH1OX2h1FOGkl8TCT4mLrc/jDKOUlsgo+JFJvgY+py+8MoJyMx4WOq
+RlAIH1OX2x9GOQ+JCR9TN4MSwsfU5faHUUaSED6mLh8lhI+py+0Po2wkIXxMXV5KCB9Tl9sfRqlI
+CB9Tl9sohI+py+0PozwkIXxMXW6khPAxdbn9YZQkhI+py80UwsfU5faH8ZGE8DF1uZ0SwsfU5faH
+kZGE8DF1ud1IQviYutz+MCqSED6mLrcjSQgfU5fbH8ZEQviYutyuJISPqcvtDyMiIXxMXW5nEsLH
+1OX2h9GQhPAxdbmdSUL4/5i63P4wAhLCx9TldichfExdbn8YSQgfU5fbH5AQPqYutz9UJAZAEHxM
+XW5/QEL4mLrc/ouE8DEiLCiEj6nL7Q9IQviYutz+iCQwgm8RYUHwMXW5/Q8J4WPqcvsbkhB23EEE
+BQiCj6nL7X9ICB9Td4MSwsfUhSD4FoEQlACC4GPqcvsfEsLH1FWKTfAxNSMIPkLEBSWAIPiYutz+
+h4TwMXWV4mPqcjvBx9Tl9j8kIXxM3aTYBB9TlxsphI+py+1/SAgfU3eDEsLH1OVOCuFj6nL7HxLC
+x9Tl9oeOhPAxdbn9DwnhY+py+0NHQviYutz+h4TwMXW5/aEjCeFj6nL7A/+SED6mLrc/fCSEj6nL
+7Q9ICB9Tl9sfQhLCx9Tl9gckhI+py+0PIwnhY+pyu5MQPqYutz+MgCSEj6nL7UwSwsfU5faH0ZAQ
+PqYutzMJ4WPqcvvDiEgIH1OX25WE8DF1uf1hTCQhfExdbkeSED6mLrc/jIokhI+py+1GEsLH1OX2
+h5GRhPAxdbmdEsLH1OX2h/GRED6mLjdTCB9Tl9sfRkkSwsfU5UZKCB9Tl9sfRnlICB9Tl9sohI+p
+y+0Po1QkIXxMXV5KCB9Tl9sfRtlIQviYunyUED6mLrc/jDKSmPAxdTMoIXxMXW5/GOU8JCZ8TNUI
+CuFj6nL7wygnI7EJPiY3UmyCj6nL7Q+jnJPEx0SCj6nL7Q+jnDSSED6mLrc/jHLSai/OevPuPxiK
+I1maJ5qqK9u6LzwRBQA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_box.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKXhI+py+0Po5y02otz
+JPHRCD6mLrc/NCQ+GsHH1OX2h4bERyP4mLrc/tCQ+GgEH1OXj2LCx9Rlo/hoBB9Tl41iE3xMXQaK
+j0bwMXXZKD6mLncTfExdNopN8DF1GSg+GsHH1OWjmPAxddkoPhrBx9Tl9oeGxEcj+Ji63P7QkPho
+BB9Tl9sfGhIfjeBj6nL7wygnrfbirDcmBQA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_lbox.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJ2hI+py+0Po5y02otz
+JPHRCD6mLrc/NCQ+GsHH1OX2h4bERyP4mLrc/tCQ+GgEH1OXj2LCx9Rlo/hoBB9Tl41iE3xMXQaK
+j0bwMXXZKD6mLncTfExdNopN8DF1uf2hIzHhY+py+8MoJ6324qw37/6DoTiSpfkRBQA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_rbox.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJxhI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pi4DxUcj+Ji6fBQTPqYuG8VH
+I/iYutz+0JD4aAQfU5fbHxoSH43gY+py+0ND4qMRfExdbn8Y5aTVXpz1xqQAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_obox.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKlhI+py+0Po5y02otz
+JPHRCD6mLrc/NCSEj0HwMXW5/aEhIXwMgo+py+0PDQnhYyAiIiKEDokJH1OXjUL4GIiIiAghQ2IT
+fExdBgrhYyAiIiKEDImPqctL8DEQERERQobEJviYugwUwsdARERECB0SEz6mLhuF8DEIPqYutz80
+JISPQfAxdbn9oSEhfAyCj6nL7Q8NiY9G8DF1uf1hlJNWe3HWG5MCADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_olbox.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJ9hI+py+0Po5y02otz
+JPHRCD6mLrc/NCSEj0HwMXW5/aEhIXwMgo+py+0PDQnhYyAiIiKEDokJH1OXjUL4GIiIiAghQ2IT
+fExdBgrhYyAiIiKEDImPqcvdBB9Tl41iE3xMXW5/6EhM+Ji63P4wykmrvTjrzbv/YCiOZGl+RAEA
+Ow==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_orbox.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJ1hI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pi4DhfAxEBEREUKHxISPqctG
+IXwMgo+py+0PDQnhYxB8TF1uf2hICB+D4GPqcvtDQ+KjEXxMXW5/GOWk1V6c9cakADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_crow.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKVhI+py+0Po5y0NpIQ
+PqYutz90JCZ8TF1uf9hITPiYutz+sJE4BB9Tl9sfMhKH4GPqclNM+Ji6bBSb4GPqclNsgo+puxSf
+4GPqcgPFx9TlboKPqctGsQk+pi5TbIKPqcttFBM+pi4fxSb4mLrc/vCROAQfU5fbH0YSEz6mLrc/
+jCQmfExdbn8YSUL4mLrc/jDKSau9khQAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_lcrow.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJ0hI+py+0Po5y0NpIQ
+PqYutz90JCZ8TF1uf9hITPiYutz+sJE4BB9Tl9sfMhKH4GPqclNM+Ji6bBSb4GPqclNsgo+puxSf
+4GPqcgPFx9TlboKPqctGsQk+pi63P3QkJnxMXW5/GOWk1V6c9ebdfzAUR7I0P6IAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_rcrow.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJxhI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pi5TbIKPqcttFBM+pi4fxSb4
+mLrc/vCROAQfU5fbH0YSEz6mLrc/jCQmfExdbn8YSUL4mLrc/jDKSau9khQAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_diamond.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKOhI+py+0Po5y02osz
+JSF8TF1uf/hIHIKPqcvtDxuJHwQfU5fbHyoS/wg+pi4vxYSPqbsUH43gY+pyUmyCj6mbFB+T4GPq
+8lF8TF3uJviYumwUm+Bj6ibFxyT4mLqMFBM+pi5TfAyCj6nL7Q8RiW8EH1OX2x8yEpvgY+py+8NH
+QviYutz+MMpJq704680RKQA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_ldiamond.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJxhI+py+0Po5y02osz
+JSF8TF1uf/hIHIKPqcvtDxuJHwQfU5fbHyoS/wg+pi4vxYSPqbsUH43gY+pyUmyCj6mbFB+T4GPq
+8lF8TF3uJviYumwUm+Bj6nL7Q0diwsfU5faHUU5a7cVZb979B0NxJEvzIwoAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_rdiamond.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJuhI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pm5SfEyCj6nLSDHhY+oyxccg
++Ji63P4QkfhG8DF1uf0hI7EJPqYutz98JISPqcvtD6OctNqLs94ckQIAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_odiamond.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKchI+py+0Po5y02osz
+JSF8TF1uf/hIgiD4mLrc/rCRAAARBB9Tl9sfKhLChyD4mLq8FBM+pu4GhfAvCD6mLifFJviYuhkE
+Hy0iMzOlhEh8TF02go8ZmZmZ0iGxCT6mbgaF8BEiMjNTSonEhI+py0HwLYLgY+py+0NEEsIOgo+p
+y+0PGUlgBB9Tl9sfPhLCx9Tl9odRTlrtxVlvjkgBADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_oldiamond.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJ3hI+py+0Po5y02osz
+JSF8TF1uf/hIgiD4mLrc/rCRAAARBB9Tl9sfKhLChyD4mLq8FBM+pu4GhfAvCD6mLifFJviYuhkE
+Hy0iMzOlhEh8TF3uJviYumwUm+Bj6nL7Q0diwsfU5faHUU5a7cVZb979B0NxJEvzIwoAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_ordiamond.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJzhI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pm4GhfARIjIzU0qJxISPqctB
+8C2C4GPqcvtDRBLCDoKPqcvtDxlJYAQfU5fbHz4SwsfU5faHUU5a7cVZb45IAQA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_dot.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKMhI+py+0Po5y02ouz
+3rxLEpvgY+py+0NG4gfBx9Tl9oeKxD+Cj6nLSTHhY+qyUXwMgo+py0exCT6mLgPFxyD4mLp8FB9T
+l5sJPqYuH8Um+Ji6DBQfg+Bj6jJSTPiYumwUH4PgY+py+0NE4h/Bx9Tl9oeKxA+Cj6nL7Q8ZiU3w
+MXW5/WGUk1Z7cdabkwIAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_odot.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKchI+py+0Po5y02ouz
+3rxLEpvgY+py+0NGEgAYwcfU5faHiiSEHUHwMXU5KSZ8TF02SggfIhARESGEDolN8DF1GSiEf4GI
+iIgQOiQ+pi4vwb9ARERECB0Sm+Bj6jJQCP8CERERIYRITPiYumyUED5EEHxMXW5/iEhC2BEEH1OX
+2x8qkgDACD6mLrc/ZCQ2wcfU5faHUU5a7cVZb04KADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_inv.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKPhI+py+0Po5y02ouz
+BiQhfExdbn/oSByCj6nL7Q8ZiU/wMXW5/WEi8Y/gY+ryUUz4mLp8FB+D4GPqslFsgo+pyxQfj+Bj
+6rJRfExd7ib4mLpsFJvgY+oyxccj+Ji6fBQTPqYuI8VHgo+py+0PFYlvBB9Tl9sfNhKb4GPqcvtD
+SBLCx9Tl9odRTlrtxVlvTAoAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_linv.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJyhI+py+0Po5y02ouz
+BiQhfExdbn/oSByCj6nL7Q8ZiU/wMXW5/WEi8Y/gY+ryUUz4mLp8FB+D4GPqslFsgo+pyxQfj+Bj
+6rJRfExd7ib4mLpsFJvgY+py+0NHYsLH1OX2h1FOWu3FWW/e/QdDcSRL8yMKADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_rinv.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJthI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pi5TfDyCj6nLRzHhY+oyUnwk
++Ji63P5QkfhG8DF1uf1hI7EJPqYutz+EJCF8TF1ufxjlpNVenPXGpAA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_oinv.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKfhI+py+0Po5y02ouz
+BiQhfExdbn/oSIIg+Ji63P6QkQQAQfAxdbn9YSIxYQfBx9Tlo5jwMXX5KCF8C0RERISQIbEJPqYu
+B4XwMRARERFChsTH1OUk+GiRmZkpHRKb4GPqclBC+BeIiIgIoUNiwsfUZaSE8CEIPqYutz9UJAYA
+BMHH1OX2h43ECIKPqcvtDyFJCB9Tl9sfRjlptRdnvTEpADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_olinv.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJ5hI+py+0Po5y02ouz
+BiQhfExdbn/oSIIg+Ji63P6QkQQAQfAxdbn9YSIxYQfBx9Tlo5jwMXX5KCF8C0RERISQIbEJPqYu
+B4XwMRARERFChsTH1OVugo+py0axCT6mLrc/dCQmfExdbn8Y5aTVXpz15t1/MBRHsjQ/ogA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_orinv.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJ0hI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pi4HJYR/gYiIiBA6JCZ8TF1G
+SggfguBj6nL7Q0ViAEAQfExdbn/YSIwg+Ji63P4QkoTwMXW5/WGUk1Z7cdYbkwIAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_none.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJQhI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pi63P3QkJnxMXW5/GOWk1V6c
+9ebdfzAUR7I0P6IAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_normal.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKHhI+py+0Po5y02ouz
+IwnhY+py+0NI4hB8TF1uf+hIfIKPqcvtDxmJfwQfU5ebYsLH1F2Kj0HwMXVZKTbBx9RVio9H8DF1
+GSk+pi53E3xMXTaKTfAxdZXi4xF8TF1OigkfU3cp/hF8TF1uf5hIfIKPqcvtDxlJCB9Tl9sfRjlp
+tRdnvXn3fyMKADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_lnormal.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJxhI+py+0Po5y02ouz
+IwnhY+py+0NI4hB8TF1uf+hIfIKPqcvtDxmJfwQfU5ebYsLH1F2Kj0HwMXVZKTbBx9RVio9H8DF1
+GSk+pi53E3xMXTaKTfAxdbn9oSMx4WPqcvvDKCet9uKsN+/+g6E4kqX5EQUAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_rnormal.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJnhI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pq5SfDyCj6nLSTHhY+ouxT+C
+j6nL7Q8TiU/wMXW5/SEjCeFj6nL7wygnrfbirDfv/m9EAQA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_onormal.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKWhI+py+0Po5y02ouz
+IwnhY+py+0NIggTBx9Tl9oeOBIAIgo+py+0PGQlhRwTBx9TlppjwMXU3CL5FEHxMXVaKTfAxdTUI
+PkYgIiJCCCESH1OXkeCjRWRmppQOiU3wMXU1CL5FRBB8TF1OigkfU3eDYEcEwcfU5faHiQSJCIKP
+qcvtDxlJCB9Tl9sfRjlptRdnvXn3fyMKADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_olnormal.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJ4hI+py+0Po5y02ouz
+IwnhY+py+0NIggTBx9Tl9oeOBIAIgo+py+0PGQlhRwTBx9TlppjwMXU3CL5FEHxMXVaKTfAxdTUI
+PkYgIiJCCCESH1OXuwk+pi4bxSb4mLrc/tCRmPAxdbn9YZSTVntx1pt3/8FQHMnS/IgCADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_ornormal.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJshI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pq4GwbeICIKPqctJMeFj6m4Q
+7Igg+Ji63P4wkSARQfAxdbn9ISMJ4WPqcvvDKCet9uKsN+/+b0QBADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_tee.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKShI+py+0Po5y0KhIT
+PqYutz98JCZ8TF1uf/hITPiYutz+8JGY8DF1uf3hIzHhY+pyUkz4mLrcFBM+pi4jxSb4mLrMFBM+
+pi4jxcfU5W6Cj6nLRrEJPqYuM8WEj6nLSTHhY+pyU0z4mLrc/vCRmPAxdbn94SMx4WPqcvvDR2LC
+x9Tl9oePxISPqcvtD6OctNpLSQEAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_ltee.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJyhI+py+0Po5y0KhIT
+PqYutz98JCZ8TF1uf/hITPiYutz+8JGY8DF1uf3hIzHhY+pyUkz4mLrcFBM+pi4jxSb4mLrMFBM+
+pi4jxcfU5W6Cj6nLRrEJPqYutz90JCZ8TF1ufxjlpNVenPXm3X8wFEeyND+iADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_rtee.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJwhI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pi4zxYSPqctJMeFj6nJTTPiY
+utz+8JGY8DF1uf3hIzHhY+py+8NHYsLH1OX2h4/EhI+py+0Po5y02ktJAQA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_vee.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAKQhI+py+0Po5w0khA+
+pi63P4yAJISPqcvtDyMgCeFj6nL7w0hiwsfU5faHkMQh+Ji63BQTPqYuK8Uh+Ji6rBSb4GPqslJs
+go+py0jxMXW5m+Bj6rJRbIKPqctJ8Qk+pi4nxYSPqctIsQk+pi63P1wkDsHH1OX2h4zEIfiYutz+
+sJGE8DF1uf1hlJNWe3HWmzdSADs=
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_lvee.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJ0hI+py+0Po5w0khA+
+pi63P4yAJISPqcvtDyMgCeFj6nL7w0hiwsfU5faHkMQh+Ji63BQTPqYuK8Uh+Ji6rBSb4GPqslJs
+go+py0jxMXW5m+Bj6rJRbIKPqcvtDx2JCR9Tl9sfRjlptRdnvXn3HwzFkSzNjygAOw==
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/doc/info/aa_rvee.gif
+
+R0lGODlhXAARAJEAAP///wAAAP///gAAACH5BAEAAAIALAAAAABcABEAAAJthI+py+0Po5y02ouz
+3rz7D4biSJYOERM+pi63P3QkNsHH1OX2h43Ex9TlboKPqctGsQk+pi4nxSf4mLqcFBM+pi4jxSb4
+mLrc/nCROAQfU5fbHzISh+Bj6nL7w0YSwsfU5faHUU5a7cVZb95IAQA7
+
+------=_NextPart_000_0092_01C7EBFA.03B8E9F0--

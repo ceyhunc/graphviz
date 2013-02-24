@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="arith.h" />
+    <ClInclude Include="color.h" />
+    <ClInclude Include="colorprocs.h" />
+    <ClInclude Include="colortbl.h" />
+    <ClInclude Include="const.h" />
+    <ClInclude Include="geom.h" />
+    <ClInclude Include="geomprocs.h" />
+    <ClInclude Include="globals.h" />
+    <ClInclude Include="htmllex.h" />
+    <ClInclude Include="htmlparse.h" />
+    <ClInclude Include="htmltable.h" />
+    <ClInclude Include="logic.h" />
+    <ClInclude Include="macros.h" />
+    <ClInclude Include="memory.h" />
+    <ClInclude Include="pointset.h" />
+    <ClInclude Include="ps.h" />
+    <ClInclude Include="render.h" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="unistd.h" />
+    <ClInclude Include="config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="args.c" />
+    <ClCompile Include="arrows.c" />
+    <ClCompile Include="colxlate.c" />
+    <ClCompile Include="diagen.c" />
+    <ClCompile Include="emit.c" />
+    <ClCompile Include="figgen.c" />
+    <ClCompile Include="fontmetrics.c" />
+    <ClCompile Include="gdgen.c" />
+    <ClCompile Include="gdtextsize.c" />
+    <ClCompile Include="gdusershape.c" />
+    <ClCompile Include="geom.c" />
+    <ClCompile Include="globals.c" />
+    <ClCompile Include="hpglgen.c" />
+    <ClCompile Include="htmllex.c" />
+    <ClCompile Include="htmlparse.c" />
+    <ClCompile Include="htmltable.c" />
+    <ClCompile Include="input.c" />
+    <ClCompile Include="labels.c" />
+    <ClCompile Include="mapgen.c" />
+    <ClCompile Include="memory.c" />
+    <ClCompile Include="mifgen.c" />
+    <ClCompile Include="mpgen.c" />
+    <ClCompile Include="ns.c" />
+    <ClCompile Include="output.c" />
+    <ClCompile Include="picgen.c" />
+    <ClCompile Include="pointset.c" />
+    <ClCompile Include="postproc.c" />
+    <ClCompile Include="psgen.c" />
+    <ClCompile Include="psusershape.c" />
+    <ClCompile Include="routespl.c" />
+    <ClCompile Include="shapes.c" />
+    <ClCompile Include="splines.c" />
+    <ClCompile Include="strcasecmp.c" />
+    <ClCompile Include="strncasecmp.c" />
+    <ClCompile Include="svggen.c" />
+    <ClCompile Include="svgusershape.c" />
+    <ClCompile Include="timing.c" />
+    <ClCompile Include="utils.c" />
+    <ClCompile Include="vrmlgen.c" />
+    <ClCompile Include="vtxgen.c" />
+    <ClCompile Include="xdgen.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="htmlparse.y" />
+  </ItemGroup>
+</Project>

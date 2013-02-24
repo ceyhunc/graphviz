@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="entities.h" />
+    <ClInclude Include="gd.h" />
+    <ClInclude Include="gd_io.h" />
+    <ClInclude Include="gdcache.h" />
+    <ClInclude Include="gdfontg.h" />
+    <ClInclude Include="gdfontl.h" />
+    <ClInclude Include="gdfontmb.h" />
+    <ClInclude Include="gdfonts.h" />
+    <ClInclude Include="gdfontt.h" />
+    <ClInclude Include="gdfx.h" />
+    <ClInclude Include="gdhelpers.h" />
+    <ClInclude Include="jisx0208.h" />
+    <ClInclude Include="wbmp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="annotate.c" />
+    <ClCompile Include="circletexttest.c" />
+    <ClCompile Include="fontconfigtest.c" />
+    <ClCompile Include="fontsizetest.c" />
+    <ClCompile Include="fontwheeltest.c" />
+    <ClCompile Include="gd.c" />
+    <ClCompile Include="gd_gd.c" />
+    <ClCompile Include="gd_gd2.c" />
+    <ClCompile Include="gd_gif_in.c" />
+    <ClCompile Include="gd_gif_out.c" />
+    <ClCompile Include="gd_io.c" />
+    <ClCompile Include="gd_io_dp.c" />
+    <ClCompile Include="gd_io_file.c" />
+    <ClCompile Include="gd_io_ss.c" />
+    <ClCompile Include="gd_jpeg.c" />
+    <ClCompile Include="gd_png.c" />
+    <ClCompile Include="gd_security.c" />
+    <ClCompile Include="gd_ss.c" />
+    <ClCompile Include="gd_topal.c" />
+    <ClCompile Include="gd_wbmp.c" />
+    <ClCompile Include="gd2copypal.c" />
+    <ClCompile Include="gd2time.c" />
+    <ClCompile Include="gd2togif.c" />
+    <ClCompile Include="gd2topng.c" />
+    <ClCompile Include="gdcache.c" />
+    <ClCompile Include="gdcmpgif.c" />
+    <ClCompile Include="gddemo.c" />
+    <ClCompile Include="gdfontg.c" />
+    <ClCompile Include="gdfontl.c" />
+    <ClCompile Include="gdfontmb.c" />
+    <ClCompile Include="gdfonts.c" />
+    <ClCompile Include="gdfontt.c" />
+    <ClCompile Include="gdft.c" />
+    <ClCompile Include="gdfx.c" />
+    <ClCompile Include="gdhelpers.c" />
+    <ClCompile Include="gdkanji.c" />
+    <ClCompile Include="gdparttopng.c" />
+    <ClCompile Include="gdtables.c" />
+    <ClCompile Include="gdtest.c" />
+    <ClCompile Include="gdtestft.c" />
+    <ClCompile Include="gdtopng.c" />
+    <ClCompile Include="gdxpm.c" />
+    <ClCompile Include="gifanimtest.c" />
+    <ClCompile Include="giftogd2.c" />
+    <ClCompile Include="pngtogd.c" />
+    <ClCompile Include="pngtogd2.c" />
+    <ClCompile Include="testac.c" />
+    <ClCompile Include="testtr.c" />
+    <ClCompile Include="wbmp.c" />
+    <ClCompile Include="webpng.c" />
+  </ItemGroup>
+</Project>

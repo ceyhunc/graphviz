@@ -1,0 +1,21 @@
+OK:
+---
+cdt
+circogen
+common
+dotgen
+fdpgen
+gd
+graph
+gvc
+neatogen
+pack
+pathplan
+plugin
+twopigen
+
+Hatalilar:
+----------
+Simdilik yok
+
+Not: Cogunda MSWIN32 define edilmemis!

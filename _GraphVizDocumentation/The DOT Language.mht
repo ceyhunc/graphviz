@@ -1,0 +1,245 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: The DOT Language
+Date: Fri, 31 Aug 2007 18:07:43 +0300
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://graphviz.org/doc/info/lang.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3138
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--=0A=
+    This is a generated document.  Do not edit.=0A=
+--><HTML=20
+version=3D2.0><HEAD><TITLE>The DOT Language</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"MSHTML 6.00.6000.16525" name=3DGENERATOR></HEAD>
+<BODY bgColor=3Dwhite><A name=3Dtop></A>
+<H1 align=3Dcenter>The DOT Language</H1>
+<HR>
+The following is an abstract grammar defining the DOT language. =
+Terminals are=20
+shown in bold font and nonterminals in italics. Literal characters are =
+given in=20
+single quotes. Parentheses ( and ) indicate grouping when needed. Square =
+
+brackets [ and ] enclose optional items. Vertical bars | separate =
+alternatives.=20
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD align=3Dright><I>graph</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft>[ <B>strict</B> ] (<B>graph</B> | <B>digraph</B>) [ =
+
+      <I>ID</I> ] <B>'{'</B> <I>stmt_list</I> <B>'}'</B></TD></TR>
+  <TR>
+    <TD align=3Dright><I>stmt_list</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft>[ <I>stmt</I> [ <B>';'</B> ] [ <I>stmt_list</I> ] =
+]</TD></TR>
+  <TR>
+    <TD align=3Dright><I>stmt</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft><I>node_stmt</I></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><I>edge_stmt</I></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><I>attr_stmt</I></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><I>ID</I> <B>'=3D'</B> <I>ID</I></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><I>subgraph</I></TD></TR>
+  <TR>
+    <TD align=3Dright><I>attr_stmt</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft>(<B>graph</B> | <B>node</B> | <B>edge</B>)=20
+    <I>attr_list</I></TD></TR>
+  <TR>
+    <TD align=3Dright><I>attr_list</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft><B>'['</B> [ <I>a_list</I> ] <B>']'</B> [ =
+<I>attr_list</I>=20
+    ]</TD></TR>
+  <TR>
+    <TD align=3Dright><I>a_list</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft><I>ID</I> [ <B>'=3D'</B> <I>ID</I> ] [ <B>','</B> ] =
+[=20
+      <I>a_list</I> ]</TD></TR>
+  <TR>
+    <TD align=3Dright><I>edge_stmt</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft>(<I>node_id</I> | <I>subgraph</I>) <I>edgeRHS</I> [ =
+
+      <I>attr_list</I> ]</TD></TR>
+  <TR>
+    <TD align=3Dright><I>edgeRHS</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft><I>edgeop</I> (<I>node_id</I> | <I>subgraph</I>) [=20
+      <I>edgeRHS</I> ]</TD></TR>
+  <TR>
+    <TD align=3Dright><I>node_stmt</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft><I>node_id</I> [ <I>attr_list</I> ]</TD></TR>
+  <TR>
+    <TD align=3Dright><I>node_id</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft><I>ID</I> [ <I>port</I> ]</TD></TR>
+  <TR>
+    <TD align=3Dright><I>port</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft><B>':'</B> <I>ID</I> [ <B>':'</B> <I>compass_pt</I> =
+]</TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>':'</B> <I>compass_pt</I></TD></TR>
+  <TR>
+    <TD align=3Dright><I>subgraph</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft>[ <B>subgraph</B> [ <I>ID</I> ] ] <B>'{'</B>=20
+      <I>stmt_list</I> <B>'}'</B></TD></TR>
+  <TR>
+    <TD align=3Dright></TD>
+    <TD align=3Dleft>|</TD>
+    <TD align=3Dleft><B>subgraph</B> <I>ID</I></TD></TR>
+  <TR>
+    <TD align=3Dright><I>compass_pt</I></TD>
+    <TD align=3Dleft>:</TD>
+    <TD align=3Dleft>(<B>n</B> | <B>ne</B> | <B>e</B> | <B>se</B> | =
+<B>s</B> |=20
+      <B>sw</B> | <B>w</B> | <B>nw</B>)</TD></TR></TBODY></TABLE>
+<P>The keywords <B>node</B>, <B>edge</B>, <B>graph</B>, <B>digraph</B>,=20
+<B>subgraph</B>, and <B>strict</B> are case-independent. Note also that =
+the=20
+allowed compass point values are not keywords, so these strings can be =
+used=20
+elsewhere as ordinary identifiers.=20
+<P>An <I>ID</I> is one of the following:=20
+<MENU>
+  <LI>Any string of alphabetic characters, underscores or digits, not =
+beginning=20
+  with a digit;=20
+  <LI>a number=20
+  [<TT>-</TT>]<SUP>?</SUP>(<TT>.</TT>[<TT>0</TT>-<TT>9</TT>]<SUP>+</SUP> =
+|=20
+  =
+[<TT>0</TT>-<TT>9</TT>]<SUP>+</SUP>(<TT>.</TT>[<TT>0</TT>-<TT>9</TT>]<SUP=
+>*</SUP>)<SUP>?</SUP>=20
+  );=20
+  <LI>any double-quoted string ("...") possibly containing escaped =
+quotes (\");=20
+  <LI>an <A name=3Dhtml>HTML string</A> (&lt;...&gt;). </LI></MENU>Note =
+that in HTML=20
+strings, angle brackets must occur in matched pairs, and unescaped =
+newlines are=20
+allowed. In addition, the content must be legal XML, so that the special =
+XML=20
+escape sequences for ", &amp;, &lt;, and &gt; may be necessary in order =
+to embed=20
+these characters in attribute values or raw text.=20
+<P>Both quoted strings and HTML strings are scanned as a unit, so any =
+embedded=20
+comments will be treated as part of the strings.=20
+<P>An <I>edgeop</I> is <TT>-&gt;</TT> in directed graphs and <TT>--</TT> =
+in=20
+undirected graphs.=20
+<P>An <I>a_list</I> clause of the form <I>ID</I> is equivalent to=20
+<I>ID</I><TT>=3Dtrue</TT>.=20
+<P>The language supports C++-style comments: <TT>/* */</TT> and =
+<TT>//</TT>. In=20
+addition, a line beginning with a '#' character is considered a line =
+output from=20
+a C preprocessor (e.g., # 34 to indicate line 34 ) and discarded.=20
+<P>Semicolons aid readability but are not required except in the rare =
+case that=20
+a named subgraph with no body immediately preceeds an anonymous =
+subgraph, since=20
+the precedence rules cause this sequence to be parsed as a subgraph with =
+a=20
+heading and a body.=20
+<P>As another aid for readability, dot allows single logical lines to =
+span=20
+multiple physical lines using the standard C convention of a backslash=20
+immediately preceding a newline character. In addition, double-quoted =
+strings=20
+can be concatenated using a '+' operator. As HTML strings can contain =
+newline=20
+characters, they do not support the concatenation operator.=20
+<H2>Semantic Notes</H2>If a default attribute is defined using a =
+<B>node</B>,=20
+<B>edge</B>, or <B>graph</B> statement, or by an attribute assignment =
+not=20
+attached to a node or edge, any object of the appropriate type defined=20
+afterwards will inherit this attribute value. This holds until the =
+default=20
+attribute is set to a new value, from which point the new value is used. =
+Objects=20
+defined before a default attribute is set will have an empty string =
+value=20
+attached to the attribute once the default attribute definition is made. =
+
+<P>Note, in particular, that a subgraph receives the attribute settings =
+of its=20
+parent graph at the time of its definition. This can be useful; for =
+example, one=20
+can assign a font to the root graph and all subgraphs will also use the =
+font.=20
+For some attributes, however, this property is undesirable. If one =
+attaches a=20
+label to the root graph, it is probably not the desired effect to have =
+the label=20
+used by all subgraphs. Rather than listing the graph attribute at the =
+top of the=20
+graph, and the resetting the attribute as needed in the subgraphs, one =
+can=20
+simple defer the attribute definition if the graph until the appropriate =
+
+subgraphs have been defined.=20
+<H2>Character encodings</H2>The DOT language assumes at least the ascii=20
+character set. Quoted strings, both ordinary and HTML-like, may contain=20
+non-ascii characters. In most cases, these strings are uninterpreted: =
+they=20
+simply serve as unique identifiers or values passed through untouched. =
+Labels,=20
+however, are meant to be displayed, which requires that the software be =
+able to=20
+compute the size of the text and determine the appropriate glyphs. For =
+this, it=20
+needs to know what character encoding is used.=20
+<P>By default, DOT assumes the UTF-8 character encoding. It also accepts =
+the=20
+Latin1 (ISO-8859-1) character set, assuming the input graph uses the =
+<B><A=20
+href=3D"http://graphviz.org/doc/info/attrs.html#a:charset">charset</A></B=
+>=20
+attribute to specify this. For graphs using other character sets, there =
+are=20
+usually programs, such as <TT>iconv</TT>, which will translate from one=20
+character set to another.=20
+<P>Another way to avoid non-ascii characters in labels is to use HTML =
+entities=20
+for special characters. During label evaluation, these entities are =
+translated=20
+into the underlying character. This <A=20
+href=3D"http://www.graphviz.org/doc/char.html">table</A> shows the =
+supported=20
+entities, with their Unicode value, a typical glyph, and the HTML entity =
+name.=20
+Thus, to include a lower-case Greek beta into a string, one can use the =
+ascii=20
+sequence <TT>&amp;beta;</TT>. In general, one should only use entities =
+that are=20
+allowed in the output character set, and for which there is a glyph in =
+the font.=20
+</P></BODY></HTML>

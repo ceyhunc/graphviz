@@ -1,0 +1,206 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Command-line Usage
+Date: Fri, 31 Aug 2007 18:08:02 +0300
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://graphviz.org/doc/info/command.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3138
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML version=3D2.0><HEAD><TITLE>Command-line Usage</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"MSHTML 6.00.6000.16525" name=3DGENERATOR></HEAD>
+<BODY bgColor=3Dwhite><A name=3Dtop></A>
+<H1 align=3Dcenter>Command-line Invocation</H1>
+<HR>
+All Graphviz programs have a similar invocation:<BR>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><CODE><I>cmd</I> [ <I>flags</I> ] [ <I>input files</I> ]<CODE>=20
+      </CODE></CODE></TD></TR></TBODY></TABLE>If no input files are =
+supplied, the=20
+program reads from <STRONG>stdin</STRONG>.=20
+<H3>Flags</H3>
+<DL>
+  <DT><STRONG>-G</STRONG><I>name</I>[=3D<I>value</I>]=20
+  <DD>Set a graph attribute, with default <I>value</I> =3D =
+<TT>true</TT>.=20
+  <DT><STRONG>-N</STRONG><I>name</I>[=3D<I>value</I>]=20
+  <DD>Set a default node attribute, with default <I>value</I> =3D =
+<TT>true</TT>.=20
+  <DT><STRONG>-E</STRONG><I>name</I>[=3D<I>value</I>]=20
+  <DD>Set a default edge attribute, with default <I>value</I> =3D =
+<TT>true</TT>.=20
+  <DT><STRONG>-T</STRONG><I>format</I>&gt;[:<I>renderer</I>]=20
+  <DD>Set output language to one of the <A=20
+  href=3D"http://graphviz.org/doc/info/output.html">supported =
+formats</A>. By=20
+  default, <A =
+href=3D"http://graphviz.org/doc/info/output.html#d:dot">attributed=20
+  dot</A> is produced.=20
+  <P>Depending on how Graphviz was built, there may be multiple =
+renderers for=20
+  generating a particular output format. For example, a typical =
+installation can=20
+  produce <A =
+href=3D"http://www.graphviz.org/doc/info/output.html#d:png">PNG</A>=20
+  output using either the Cairo or GD library. The desired rendering =
+engine can=20
+  be specified after a colon. Thus, <TT>-Tpng:cairo</TT> specifies PNG =
+output=20
+  produced by Cairo. If no renderer is specified, the default one is =
+invoked.=20
+  The flag <TT>-T<I>format</I>:</TT> produces a list of all of the =
+renderers=20
+  available for the specified <I>format</I>, the first one listed being =
+the=20
+  default. </P>
+  <DT><STRONG>-V</STRONG>=20
+  <DD>Emit version information and exit.=20
+  <DT><STRONG>-l</STRONG><I>library</I>=20
+  <DD>User-supplied, device-dependent library text. Multiple flags may =
+be given.=20
+  These strings are passed to the code generator at the beginning of =
+output.=20
+  <P>For PostScript output, they are treated as file names whose content =
+will be=20
+  included in the preamble after the standard preamble. If =
+<I>library</I> is the=20
+  empty string <TT>""</TT>, the standard preamble is not emitted. </P>
+  <DT><A name=3Dd:n><STRONG>-n</STRONG>[<I>num</I>]</A>=20
+  <DD>Sets no-op flag in <STRONG>neato</STRONG>. If set, =
+<STRONG>neato</STRONG>=20
+  assumes nodes have already been positioned and all nodes have a <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:pos">pos</A> =
+attribute giving=20
+  the positions. It then performs an optional adjustment to remove =
+node-node=20
+  overlap, depending on the value of the <A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:overlap">overlap</A> =
+
+  attribute, computes the edge layouts, depending on the value of the <A =
+
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:splines">splines</A> =
+
+  attribute, and emits the graph in the appropriate format. If =
+<I>num</I> is=20
+  supplied, the following actions occur:=20
+  <DL>
+    <DT><I>num</I> =3D 1=20
+    <DD>Equivalent to <STRONG>-n</STRONG>.=20
+    <DT><I>num</I> &gt; 1=20
+    <DD>Use node positions as specified, with no adjustment to remove =
+node-node=20
+    overlaps, and use any edge layouts already specified by the <A=20
+    href=3D"http://graphviz.org/doc/info/attrs.html#d:pos">pos</A> =
+attribute.=20
+    <STRONG>neato</STRONG> computes an edge layout for any edge that =
+does not=20
+    have a <B>pos</B> attribute. As usual, edge layout is guided by the =
+<A=20
+    =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:splines">splines</A>=20
+    attribute. </DD></DL>
+  <DT><STRONG>-o</STRONG><I>outfile</I>=20
+  <DD>Write output to file <I>outfile</I>. By default, output goes to=20
+  <STRONG>stdout</STRONG>.=20
+  <DT><STRONG>-O</STRONG>=20
+  <DD>Automatically generate output file names based on the input file =
+name and=20
+  the various output formats specified by the <STRONG>-T</STRONG> flags. =
+
+  <DT><STRONG>-q</STRONG>=20
+  <DD>Suppress warning messages.=20
+  <DT><A name=3Dd:s><STRONG>-s</STRONG></A>[<I>scale</I>]=20
+  <DD>Set input scale to <I>scale</I>. If this value is omitted, 72.0 is =
+used.=20
+  This number is used to convert the point coordinate units used in the =
+<A=20
+  href=3D"http://graphviz.org/doc/info/attrs.html#d:pos">pos</A> =
+attribute into=20
+  inches. Ignored if the <STRONG>-n</STRONG> flag is used.=20
+  <DT><STRONG>-v</STRONG>=20
+  <DD>Verbose mode=20
+  <DT><STRONG>-x</STRONG>=20
+  <DD>In <STRONG>neato</STRONG>, on input, prune isolated nodes and =
+peninsulas.=20
+  This removes uninteresting graph structure and produces a less =
+cluttered=20
+  drawing.=20
+  <DT><STRONG>-y</STRONG>=20
+  <DD>By default, the coordinate system used in generic output formats, =
+such as=20
+  <A href=3D"http://graphviz.org/doc/info/output.html#d:dot">attributed =
+dot</A>,=20
+  <A href=3D"http://graphviz.org/doc/info/output.html#d:xdot">extended =
+dot</A>, <A=20
+  href=3D"http://graphviz.org/doc/info/output.html#d:plain">plain</A> =
+and <A=20
+  =
+href=3D"http://graphviz.org/doc/info/output.html#d:plain-ext">plain-ext</=
+A>, is=20
+  the standard cartesian system with the origin in the lower left =
+corner, and=20
+  with increasing y coordinates as points move from bottom to top. If =
+the=20
+  <CODE>-y</CODE> flag is used, the coordinate system is inverted, so =
+that=20
+  increasing values of y correspond to movement from top to bottom.=20
+  <DT><STRONG>-?</STRONG>=20
+  <DD>Print usage information, then exit. </DD></DL>If multiple=20
+<STRONG>-T</STRONG> flags are given, drawings of the graph are emitted =
+in each=20
+of the specified formats. Multiple <STRONG>-o</STRONG> flags can be used =
+to=20
+specify the output file for each format. If there are more formats than =
+files,=20
+the remaining formats are written to <STRONG>stdout</STRONG>.=20
+<P>Note that the <STRONG>-G</STRONG>, <STRONG>-N</STRONG> and=20
+<STRONG>-E</STRONG> flags override any initial attribute declarations in =
+the=20
+input graph, i.e., those attribute statements appearing before any node, =
+edge or=20
+subgraph definitions. In addition, these flags cause the related =
+attributes to=20
+be permanently attached to the graph. Thus, if attributed dot is used =
+for=20
+output, the graph will have these attributes.=20
+<H3>Environment Variables</H3>
+<DL>
+  <DT><STRONG>GDFONTPATH</STRONG>=20
+  <DD>List of pathnames giving directories which a program should search =
+for=20
+  fonts. Overridden by <A=20
+  =
+href=3D"http://graphviz.org/doc/info/command.html#d:DOTFONTPATH">DOTFONTP=
+ATH</A>.=20
+  <IT>Used only if Graphviz is not built with the <TT>fontconfig</TT>=20
+  library</IT>=20
+  <DT><A name=3Dd:DOTFONTPATH><STRONG>DOTFONTPATH</STRONG></A>=20
+  <DD>List of pathnames giving directories which a program should search =
+for=20
+  fonts. Overridden by <A=20
+  =
+href=3D"http://graphviz.org/doc/info/attrs.html#d:fontpath"><STRONG>fontp=
+ath</STRONG></A>.=20
+  <IT>Used only if Graphviz is not built with the <TT>fontconfig</TT>=20
+  library</IT>=20
+  <DT><A name=3Dd:SERVER_NAME><STRONG>SERVER_NAME</STRONG></A>=20
+  <DD>If defined, this indicates that the software is running as a web=20
+  application, which restricts access to image files. See <A=20
+  href=3D"file:///d:GV_FILE_PATH">GV_FILE_PATH</A>.=20
+  <DT><A name=3Dd:GV_FILE_PATH><STRONG>GV_FILE_PATH</STRONG></A>=20
+  <DD>If <A href=3D"file:///d:SERVER_NAME">SERVER_NAME</A> is defined, =
+image files=20
+  are restricted to the directory specified by <TT>GV_FILE_PATH</TT>. =
+Note that=20
+  sometimes, when using one of the layout programs in a web script, it =
+is not=20
+  enough to use an export command but rather the variables should be set =
+when=20
+  the command is run, for example,<BR><CODE>SERVER_NAME=3Dxxx=20
+  GV_FILE_PATH=3D"images/" dot -Tpng -o x.png x.dot =
+</CODE></DD></DL></BODY></HTML>

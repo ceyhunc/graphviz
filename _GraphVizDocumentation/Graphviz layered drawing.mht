@@ -1,0 +1,522 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Graphviz layered drawing
+Date: Fri, 31 Aug 2007 18:03:43 +0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0005_01C7EBF9.44774640"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3138
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0005_01C7EBF9.44774640
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://graphviz.org/Documentation/html/layers/
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Graphviz layered drawing</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"MSHTML 6.00.6000.16525" name=3DGENERATOR></HEAD>
+<BODY>
+<H3>Graphviz layered drawing </H3>If the <TT>layers</TT> graph attribute =
+is set,=20
+the graph is printed in a sequence of colored layers, or overlays. (This =
+
+coloring overrides any other settings.) <TT>layers</TT> defines a list =
+of layer=20
+names, each separated by a sequence of separator characters. The tokens =
+can be=20
+any identifier or natural number, except the reserved word <TT>all</TT>. =
+By=20
+default, the separator characters are colon, space and tab, though this =
+can be=20
+overridden using the <TT>layersep</TT> graph attribute.=20
+<P>The <TT>layer</TT> attribute of a node or edge enables its appearance =
+in=20
+given layers. Its value specifies a layer, or a layer range, written as =
+two=20
+layer names separated by a sequence of separator characters. The keyword =
+
+<TT>all</TT> means all possible layers. If <TT>all</TT> is used as part =
+of a=20
+range, the range denotes all layers bounded on one side by the other =
+token.=20
+Thus, the label <TT>pvt:all</TT> of the edge <TT>node2 -&gt; node3</TT> =
+in the=20
+example below corresponds to the layers <TT>pvt, test, new, and =
+ofc</TT>.=20
+<P>As an example, the graph: <PRE>digraph G {
+	layers=3D"local:pvt:test:new:ofc";
+
+	node1  [layer=3D"pvt"];
+	node2  [layer=3D"all"];
+	node3  [layer=3D"pvt:ofc"];		/* pvt, test, new, and ofc */
+	node2 -&gt; node3  [layer=3D"pvt:all"];	/* same as pvt:ofc */
+	node2 -&gt; node4 [layer=3D3];		/* same as test */
+}
+</PRE>produces the 5 layers shown below:=20
+<TABLE bgColor=3Dwhite border=3D1>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><IMG=20
+            =
+src=3D"http://graphviz.org/Documentation/html/layers/lay1.gif"> =
+</TD></TR>
+        <CAPTION align=3Dbottom>Layer 1</CAPTION></TABLE></TD>
+    <TD>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><IMG=20
+            =
+src=3D"http://graphviz.org/Documentation/html/layers/lay2.gif"> =
+</TD></TR>
+        <CAPTION align=3Dbottom>Layer 2</CAPTION></TABLE></TD>
+    <TD>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><IMG=20
+            =
+src=3D"http://graphviz.org/Documentation/html/layers/lay3.gif"> =
+</TD></TR>
+        <CAPTION align=3Dbottom>Layer =
+3</CAPTION></TABLE></TD></TR></TBODY></TABLE><ILAYER=20
+left=3D"120">
+<TABLE bgColor=3Dwhite border=3D1>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><IMG=20
+            =
+src=3D"http://graphviz.org/Documentation/html/layers/lay4.gif"> =
+</TD></TR>
+        <CAPTION align=3Dbottom>Layer 4</CAPTION></TABLE></TD>
+    <TD>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><IMG=20
+            =
+src=3D"http://graphviz.org/Documentation/html/layers/lay5.gif"> =
+</TD></TR>
+        <CAPTION align=3Dbottom>Layer=20
+5</CAPTION></TABLE></TD></TR></TBODY></TABLE></ILAYER>
+<P>In a layered graph, if a given node (or edge) does not have a layer=20
+assignment, but incident edges (nodes, resp.) do, its layer =
+specification is=20
+inferred from these. For example, in the examples above, node4 only =
+appears on=20
+layer 3, because a layer assignment was given for its connecting edge. =
+Note,=20
+however, that if a node or edge without a layer attribute is incident =
+with an=20
+edge or node without a layer attribute (or such a node has no edges), =
+then the=20
+node or edge appears on all layers.=20
+<P>To change the default so that nodes and edges with no layer attribute =
+appear=20
+on all layers, insert <PRE>	node [layer=3Dall];
+	edge [layer=3Dall];
+</PRE>at the beginning of the graph file.=20
+<P>At present, the layers feature is only available in PostScript =
+output.=20
+<P>There is currently no way to specify a set of layers that are not a=20
+continuous range, sorry, but feel free to fix it in the source.=20
+<P>The color sequence for layers is set in the array layercolorseq (in=20
+Postscript at least). The first index is 1 and each element is a =
+three-element=20
+color coordinate array. Custom layer colors can be created by setting =
+the value=20
+of this array.=20
+<P>
+<H4>TODO</H4>
+<UL>
+  <LI>simply change default colors per layer, thus allowing user =
+override on=20
+  individual nodes or edges when desired.=20
+  <LI>forcing nodes/edges in a given subgraph to take certain =
+attributes. Might=20
+  require a hook in the libgraph parser. It would be pretty easy to =
+support the=20
+  semantics: for every node/edge in this subgraph, assign it the default =
+
+  attributes that differ from the defaults of the parent of this graph. =
+What you=20
+  need to avoid is the problem exposed in the following example: <PRE>
+			subgraph sub0 {
+				node [color=3Dred];
+				a; b; c;
+			}
+			subgraph sub1 {
+				node [shape=3Ddiamond];
+				a; b; c;
+			}
+</PRE>We don't want to reset a,b,c to color=3Dblack just because that is =
+default=20
+  in sub1. Solution: none, hope for a fix in libgraph. </LI></UL>
+<P>
+<CENTER></CENTER></BODY></HTML>
+
+------=_NextPart_000_0005_01C7EBF9.44774640
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/Documentation/html/layers/lay1.gif
+
+R0lGODlh6wCxALMAAP///////gAAAL+/v19fX9/f339/fx8fHz8/P5+fnwAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAEALAAAAADrALEAAAT/EMhJq7046827/2AojmRpnmiqrmzrvnAsz3Rt33iu73zv
+/8CgcEgsGo/IpHLJbDqf0Kh0Sq1ar9isdsvter/gsHhMLpvPW4iAQE5a7cVZb979B0NxJD1IyEmr
+hUBOWu3FWW/e/QdDcSQhISUEctJKoZASAjlptRdnvXn3HwzFsYOEhEBOWu0FQggI5KTVXpz15t1/
+MBTHCxJSQCAnrfZWIYSAQE5a7cVZb979B0NxlCAhIZCTVnvxFEJAICet9uKsN+/+g6EYQkJCICet
+9uIrhIBATlrtxVlv3v0HQ9GDhIBATlrtxVkKobXWNE3TNE3TNE3TNE2ChIBATlrtxdkK/6G11jRN
+0zRN0zRN07QMEgICOWm1F2cshNZa0zRN0zRN0zRN0y5IQCAnrfbirKXYe2/btm3btm3btmWQEBDI
+Sau9OGsqxN7btm3btm3btm2bBQkBgZy02ouztkLsvW3btm3btm3btlWQgEBOWu3FWWOx9962bdu2
+bdu2baMgISCQk1Z7cdZYiL23bdu2bdu2bds2CRICAjlptRdnrYXYe9u2bdu2bdu2bQMgAYGctNqL
+s95AcM5xHMdxHMdxXAYJAYGctNp7ExJ4FkiEQAMCOakUAgI5abUXZ7159x8MN0hAICet9uIiBJYF
+ogHGEQMCOakUEMhJq7046827/2CoQf9CQCAnrfZiIEQGCQIJkjhzzikEBHLSai/OevPuPxhmkIBA
+TlrtxVKIfAUUEMhJp4BATlrtxVlv3v0HwwwSEMhJ5SCimHPGhIUIgQoEUpJzkhBzIHEggUBOUMSh
+lAIBgZy02ouz3rz7D4YZJCCQk8oihClDHAnLQWWIUwAA6BRYkBAAFJHAEAQCOYcwc84JBARy0mov
+znrz7j8YZpCAQE46jyjyiAIMFAMAIwgASSQAYBECAAKFnBDIic6cc0oBgZy02ouz3rz7D4YYJAQE
+ctJ5RJFHFHCgAAAUcQBAogAAgRAAHAGBnHSIQSmVQkAgJ6324qw37/6DIQYJCOSk84j/Io8oQEAB
+AABCACAEAAACIQAQokAgpywnUUqngEBOWu3FWW/e/QfDDBIQyEnnEUUeUcCBogAAxAFAiAIABEIA
+cEQCABQAIADHQCAnrUBAICet9uKsN+/+g2EGCQjkpPOIIo8ogEBhACjCAICEAQACIQAgAgEAEgAQ
+IAOBnLRKAYGctNqLs968+w+GGSQgkJPKIsQARYgBQTliAHIKAEMImMAQooAihAFpQACQkdJAICed
+AgI5abUXZ7159x8MM0gICOSk4AghyhFCwAIKEoIUAAAYB4qTBBkADCROAhAgKOQ8EMhJpRAQyEmr
+vTjrzbv/YKhBAgI5abUXZ72n4Jzj/ziO4ziO4zgMEgICOWm1F2e9gRAQyEmrvTjrzbv/YMhBAgI5
+abUXZ72B4JzjOI7jOI7jOA0SAgI5abUXZ62F2Hvbtm3btm3btm2TICEgkJNWe3HWWIi9t23btm3b
+tm3bNgoSEMhJq704ayz23tu2bdu2bdu2bRUkBARy0movztoKsfe2bdu2bdu2bdtmQUJAICet9uKs
+qRB7b9u2bdu2bdu2bRkkIJCTVntx1lLsvbdt27Zt27Zt2zYAEgICOWm1F2cshNZa0zRN0zRN0zRN
+0zJICAjkpNVenK0QWmtN0zRN0zRN0zRN0yRICAjkpNVenKUQWmtN0zRN0zRN0zRN0/8qSEgI5KTV
+XnyFEBDISau9OOvNu/9gKIaQkBDISau9eAohIJCTVntx1pt3/8FQHCVISAGBnLTaW4UQAgI5abUX
+Z7159x8MxfGChIRATlrtBUIICOSk1V6c9ebdfzAUxw4SUkIgJ60UCikhkJNWe3HWm3f/wVAcSUjI
+SauFQE5a7cVZb979B0NxJD1IQCAnrfbirDfv/oOhOJKleaKpurKt+8KxPNO1feO5vvO9/wODwiGx
+aDwik8ols+l8QqPSKbVqvWKz2i236/2Cw+IxuWw+o9PqNbvtfsPj8jm9br/j8/o9v+//AwYKDhIW
+Gh4iJiouMjY6PkJGSk5SVlpeYmZfam5ydnp+goaKjpKWmp6ipqqusra6vsLGys7S1tre4ubq7vL2
++v4CBwsPExcbHyMnKy8zNzs/Q0dLT1NXW19jZ2tvc3d7f4OHi4+Tl5ufo6err7O3u7/Dx8vP09dz
+QUQAOw==
+
+------=_NextPart_000_0005_01C7EBF9.44774640
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/Documentation/html/layers/lay2.gif
+
+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
+
+------=_NextPart_000_0005_01C7EBF9.44774640
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/Documentation/html/layers/lay3.gif
+
+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
+PqFR6ZRatV6xWe2W2/V+wWHxmFw2NyERADs=
+
+------=_NextPart_000_0005_01C7EBF9.44774640
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/Documentation/html/layers/lay4.gif
+
+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
+
+------=_NextPart_000_0005_01C7EBF9.44774640
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://graphviz.org/Documentation/html/layers/lay5.gif
+
+R0lGODlh6wCxALMAAP///////gAAAKsozOrJ8sp43/Tk+NWT5bVC0sBd2N+u6wAAAAAAAAAAAAAA
+AAAAACH5BAEAAAEALAAAAADrALEAAAT/EMhJq7046827/2AojmRpnmiqrmzrvnAsz3Rt33iu73zv
+/8CgcEgsGo/IpHLJbDqf0Kh0Sq1ar9isdsvter/gsHhMLpvPW8iAQE5a7cVZb979B0NxJD1oyEmr
+hUBOWu3FWW/e/QdDcSShISUEctJK4ZASAjlptRdnvXn3HwzFsYOGhEBOWu0FYwwI5KTVXpz15t1/
+MBTHCxpyQCAnrfbWMcaAQE5a7cVZb979B0NxlKAhIZCTVnvxHGNAICet9uKsN+/+g6EYQkNCICet
+9uI7xoBATlrtxVlv3v0HQ9GDxoBATlrtxVmOobXWNE3TNE3TNE3TNE2CxoBATlrtxdmO/6G11jRN
+0zRN0zRN07QMGgMCOWm1F2c8htZa0zRN0zRN0zRN0y5oQCAnrfbirOXYe2/btm3btm3btmXQGBDI
+Sau9OGs6xt7btm3btm3btm2bBY0BgZy02ouztmPsvW3btm3btm3btlXQgEBOWu3FWeOx9962bdu2
+bdu2baOgMSCQk1Z7cdZ4jL23bdu2bdu2bds2CRoDAjlptRdnrcfYe9u2bdu2bdu2bQOgAYGctNqL
+s95gcM5xHMdxHMdxXAaNAYGctNp7VRp4GljGSAQCOakcAwI5abUXZ7159x8MN2hAICet9mIzBpYG
+JgIIGgQCOakcEMhJq7046827/2CoQf9jQCAnrfZiMEYGCgIJ1EBzzjkGBHLSai/OevPuPxhm0IBA
+TlrtxXKMfAccEMhJ54BATlrtxVlv3v0HwwwaEMhJJSnDHITIhKaMkQwEUhaE1BiTpIFggUBOYAai
+lIIBgZy02ouz3rz7D4YZNCCQk0ozxjFkIAkNSoYMZAAACRlo0hgAmKEAGQUCOck4c84JBgRy0mov
+znrz7j8YZtCAQE460TASDQMOHASAMwoAaigAoBkDgAKHnBDImdCcc8oBgZy02ouz3rz7D4YYNAYE
+ctKJhpFoGIDgAACYgQBIwwAAwRgAoAGBnJQMQimVY0AgJ6324qw37/6DIQYNCOSkEw3/I9EwYMAB
+AABjADAGAACCMQAYw0AgpzRIUUrngEBOWu3FWW/e/QfDDBoQyEknGkaiYQCCwwAABgJgDAMABGMA
+gIYCABgAIADoQCAnrWBAICet9uKsN+/+g2EGDQjkpBMNI9EwoMBxADDjAJDGAQCCMQAoIwEAFAAQ
+pAOBnLTKAYGctNqLs968+w+GGTQgkJNKMwYBZgwCgUGDgIIMAGQMqAAZwwAzxgGKQADSkfJAICed
+AwI5abUXZ7159x8MM2gMCOSkAI0xDBpjQANMGqMYAAAgCA6kRiEAkDSQAhAkOOREEMhJ5RgQyEmr
+vTjrzbv/YKhBAwI5abUXZ73n4Jzj/ziO4ziO4zgMGgMCOWm1F2e9wRgQyEmrvTjrzbv/YMhBAwI5
+abUXZ73B4JzjOI7jOI7jOA0aAwI5abUXZ63H2Hvbtm3btm3btm2ToDEgkJNWe3HWeIy9t23btm3b
+tm3bNgoaEMhJq704azz23tu2bdu2bdu2bRU0BgRy0movztqOsfe2bdu2bdu2bdtmQWNAICet9uKs
+6Rh7b9u2bdu2bdu2bRk0IJCTVntx1nLsvbdt27Zt27Zt2zYAGgMCOWm1F2c8htZa0zRN0zRN0zRN
+0zJoDAjkpNVenO0YWmtN0zRN0zRN0zRN0yRoDAjkpNVenOUYWmtN0zRN0zRN0zRN0/8qaEgI5KTV
+XnzHGBDISau9OOvNu/9gKIbQkBDISau9eI4xIJCTVntx1pt3/8FQHCVoyAGBnLTaW8cYAwI5abUX
+Z7159x8MxfGChoRATlrtBWMMCOSk1V6c9ebdfzAUxw4aUkIgJ60UDikhkJNWe3HWm3f/wVAcQ2gA
+AIectFoI5KTVXpz15t1/MBRHEoAGBHJSOSCQk1Z7cdabd//BUBxJDRoQyEmrvTjrzbv/YCiOZDlB
+AwI5abUXZ7159x8MxZEsJWhAICet9uKsN+/+g6E4kuUEDQjkpNVenPXm3X8wFEeylKABgZy02ouz
+3rz7D4biSJYTNCCQk1Z7cdabd///wVAcyVKCBgRy0movznrz7j8YiiNZTtCAQE5a7cVZb979B0Nx
+JEsJGhDISau9OOvNu/9gKI5kOUEDAjlptRdnvXn3HwzFkSwlaEAgJ6324qw37/6DoTiS5QQNCOSk
+1V6c9ebdfzAUR7KUoAGBnLTai7PevPsPhuJIlhM0IJCTVntx1pt3/8FQHMlSggYEctJqL8568+4/
+GIojWU7QgEBOWu3FWW/e/QdDcSRLCRoQyEmrvTjrzbv/YCiOZDlBAwI5abUXZ7159x8MxZEsJWhA
+ICet9uKsN+/+g6E4kuUEDQjkpNVenPXm3X8wFEeylKABgZy02ouz3rz7D4biSJYT/zQgkJNWe3HW
+m3f/wVAcyVKCBgRy0movznrz7j8YiiNZTtCAQE5a7cVZb979B0NxJEsJGhDISau9OOvNu/9gKI5k
+OUEDAjlptRdnvXn3HwzFkSwlaEAgJ6324qw37/6DoTiS5QQNCOSk1V6c9ebdfzAUR7KUoAGBnLTa
+i7PevPsPhuJIlhM0IJCTVntx1pt3/8FQHMlSggYEctJqL8568+4/GIojWU7QgEBOWu3FWW/e/QdD
+cSRLCRoQyEmrvTjrzbv/YCiOZClBAwI5abUXZ7159x8MxZEsJ2hAICet9uKsN+/+g6E4kiQ0BhgQ
+yEmrvTjrzbv/YCiOZAkNOSCQk/9We3HWm3f/wVAcyRIackIgJ6324qw37/6DoTiSIjTkHBDISau9
+OOvNu/9gKI6kCA05IZCTVntx1pt3/8FQHMkRGlJCICet9uKsN+/+g6E4kiQ0pIRATlrtxVlv3v0H
+Q3EkR2hICYGctNqLs968+w+G4kiS0JADAjlptRdnvXn3HwzFkSyhISGQk1Z7cdabd//BUBzJEoCG
+hEBOWu3FWW/e/QdDcSRLaEgI5KTVXpz15t1/MBRHUoMGBHJSMAYEctJqL8568+4/GIojCUBDTlot
+GBDISau9OOvNu/9gKI4iNKSEQE5aKRxSQiAnrfbirDfv/oOhOHbQkBDISau9YIz/AYGctNqLs968
++w+G4nhBQw4I5KTV3jrGGBDISau9OOvNu/9gKI4SNCQEctJqL55jDAjkpNVenPXm3X8wFENoSAjk
+pNVefMcYEMhJq7046827/2AoetAYEMhJq704yzG01pqmaZqmaZqmaZqmSdAYEMhJq7042zG01pqm
+aZqmaZqmaZqWQWNAICet9uKMx9Baa5qmaZqmaZqmadoFDQjkpNVenLUce+9t27Zt27Zt27YMGgMC
+OWm1F2dNx9h727Zt27Zt27Zts6AxIJCTVntx1naMvbdt27Zt27Zt27YKGhDISau9OGs89t7btm3b
+tm3btm0UNAYEctJqL84aj7H3/7Zt27Zt27Zt2yZBY0AgJ6324qz1GHtv27Zt27Zt27ZtADQgkJNW
+e3HWGwzOOY7jOI7jOI7LoDEgkJNWe7FKA1MF0UgGAjkpGAMCOWm1F2e9efcfDDdoQCAnrfZiYMbI
+EioCykgQyEnlgEBOWu3FWW/e/QdDDRoDAjlptRfLMbI0EAAzhpRSSjkGBHLSai/OevPuPxhm0IBA
+TlrtxXOMbAc8EMhJ54BATlrtxVlv3v0HwwwaEMhJJynDHITIhKaMkQwEUhaE1BiTpIFggUBOdeac
+Uw4I5KTVXpz15t1/MMygAYGcdJoxjiEDSWhQMmQgAwBIyECTxgDADAXIKAACAP/OQAoCOekcEMhJ
+q7046827/2CYQQMCOSlFw0g0DDhwEADOKACooQCAZgwAChxyQiClGkPNOeeAQE5a7cVZb979B0MM
+GgMCOSlFw0g0DEBwAADMQACkYQCAYAwA0IBATgrOQLXKMSCQk1Z7cdabd//BEIMGBHJSioaRaBgw
+4AAAgDEAGAMAAMEYAIxhIJCTmjEopQMCOWm1F2e9efcfDDNoQCAnpWgYiYYBCA4DABgIgDEMABCM
+AQAaCgBgIJATDEQpHRDISau9OOvNu/9gmEEDAjkpRcNINAwocBwAzDgApHEAgGAMAMpIAAAFgZxk
+nDnnHBDISau9OOvNu/9gmEH/AwI56TRjEGDGIBAYNAgoyABAxoAKkDEMMGMcoAgEUpqU5pwTDAjk
+pNVenPXm3X8wzKAxIJCTSjTGMGiMAQ0waYxiAACAIDiQGoUAQNJACkAA0hjoQCAnnWNAICet9uKs
+N+/+g6EGDQjkpNVenPWeg3OO4ziO4ziO4zBoDAjkpNVenPUGY0AgJ6324qw37/6DIQcNCOSk1V6c
+9QaDc47jOI7jOI7jNGgMCOSk1V6ctR5j723btm3btm3btk2CxoBATlrtxVnjMfbetm3btm3btm3b
+KGhAICet9uKs8dh7b9u2bdu2bdu2VdAYEMhJq704azvG3tu2bdu2bdu2bZsF/40BgZy02ouzpmPs
+vW3btm3btm3btmXQgEBOWu3FWcux9962bdu2bdu2bdsAaAwI5KTVXpzxGFprTdM0TdM0TdM0Tcug
+MSCQk1Z7cbZjaK01TdM0TdM0TdM0TZOgMSCQk1Z7cZZjaK01TdM0TdM0TdM0TaugISGQk1Z78R1j
+QCAnrfbirDfv/oOhGEJDQiAnrfbiOcaAQE5a7cVZb979B0NxlKAhBwRy0mpvHWMMCOSk1V6c9ebd
+fzAUxwsaEgI5abUXjDEgkJNWe3HWm3f/wVAcO2hICYGctFI4pIRATlrtxVlv3v0HQ3EkoSEnrRYC
+OWm1F2e9efcfDMWR9KABgUactNqLs968+w+G4kiW5omm6sq27gvH8kzX9o3n+s73/g8MCofEovGI
+TCqXzKbzCY1Kp9Sq9YrNarfcrvcLDovH5LL5nIVEADs=
+
+------=_NextPart_000_0005_01C7EBF9.44774640--
