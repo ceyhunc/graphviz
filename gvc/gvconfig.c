@@ -1,6 +1,3 @@
-/* $Id: gvconfig.c,v 1.54 2005/12/02 04:14:47 ellson Exp $ $Revision: 1.54 $ */
-/* vim:set shiftwidth=4 ts=8: */
-
 /**********************************************************
 *      This software is part of the graphviz package      *
 *                http://www.graphviz.org/                 *
